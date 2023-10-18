@@ -1,0 +1,139 @@
+/* Estilos para bloques de código */
+div[data-rehype-pretty-code-fragment] {
+    overflow: hidden;
+    border-radius: 0.5rem;
+    border: solid 1px;
+
+    pre {
+        overflow-x: auto;
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+    }
+}
+
+div[data-rehype-pretty-code-title] {
+    padding: .2rem 0.5rem;
+    font-size: smaller;
+
+    &:last-of-type {
+        display: none;
+    }
+}
+
+/* Tema claro para bloques de código */
+html[data-theme="light"] {
+    div[data-rehype-pretty-code-fragment] {
+        background-color: #ededed78;
+        border-color: #b8b8b8;
+    }
+
+    div[data-rehype-pretty-code-title] {
+        color: #111111;
+        background-color: #ededed;
+        border-bottom: solid 1px #b8b8b8;
+    }
+
+    div[data-rehype-pretty-code-fragment] [data-highlighted-line] {
+        border-left-color: rgb(78, 90, 251);
+        background-color: rgba(205, 217, 254, 0.436);
+    }
+}
+
+
+/* Tema oscuro para bloques de código */
+html[data-theme="dark"] {
+    div[data-rehype-pretty-code-fragment] {
+        background-color: #000000;
+        border-color: #333333;
+    }
+
+    div[data-rehype-pretty-code-title] {
+        color: #929292;
+        background-color: #000000;
+        border-bottom: solid 1px;
+        border-color: $element-border-color;
+    }
+
+    div[data-rehype-pretty-code-fragment] [data-highlighted-line] {
+        border-left-color: rgb(78, 90, 251);
+        background-color: rgba(214, 205, 254, 0.104);
+    }
+}
+
+/* Estilos para líneas de código */
+div[data-rehype-pretty-code-fragment] [data-line] {
+    padding-left: 0.75rem;
+    border-left-width: 8px;
+    border-left-color: transparent;
+}
+
+/* Estilos para caracteres resaltados */
+span[data-highlighted-chars] {
+    background-color: #fff4;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    border-bottom: solid 2px #eee4;
+}
+
+/* Tema claro para caracteres resaltados */
+html[data-theme="light"] span[data-highlighted-chars] {
+    background-color: #a8d5f882;
+}
+
+/* Tema oscuro para caracteres resaltados */
+html[data-theme="dark"] span[data-highlighted-chars] {
+    background-color: #5077f84a;
+}
+
+/* Estilos para líneas */
+.line {
+    padding: 0 0.2rem;
+    border: solid 1px;
+    border-radius: 0.5rem;
+}
+
+/* Tema claro para líneas */
+html[data-theme="light"] .line {
+    border-color: #b8b8b8;
+}
+
+/* Tema oscuro para líneas */
+html[data-theme="dark"] .line {
+    border-color: $element-border-color;
+}
+
+/* Estilos para números de línea */
+code[data-line-numbers] {
+    counter-reset: lineNumbers;
+
+    >[data-line]::before {
+        counter-increment: lineNumbers;
+        content: counter(lineNumbers);
+        display: inline-block;
+        width: 1rem;
+        padding-right: 1.4rem;
+        text-align: right;
+        color: gray;
+    }
+}
+
+/* Configuración de esquemas de color */
+pre[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+html[data-theme="dark"] {
+
+    pre[data-theme="light"],
+    code[data-theme="light"] {
+        display: none;
+    }
+}
+
+html[data-theme="light"] {
+
+    pre[data-theme="dark"],
+    code[data-theme="dark"] {
+        display: none;
+    }
+}
