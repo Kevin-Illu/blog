@@ -1,6 +1,7 @@
-import { Open_Sans, PT_Sans, JetBrains_Mono } from "next/font/google";
+import { PT_Serif, PT_Sans, JetBrains_Mono } from "next/font/google";
 
-const open_sans = Open_Sans({
+const open_sans = PT_Serif({
+  weight: "400",
   subsets: ["latin"],
 });
 

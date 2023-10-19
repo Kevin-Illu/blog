@@ -1,5 +1,9 @@
 html[data-theme="light"] {
 
+    body {
+        background-color: $bg-light;
+    }
+
     h1,
     h2,
     h3,
@@ -11,6 +15,9 @@ html[data-theme="light"] {
 }
 
 html[data-theme="dark"] {
+    body {
+        background-color: $bg-dark;
+    }
 
     h1,
     h2,
@@ -22,6 +29,10 @@ html[data-theme="dark"] {
     }
 }
 
+p {
+    line-height: 1.4;
+}
+
 html[data-theme="light"] p {
     color: $text-color-black;
 }
@@ -30,41 +41,7 @@ html[data-theme="dark"] p {
     color: $text-color-white;
 }
 
-.container {
-    width: 96%;
-    margin: 0 auto;
-
-    @media (min-width: 768px) {
-        width: 80%;
-    }
-
-    @media (min-width: 992px) {
-        width: 70%;
-    }
-
-    @media (min-width: 1200px) {
-        width: 46%;
-    }
-}
-
-.blog__header {
-    padding: 1rem 0;
-    display: flex;
-    gap: .4rem;
-    flex-flow: column;
-
-    h1 {
-        padding: 0;
-        margin: 0;
-    }
-}
-
-p {
-    line-height: 1.4;
-}
-
 // blockquote
-
 blockquote {
     border-left: 4px solid;
     margin: 20px 0;

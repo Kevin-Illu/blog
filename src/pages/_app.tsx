@@ -1,3 +1,4 @@
+import { Layout } from "@/components";
 import "../styles/index.scss";
 import { pt_sans, open_sans, jetBrains_mono } from "@/fonts";
 import { ThemeProvider } from "next-themes";
@@ -15,14 +16,13 @@ export default function App({ Component, pageProps }: AppProps) {
           h5,
           h6 {
             font-family: ${pt_sans.style.fontFamily};
-            font-weight: bold;
+            font-weight: 400;
           }
 
-          p,
-          span:not([data-line]),
-          li {
+          html,
+          span:not([data-line]) {
             font-family: ${open_sans.style.fontFamily};
-            font-weight: regular;
+            font-weight: 300;
           }
 
           span[data-line] span,

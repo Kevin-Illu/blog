@@ -1,6 +1,6 @@
-import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import rehypePrettyCode from "rehype-pretty-code";
-import { rehypePrettyCodeOptions } from "./lib/rehypePrettyCode";
+import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import { rehypePrettyCodeOptions } from "./src/lib/rehypePrettyCode";
 
 const Post = defineDocumentType(() => ({
   name: "Post",
@@ -20,10 +20,7 @@ const Post = defineDocumentType(() => ({
   computedFields: {
     slug: {
       type: "string",
-      resolve: (post) =>
-        post._raw.sourceFileName
-          // hello-world.mdx => hello-world
-          .replace(/\.mdx$/, ""),
+      resolve: (post) => post._raw.sourceFileName.replace(/\.mdx$/, ""),
     },
   },
 }));

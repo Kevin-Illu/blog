@@ -1,8 +1,9 @@
+import { Layout } from "@/components";
 import { getTimeAgo } from "@/utils/relativeTime";
 import { allPosts, type Post } from "contentlayer/generated";
 import { type GetStaticProps, type InferGetStaticPropsType } from "next";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export const getStaticPaths = () => {
   return {
@@ -36,13 +37,16 @@ export default function SinglePostPage({
   }, []);
 
   return (
-    <div className="container">
+    <Layout>
       <header className="blog__header">
-        <h1>{post.title}</h1>
-        <span>{timeAgo}</span>
+        <div className="container">
+          <h1 className="blog__header__title">{post.title}</h1>
+          <p className="blog__header__date">{timeAgo}</p>
+        </div>
       </header>
-
-      <MDXContent />
-    </div>
+      <div className="container">
+        <MDXContent />
+      </div>
+    </Layout>
   );
 }

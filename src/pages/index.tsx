@@ -1,4 +1,4 @@
-import { ThemeChanger } from "@/components/theme-changer";
+import { Layout } from "@/components";
 import Head from "next/head";
 
 export default function Home() {
@@ -10,9 +10,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <ThemeChanger />
-      </main>
+      <Layout asContainer>
+        <h1>Hello world</h1>
+      </Layout>
     </div>
   );
 }

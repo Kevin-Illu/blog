@@ -14,15 +14,15 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/*": ["./*"],
-      "@/fonts": ["./styles/fonts"],
+      "@/*": ["./src/*"],
+      "@/fonts": ["./src/styles/fonts"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     }
   },
   "include": [
     "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
     ".contentlayer/generated"
   ],
   "exclude": ["node_modules"]

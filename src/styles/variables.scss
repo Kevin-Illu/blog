@@ -1,0 +1,49 @@
+// bg
+$bg-dark: #000;
+$bg-light: #fff;
+
+// text
+$text-color-white: #f8f8f8;
+$text-color-black: #111111;
+$element-border-color: #2c2c2c;
+
+
+// Media queries for devices
+$breakpoint-phone: 576px; // phone
+$breakpoint-tablet: 768px; // tablet
+$breakpoint-laptop: 992px; // laptop
+$breakpoint-desktop: 1200px; // desktop
+$breakpoint-desktop-xlarge: 1400px; // large
+
+// container breakpoints
+$container-w-small: 96%;
+$container-w-medium: 86%;
+$container-w-normal: 74%;
+$container-w-large: 54%;
+$container-w-xlarge: 40%;
+
+
+// font size for each breakpoint
+$h1-small : 36px;
+$h1-medium: 38px;
+$h1-normal: 42px;
+$h1-large : 48px;
+$h1-xlarge: 54px;
+
+$h2-small : 22px;
+$h2-medium: 24px;
+$h2-normal: 26px;
+$h2-large : 28px;
+$h2-xlarge: 32px;
+
+$h3-small : 18px;
+$h3-medium: 20px;
+$h3-normal: 22px;
+$h3-large : 24px;
+$h3-xlarge: 26px;
+
+$text-small : 14px;
+$text-medium: 16px;
+$text-normal: 18px;
+$text-large : 20px;
+$text-xlarge: 22px;
