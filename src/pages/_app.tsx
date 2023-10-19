@@ -19,8 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
             font-weight: 400;
           }
 
-          html,
-          span:not([data-line]) {
+          html {
             font-family: ${open_sans.style.fontFamily};
             font-weight: 300;
           }

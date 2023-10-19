@@ -5,5 +5,5 @@ export interface LayoutHeaderProps {
 }
 
 export const LayoutHeader: FC<LayoutHeaderProps> = ({ children }) => {
-  return <header>{children}</header>;
+  return <header className="header__root">{children}</header>;
 };

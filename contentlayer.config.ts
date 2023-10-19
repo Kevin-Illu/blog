@@ -12,6 +12,10 @@ const Post = defineDocumentType(() => ({
       type: "string",
       required: true,
     },
+    description: {
+      type: "string",
+      required: true,
+    },
     date: {
       type: "date",
       required: true,

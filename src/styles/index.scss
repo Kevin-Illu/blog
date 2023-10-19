@@ -6,5 +6,9 @@
 @import './markdown/index.scss';
 @import './markdown/syntax-highlighting.scss';
 
+
+// general components
+@import './layout/header.scss';
+
 // content
 @import './post/index.scss'

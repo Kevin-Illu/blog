@@ -10,8 +10,23 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout asContainer>
-        <h1>Hello world</h1>
+
+      <Layout>
+        <Layout.Header>
+          <div className="header__root__title">
+            <h1 className="header__root__title--root">
+              <span>WEB DEVELOPER</span>
+              <span>DESKTOP DEVELOPER</span>
+              <span>SISTEM DESIGN ENTUSIAST</span>
+            </h1>
+          </div>
+        </Layout.Header>
+        <Layout.Content>
+          <p>hola</p>
+        </Layout.Content>
+        <Layout.Footer>
+          <p>footer</p>
+        </Layout.Footer>
       </Layout>
     </div>
   );
