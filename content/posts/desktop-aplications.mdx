@@ -1,0 +1,131 @@
+---
+title: "Como crear una aplicacion de escritorio con Javascript"
+description: "Como funciona Electron JS y como empezar a jugar"
+date: 10-01-2023
+---
+
+# Creando una Aplicación de Escritorio con Electron
+
+Electron es una poderosa plataforma que te permite construir aplicaciones de escritorio multiplataforma utilizando tecnologías web familiares, como HTML, CSS y JavaScript. En este artículo, te guiaré a través de los pasos para crear una aplicación de escritorio simple con Electron y te mostraré una estructura de directorios básica para organizar tu proyecto.
+
+## Paso 1: Configuración del Proyecto
+
+Para comenzar, asegúrate de tener [Node.js](https://nodejs.org/) instalado en tu sistema. Luego, crea un nuevo directorio para tu proyecto e inicia un proyecto Node.js ejecutando el siguiente comando en la terminal:
+
+```bash
+mkdir mi-aplicacion-electron
+cd mi-aplicacion-electron
+npm init -y
+```
+
+## Paso 2: Instalación de Electron
+
+Instala Electron como dependencia de desarrollo utilizando npm:
+
+```bash
+npm install electron --save-dev
+```
+
+## Paso 3: Estructura de Directorios
+
+Organizar tu proyecto correctamente es esencial. Aquí hay una estructura de directorios básica que puedes seguir:
+
+```
+mi-aplicacion-electron/
+  ├── package.json
+  ├── index.html
+  ├── main.js
+  └── renderer.js
+```
+
+- `package.json`: El archivo de configuración de Node.js que contiene información sobre tu proyecto y sus dependencias.
+- `index.html`: El archivo HTML que actúa como la página principal de tu aplicación.
+- `main.js`: El archivo JavaScript que sirve como el punto de entrada principal para la parte del proceso principal de Electron.
+- `renderer.js`: El archivo JavaScript que maneja la parte del proceso de renderización de Electron.
+
+## Paso 4: Archivo `package.json`
+
+Asegúrate de configurar tu archivo `package.json` con la información de tu proyecto y las rutas de los archivos principales:
+
+```json
+{
+  "name": "mi-aplicacion-electron",
+  "version": "1.0.0",
+  "description": "Una aplicación de escritorio con Electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^12.0.4"
+  }
+}
+```
+
+## Paso 5: Archivo `main.js`
+
+Crea el archivo `main.js` para iniciar la aplicación de Electron:
+
+```javascript
+const { app, BrowserWindow } = require("electron");
+const path = require("path");
+
+function createWindow() {
+  const mainWindow = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      nodeIntegration: true,
+    },
+  });
+
+  mainWindow.loadFile("index.html");
+}
+
+app.whenReady().then(createWindow);
+
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") {
+    app.quit();
+  }
+});
+
+app.on("activate", () => {
+  if (BrowserWindow.getAllWindows().length === 0) {
+    createWindow();
+  }
+});
+```
+
+## Paso 6: Archivo `index.html`
+
+Crea el archivo `index.html` para tu interfaz de usuario:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mi Aplicación Electron</title>
+  </head>
+  <body>
+    <h1>Hola desde Electron</h1>
+  </body>
+</html>
+```
+
+## Paso 7: Ejecución de la Aplicación
+
+Finalmente, ejecuta tu aplicación de Electron con el siguiente comando:
+
+```bash
+npm start
+```
+
+Esto iniciará tu aplicación de escritorio con Electron y mostrará el contenido de `index.html` en una ventana de la aplicación.
+
+¡Felicidades! Has creado una aplicación de escritorio básica con Electron. Puedes continuar desarrollando tu aplicación agregando funcionalidad y diseñando la interfaz de usuario según tus necesidades.
+
+Recuerda que esta es solo una estructura de directorios y un punto de partida básico. A medida que tu aplicación crezca, podrías dividir tu código en módulos y organizarlo de manera más eficiente.

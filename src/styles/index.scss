@@ -10,5 +10,8 @@
 // general components
 @import './layout/header.scss';
 
+// pages or sections
+@import './home/posts-list.scss';
+
 // content
-@import './post/index.scss'
+@import './post/index.scss';

@@ -1,0 +1,88 @@
+---
+title: "Que es Compound Component en React"
+description: "Descubriendo el mejor patron en React para librearias"
+date: 10-14-2023
+---
+
+# Patrón "Compound Component" en React con TypeScript
+
+Cuando se trabaja en el desarrollo de componentes en React, a menudo se necesita crear componentes más complejos que constan de múltiples partes. El patrón "Compound Component" es una excelente opción para abordar esta situación, ya que permite que los componentes se comporten como una unidad cohesiva, con partes interconectadas. Veamos cómo implementar este patrón en React con TypeScript.
+
+## ¿Qué es el patrón "Compound Component"?
+
+El patrón "Compound Component" es una técnica de diseño que se utiliza para construir componentes en React que trabajan juntos como una unidad, pero se componen a partir de múltiples partes o subcomponentes. Cada parte individual se encarga de una responsabilidad específica y, cuando se combinan, forman un componente más poderoso y flexible.
+
+## Ejemplo de Código
+
+Supongamos que estamos creando un componente `Accordion` que muestra un conjunto de elementos colapsables. Cada elemento se compone de un título y un contenido. Veamos cómo podemos implementar este componente siguiendo el patrón "Compound Component" en TypeScript.
+
+```jsx
+import React, { ReactNode, useState } from "react";
+
+// Componente "Accordion" que actúa como contenedor
+const Accordion: React.FC = ({ children }) => {
+  const [activeIndex, setActiveIndex] = (useState < number) | (null > null);
+
+  return (
+    <div>
+      {React.Children.map(children, (child, index) => {
+        if (React.isValidElement(child)) {
+          return React.cloneElement(child, {
+            isActive: index === activeIndex,
+            onClick: () => setActiveIndex(index),
+          });
+        }
+        return child;
+      })}
+    </div>
+  );
+};
+
+// Componente "AccordionItem" que representa un elemento colapsable
+type AccordionItemProps = {
+  isActive: boolean,
+  onClick: () => void,
+  title: string,
+  children: ReactNode,
+};
+
+const AccordionItem: React.FC<AccordionItemProps> = ({
+  isActive,
+  onClick,
+  title,
+  children,
+}) => (
+  <div>
+    <div onClick={onClick} style={{ cursor: "pointer" }}>
+      <strong>{title}</strong>
+      {isActive ? " - (Cerrado)" : " - (Abierto)"}
+    </div>
+    {isActive && <div>{children}</div>}
+  </div>
+);
+
+// Uso del componente "Accordion"
+function App() {
+  return (
+    <Accordion>
+      <AccordionItem title="Elemento 1">
+        Contenido del elemento 1.
+      </AccordionItem>
+      <AccordionItem title="Elemento 2">
+        Contenido del elemento 2.
+      </AccordionItem>
+      <AccordionItem title="Elemento 3">
+        Contenido del elemento 3.
+      </AccordionItem>
+    </Accordion>
+  );
+}
+
+export default App;
+```
+
+En este ejemplo, el componente `Accordion` actúa como contenedor y los subcomponentes `AccordionItem` representan los elementos colapsables. Cada elemento puede ser abierto o cerrado, y el estado se gestiona en el componente `Accordion`.
+
+## Conclusión
+
+El patrón "Compound Component" es una poderosa técnica de diseño para construir componentes en React que constan de múltiples partes. Al implementarlo correctamente, puedes crear componentes reutilizables y altamente personalizables. ¡Inténtalo en tu próximo proyecto React!

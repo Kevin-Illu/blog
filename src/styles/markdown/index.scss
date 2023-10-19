@@ -4,14 +4,14 @@ html[data-theme="light"] {
         background-color: $bg-light;
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: $text-color-black;
-    }
+    // h1,
+    // h2,
+    // h3,
+    // h4,
+    // h5,
+    // h6 {
+    //     color: $text-color-black;
+    // }
 }
 
 html[data-theme="dark"] {
@@ -19,14 +19,14 @@ html[data-theme="dark"] {
         background-color: $bg-dark;
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: $text-color-white;
-    }
+    // h1,
+    // h2,
+    // h3,
+    // h4,
+    // h5,
+    // h6 {
+    //     color: $text-color-white;
+    // }
 }
 
 p {
@@ -86,6 +86,6 @@ li {
 hr {
     border: none;
     border-top: 1px solid;
-    border-color: $element-border-color;
+    border-color: $border-color-dark;
     margin: 3.4rem 0;
 }
