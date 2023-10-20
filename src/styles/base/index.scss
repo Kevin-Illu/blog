@@ -3,9 +3,23 @@ a {
 }
 
 html[data-theme="light"] {
+
+    * {
+        border-color: $border-light-color;
+    }
+
     body {
         color: $text-light-color;
         background-color: $background-light-color;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $heading-light-color;
     }
 
     a {
@@ -18,9 +32,22 @@ html[data-theme="light"] {
 }
 
 html[data-theme="dark"] {
+    * {
+        border-color: $border-dark-color;
+    }
+
     body {
         color: $text-dark-color;
         background-color: $background-dark-color;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $heading-dark-color;
     }
 
     a {

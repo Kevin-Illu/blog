@@ -34,13 +34,7 @@ export default function Home({
 
       <Layout>
         <Layout.Header>
-          <div className="header__root__title">
-            <h1 className="header__root__title--root">
-              <span>WEB DEVELOPER</span>
-              <span>DESKTOP DEVELOPER</span>
-              <span>DESIGN SISTEM ENTUSIAST</span>
-            </h1>
-          </div>
+          <h1></h1>
         </Layout.Header>
         <Layout.Content>
           <section className="recent-posts">
@@ -69,7 +63,7 @@ interface PostCardProps {
 export const PostCard: FC<PostCardProps> = ({ title, description, slug }) => {
   return (
     <Link href={`/blog/${slug}`} className="recent-posts__list__item">
-      <h3 className="item__title">{title}</h3>
+      <p className="item__title">{title}</p>
       <p className="item__description">{description}</p>
     </Link>
   );

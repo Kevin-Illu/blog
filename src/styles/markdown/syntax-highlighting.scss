@@ -13,28 +13,32 @@ div[data-rehype-pretty-code-fragment] {
 
 div[data-rehype-pretty-code-title] {
     padding: .2rem 0.5rem;
+    font-size: small;
 
+    // no se porque aparece doble titulo
+    // asi que lo elimino mejor :/
     &:last-of-type {
         display: none;
     }
 }
 
+
 /* Tema claro para bloques de código */
 html[data-theme="light"] {
     div[data-rehype-pretty-code-fragment] {
-        background-color: #ededed78;
-        border-color: #b8b8b8;
+        background-color: $background-subtle-light-color;
+        border-color: $border-light-color;
     }
 
     div[data-rehype-pretty-code-title] {
-        color: #111111;
-        background-color: #ededed;
-        border-bottom: solid 1px #b8b8b8;
+        background-color: $background-subtle-light-color;
+        border-bottom: solid 1px $border-light-color;
+        color: $low-contrast-text-light-color;
     }
 
     div[data-rehype-pretty-code-fragment] [data-highlighted-line] {
-        border-left-color: rgb(78, 90, 251);
-        background-color: rgba(205, 217, 254, 0.436);
+        border-left-color: $code-highlight-light-pure-color;
+        background-color: $code-highlight-light-color;
     }
 }
 
@@ -42,22 +46,22 @@ html[data-theme="light"] {
 /* Tema oscuro para bloques de código */
 html[data-theme="dark"] {
     div[data-rehype-pretty-code-fragment] {
-        background-color: #000000;
-        border-color: #333333;
+        background-color: $background-subtle-dark-color;
+        border-color: $border-dark-color;
     }
 
     div[data-rehype-pretty-code-title] {
-        color: #929292;
-        background-color: #000000;
-        border-bottom: solid 1px;
-        border-color: #333333;
+        background-color: $background-subtle-dark-color;
+        border-bottom: solid 1px $border-dark-color;
+        color: $low-contrast-text-dark-color;
     }
 
     div[data-rehype-pretty-code-fragment] [data-highlighted-line] {
-        border-left-color: rgb(78, 90, 251);
-        background-color: rgba(214, 205, 254, 0.104);
+        border-left-color: $code-highlight-dark-pure-color;
+        background-color: $code-highlight-dark-color;
     }
 }
+
 
 /* Estilos para líneas de código */
 div[data-rehype-pretty-code-fragment] [data-line] {
@@ -66,40 +70,47 @@ div[data-rehype-pretty-code-fragment] [data-line] {
     border-left-color: transparent;
 }
 
-/* Estilos para caracteres resaltados */
+
+/* 
+    Temas claro y oscuro
+    para caracteres resaltados 
+*/
 span[data-highlighted-chars] {
-    background-color: #fff4;
     padding: 0.1rem 0.4rem;
     border-radius: 4px;
-    border-bottom: solid 2px #eee4;
+    border-bottom: solid 2px;
 }
 
-/* Tema claro para caracteres resaltados */
 html[data-theme="light"] span[data-highlighted-chars] {
-    background-color: #a8d5f882;
+    background-color: $code-text-highlight-light-bg-color;
+    border-color: $code-text-highlight-light-bg-color;
 }
 
-/* Tema oscuro para caracteres resaltados */
 html[data-theme="dark"] span[data-highlighted-chars] {
-    background-color: #5077f84a;
+    background-color: $code-text-highlight-dark-bg-color;
+    border-color: $code-text-highlight-dark-bg-color;
 }
 
-/* Estilos para líneas */
+/*
+    Tema claro y oscuros
+    para líneas de codigo
+*/
 .line {
     padding: 0 .4rem;
     border: solid 1px;
     border-radius: 0.5rem;
 }
 
-/* Tema claro para líneas */
 html[data-theme="light"] .line {
-    border-color: #b8b8b8;
+    background-color: $background-subtle-light-color;
+    border-color: $border-light-color;
 }
 
-/* Tema oscuro para líneas */
 html[data-theme="dark"] .line {
-    border-color: #333333;
+    background-color: $background-subtle-dark-color;
+    border-color: $border-dark-color;
 }
+
 
 /* Estilos para números de línea */
 code[data-line-numbers] {
@@ -116,7 +127,12 @@ code[data-line-numbers] {
     }
 }
 
-/* Configuración de esquemas de color */
+
+/*
+    Configuración de esquemas de color
+    esta es la logica para mostrar el code block
+    segun el color scheme del usuario
+*/
 pre[data-theme="dark"] {
     color-scheme: dark;
 }

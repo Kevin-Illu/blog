@@ -39,12 +39,14 @@ export default function SinglePostPage({
 
   return (
     <Layout>
-      <header className="blog__header">
-        <div className="container">
-          <h1 className="blog__header__title">{post.title}</h1>
-          <p className="blog__header__date">{timeAgo}</p>
-        </div>
-      </header>
+      <Layout.Header>
+        <header className="blog__header">
+          <div className="container">
+            <h1 className="blog__header__title">{post.title}</h1>
+            <p className="blog__header__date">{timeAgo}</p>
+          </div>
+        </header>
+      </Layout.Header>
       <div className="container">
         <MDXContent />
       </div>

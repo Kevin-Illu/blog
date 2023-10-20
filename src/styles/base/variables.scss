@@ -1,12 +1,7 @@
-// // bg
-// $bg-dark: #000;
-// $bg-light: #fff;
-
-// // text
-// $text-color-white: #f8f8f8;
-// $text-color-black: #111111;
-// $border-color-dark: #2c2c2c;
-
+// this themes are defined but not tested
+// this is my own solution for my project and
+// not garanteed to work in others projects.
+//
 
 // Media queries for devices
 $breakpoint-phone: 425px; // phone
@@ -19,8 +14,8 @@ $breakpoint-desktop-xlarge: 2560px; // large
 $container-w-small: 96%; // phone
 $container-w-medium: 90%; // tablet
 $container-w-normal: 54%; // laptop
-$container-w-large: 48%; // desktop
-$container-w-xlarge: 38%; // large desktop
+$container-w-large: 40%; // desktop
+$container-w-xlarge: 34%; // large desktop
 
 
 // font size for each breakpoint
@@ -49,14 +44,16 @@ $text-large : 22px;
 $text-xlarge: 22px;
 
 
-// themes
+// themes colors definitions
+// the colors are defined in the colors.scss file :D
 
-// app / code blocks / cards / sidebar backgrounds
+// backgrounds for diferent components
+// app background, code blocks, cards, sidebar
 $background-light-color: $gray-light-1;
 $background-subtle-light-color: $gray-light-2;
 
 $background-dark-color: $gray-dark-1;
-$background-dark-subtle-color: $gray-dark-2;
+$background-subtle-dark-color: $gray-dark-2;
 
 // borders
 $border-dark-color: $gray-dark-6;
@@ -72,10 +69,11 @@ $low-contrast-text-dark-color: $gray-dark-11;
 $high-contrast-text-light-color: $gray-light-12;
 $high-contrast-text-dark-color: $gray-dark-12;
 
-$text-light-color: $high-contrast-text-light-color;
-$text-dark-color: $high-contrast-text-dark-color;
+$text-light-color: $low-contrast-text-light-color;
+$text-dark-color: $low-contrast-text-dark-color;
 
-
+$heading-light-color: $high-contrast-text-light-color;
+$heading-dark-color: $high-contrast-text-dark-color;
 
 // anchor text colors and states
 $low-contrast-link-light-color: $tomato-light-11;
@@ -86,3 +84,20 @@ $high-contrast-link-dark-color: $tomato-dark-12;
 
 $link-light-color: $low-contrast-link-light-color;
 $link-dark-color: $low-contrast-link-dark-color;
+
+
+// markdown highlighting
+
+
+// code highlighting
+$code-highlight-dark-color: $tomato-dark-a3;
+$code-highlight-light-color: $tomato-light-a3;
+
+$code-highlight-dark-pure-color: $tomato-dark-a8;
+$code-highlight-light-pure-color: $tomato-light-a8;
+
+$code-text-highlight-light-bg-color: $tomato-light-a4;
+$code-text-highlight-light-text-color: $tomato-light-a12;
+
+$code-text-highlight-dark-bg-color: $tomato-dark-a4;
+$code-text-highlight-dark-text-color: $tomato-dark-a12;

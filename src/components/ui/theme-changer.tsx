@@ -1,7 +1,7 @@
 import { useTheme } from "next-themes";
 
 export const ThemeChanger = () => {
-  const { theme, setTheme } = useTheme();
+  const { setTheme } = useTheme();
 
   return (
     <>

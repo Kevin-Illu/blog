@@ -9,6 +9,13 @@ export default function App({ Component, pageProps }: AppProps) {
     <main>
       <ThemeProvider>
         <style jsx global>{`
+          p,
+          span,
+          strong {
+            font-family: ${nunito.style.fontFamily};
+            font-weight: 300;
+          }
+
           h1,
           h2,
           h3,
@@ -16,12 +23,6 @@ export default function App({ Component, pageProps }: AppProps) {
           h5,
           h6 {
             font-family: ${nunito_sans.style.fontFamily};
-            font-weight: 400;
-          }
-
-          html {
-            font-family: ${nunito.style.fontFamily};
-            font-weight: 300;
           }
 
           span[data-line] span,

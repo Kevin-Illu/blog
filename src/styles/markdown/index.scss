@@ -1,27 +1,11 @@
-// html[data-theme="light"] {
-
-//     body {
-//         background-color: $bg-light;
-//     }
-// }
-
-// html[data-theme="dark"] {
-//     body {
-//         background-color: $bg-dark;
-//     }
-// }
+/*
+    markdown default elements
+    styles
+*/
 
 p {
     line-height: 1.4;
 }
-
-// html[data-theme="light"] p {
-//     color: $text-color-black;
-// }
-
-// html[data-theme="dark"] p {
-//     color: $text-color-white;
-// }
 
 // blockquote
 blockquote {
@@ -30,24 +14,6 @@ blockquote {
     padding: 10px 20px;
     font-style: italic;
 }
-
-html[data-theme="light"] {
-    blockquote {
-        color: #666;
-        border-left-color: #ccc;
-        background-color: #f8f8f8;
-    }
-}
-
-html[data-theme="dark"] {
-    blockquote {
-        background-color: #2e2e2e;
-        border-left-color: #515151;
-        color: #f8f8f8;
-    }
-}
-
-// list styles
 
 ul {
     list-style-type: disc;
@@ -68,6 +34,31 @@ li {
 hr {
     border: none;
     border-top: 1px solid;
-    // border-color: $border-color-dark;
     margin: 3.4rem 0;
+}
+
+html[data-theme="light"] {
+
+    hr {
+        border-color: $border-light-color;
+    }
+
+    blockquote {
+        color: #666;
+        border-left-color: #ccc;
+        background-color: #f8f8f8;
+    }
+}
+
+html[data-theme="dark"] {
+
+    hr {
+        border-color: $border-dark-color;
+    }
+
+    blockquote {
+        background-color: #2e2e2e;
+        border-left-color: #515151;
+        color: $heading-dark-color;
+    }
 }
