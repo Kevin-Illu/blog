@@ -1,6 +1,7 @@
 .container {
     width: $container-w-small;
-    margin: 0 auto;
+    margin: 0;
+    padding: 0 .8rem;
 
     h1,
     h2,
@@ -8,7 +9,7 @@
     h4,
     h5,
     h6 {
-        font-weight: 400;
+        font-weight: 300;
     }
 
 
@@ -26,6 +27,8 @@
 
     @media screen and (min-width: $breakpoint-tablet) {
         width: $container-w-medium;
+        margin: 4rem 0;
+        padding: 0 2rem;
 
         h1 {
             font-size: $h1-medium;
@@ -46,6 +49,7 @@
 
     @media screen and (min-width: $breakpoint-laptop) {
         width: $container-w-normal;
+        margin: 4rem 4rem;
 
         h1 {
             font-size: $h1-normal;
@@ -66,6 +70,7 @@
 
     @media screen and (min-width: $breakpoint-desktop) {
         width: $container-w-large;
+        margin: 4rem 16rem;
 
         h1 {
             font-size: $h1-large;
@@ -86,6 +91,7 @@
 
     @media screen and (min-width: $breakpoint-desktop-xlarge) {
         width: $container-w-xlarge;
+        margin: 4rem 36rem;
 
         h1 {
             font-size: $h1-xlarge;

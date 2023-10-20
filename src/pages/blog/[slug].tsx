@@ -34,6 +34,7 @@ export default function SinglePostPage({
     const time = new Date(post.date);
     const timeAgo = getTimeAgo(time);
     setTimeAgo(timeAgo);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

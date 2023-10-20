@@ -1,45 +1,27 @@
-html[data-theme="light"] {
+// html[data-theme="light"] {
 
-    body {
-        background-color: $bg-light;
-    }
+//     body {
+//         background-color: $bg-light;
+//     }
+// }
 
-    // h1,
-    // h2,
-    // h3,
-    // h4,
-    // h5,
-    // h6 {
-    //     color: $text-color-black;
-    // }
-}
-
-html[data-theme="dark"] {
-    body {
-        background-color: $bg-dark;
-    }
-
-    // h1,
-    // h2,
-    // h3,
-    // h4,
-    // h5,
-    // h6 {
-    //     color: $text-color-white;
-    // }
-}
+// html[data-theme="dark"] {
+//     body {
+//         background-color: $bg-dark;
+//     }
+// }
 
 p {
     line-height: 1.4;
 }
 
-html[data-theme="light"] p {
-    color: $text-color-black;
-}
+// html[data-theme="light"] p {
+//     color: $text-color-black;
+// }
 
-html[data-theme="dark"] p {
-    color: $text-color-white;
-}
+// html[data-theme="dark"] p {
+//     color: $text-color-white;
+// }
 
 // blockquote
 blockquote {
@@ -86,6 +68,6 @@ li {
 hr {
     border: none;
     border-top: 1px solid;
-    border-color: $border-color-dark;
+    // border-color: $border-color-dark;
     margin: 3.4rem 0;
 }

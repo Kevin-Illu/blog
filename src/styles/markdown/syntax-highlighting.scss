@@ -13,7 +13,6 @@ div[data-rehype-pretty-code-fragment] {
 
 div[data-rehype-pretty-code-title] {
     padding: .2rem 0.5rem;
-    font-size: smaller;
 
     &:last-of-type {
         display: none;
@@ -51,7 +50,7 @@ html[data-theme="dark"] {
         color: #929292;
         background-color: #000000;
         border-bottom: solid 1px;
-        border-color: $border-color-dark;
+        border-color: #333333;
     }
 
     div[data-rehype-pretty-code-fragment] [data-highlighted-line] {
@@ -87,7 +86,7 @@ html[data-theme="dark"] span[data-highlighted-chars] {
 
 /* Estilos para líneas */
 .line {
-    padding: 0 0.2rem;
+    padding: 0 .4rem;
     border: solid 1px;
     border-radius: 0.5rem;
 }
@@ -99,7 +98,7 @@ html[data-theme="light"] .line {
 
 /* Tema oscuro para líneas */
 html[data-theme="dark"] .line {
-    border-color: $border-color-dark;
+    border-color: #333333;
 }
 
 /* Estilos para números de línea */

@@ -23,7 +23,6 @@ export const getStaticProps: GetStaticProps<{
 export default function Home({
   posts,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log(posts);
   return (
     <div>
       <Head>

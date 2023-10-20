@@ -1,6 +1,6 @@
 import { Layout } from "@/components";
 import "../styles/index.scss";
-import { pt_sans, open_sans, jetBrains_mono } from "@/fonts";
+import { jetBrains_mono, nunito_sans, nunito } from "@/fonts";
 import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 
@@ -15,12 +15,12 @@ export default function App({ Component, pageProps }: AppProps) {
           h4,
           h5,
           h6 {
-            font-family: ${pt_sans.style.fontFamily};
+            font-family: ${nunito_sans.style.fontFamily};
             font-weight: 400;
           }
 
           html {
-            font-family: ${open_sans.style.fontFamily};
+            font-family: ${nunito.style.fontFamily};
             font-weight: 300;
           }
 

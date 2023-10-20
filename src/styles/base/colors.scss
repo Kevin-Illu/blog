@@ -1,0 +1,79 @@
+// backgrounds 1-2
+// Steps 1 and 2 are designed for app backgrounds and subtle component backgrounds.
+// You can use them interchangeably,
+// depending on the vibe you're going for.
+
+// components backgrounds 3-4-5
+// Step 3 is for normal states.
+// Step 4 is for hover states.
+// Step 5 is for pressed or selected states.
+// if the component has a transparent background
+// you can use the step 3 for its hover state
+
+// borders 6-7-8
+// Step 6 is designed for subtle borders on components which are not interactive. 
+// For example sidebars, headers, cards, alerts, and separators. 
+// Step 7 is designed for subtle borders on interactive components. 
+// Step 8 is designed for stronger borders on interactive components and focus rings.
+
+// solid background 9-10
+// Step 9 has the highest chroma of all steps in the scale. In other words,
+// it's the purest step, the step mixed with the least amount of white or black.
+// Step 10 is designed for component hover states,
+// where step 9 is the component's normal state background.
+
+// Steps 11–12: Text
+// Step 11 is designed for low-contrast text.
+// Step 12 is designed for high-contrast text.
+
+$gray-light-1: #fcfcfc;
+$gray-light-2: #f9f9f9;
+$gray-light-3: #f0f0f0;
+$gray-light-4: #e8e8e8;
+$gray-light-5: #e0e0e0;
+$gray-light-6: #d9d9d9;
+$gray-light-7: #cecece;
+$gray-light-8: #bbbbbb;
+$gray-light-9: #8d8d8d;
+$gray-light-10: #838383;
+$gray-light-11: #646464;
+$gray-light-12: #202020;
+
+$gray-dark-1: #111111;
+$gray-dark-2: #191919;
+$gray-dark-3: #222222;
+$gray-dark-4: #2a2a2a;
+$gray-dark-5: #313131;
+$gray-dark-6: #3a3a3a;
+$gray-dark-7: #484848;
+$gray-dark-8: #606060;
+$gray-dark-9: #6e6e6e;
+$gray-dark-10: #7b7b7b;
+$gray-dark-11: #b4b4b4;
+$gray-dark-12: #eeeeee;
+
+$tomato-light-1: #fffcfc;
+$tomato-light-2: #fff8f7;
+$tomato-light-3: #feebe7;
+$tomato-light-4: #ffdcd3;
+$tomato-light-5: #ffcdc2;
+$tomato-light-6: #fdbdaf;
+$tomato-light-7: #f5a898;
+$tomato-light-8: #ec8e7b;
+$tomato-light-9: #e54d2e;
+$tomato-light-10: #dd4425;
+$tomato-light-11: #d13415;
+$tomato-light-12: #5c271f;
+
+$tomato-dark-1: #181111;
+$tomato-dark-2: #1f1513;
+$tomato-dark-3: #391714;
+$tomato-dark-4: #4e1511;
+$tomato-dark-5: #5e1c16;
+$tomato-dark-6: #6e2920;
+$tomato-dark-7: #853a2d;
+$tomato-dark-8: #ac4d39;
+$tomato-dark-9: #e54d2e;
+$tomato-dark-10: #ec6142;
+$tomato-dark-11: #ff977d;
+$tomato-dark-12: #fbd3cb;

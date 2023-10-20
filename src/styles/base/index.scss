@@ -1,0 +1,33 @@
+a {
+    text-decoration: none;
+}
+
+html[data-theme="light"] {
+    body {
+        color: $text-light-color;
+        background-color: $background-light-color;
+    }
+
+    a {
+        color: $link-light-color;
+
+        &:hover {
+            text-decoration: underline $border-accent-light-color;
+        }
+    }
+}
+
+html[data-theme="dark"] {
+    body {
+        color: $text-dark-color;
+        background-color: $background-dark-color;
+    }
+
+    a {
+        color: $link-dark-color;
+
+        &:hover {
+            text-decoration: underline $border-accent-dark-color;
+        }
+    }
+}

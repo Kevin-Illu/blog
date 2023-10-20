@@ -30,8 +30,7 @@ A continuación, se presenta un ejemplo sencillo de cómo implementar el Patrón
 
 Primero, creamos un servicio de tareas:
 
-```typescript
-// task.service.ts
+```typescript title="task.service.ts"
 import Task from "./task.model";
 
 class TaskService {
@@ -55,8 +54,7 @@ export default new TaskService();
 
 Luego, utilizamos este servicio en nuestras rutas o controladores:
 
-```typescript
-// task.controller.ts
+```typescript title="task.controller.ts"
 import { Request, Response } from "express";
 import TaskService from "./task.service";
 
@@ -86,8 +84,7 @@ class TaskController {
 
 Finalmente, configuramos nuestras rutas de Express:
 
-```typescript
-// routes.ts
+```typescript title="routes.ts"
 import { Router } from "express";
 import TaskController from "./task.controller";
 

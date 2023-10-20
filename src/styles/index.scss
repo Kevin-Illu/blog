@@ -1,17 +1,13 @@
-@import './normalize.scss';
-@import './variables.scss';
-@import './themes.scss';
+@import './base/normalize.scss';
+@import './base/colors.scss';
+@import './base/variables.scss';
+
+// page basic styles
+@import './base/index.scss';
 
 // markdown styles
 @import './markdown/index.scss';
 @import './markdown/syntax-highlighting.scss';
-
-
-// general components
-@import './layout/header.scss';
-
-// pages or sections
-@import './home/posts-list.scss';
 
 // content
 @import './post/index.scss';
