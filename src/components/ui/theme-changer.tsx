@@ -5,6 +5,11 @@ import { useEffect, useState } from "react";
 export const ThemeChanger = () => {
   const { theme, setTheme } = useTheme();
   const [isChecked, setIsChecked] = useState<boolean>(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
     setIsChecked(theme === "dark");
@@ -17,7 +22,7 @@ export const ThemeChanger = () => {
 
   return (
     <div className="theme__changer">
-      <p>light</p>
+      {isClient && <p>{theme}</p>}
       <Switch.Root
         checked={isChecked}
         onCheckedChange={handleThemeChange}
@@ -25,7 +30,6 @@ export const ThemeChanger = () => {
       >
         <Switch.Thumb className="switch__root__thumb" />
       </Switch.Root>
-      <p>dark</p>
     </div>
   );
 };

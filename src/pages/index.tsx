@@ -33,9 +33,18 @@ export default function Home({
       </Head>
 
       <Layout>
-        <Layout.Header>
-          <div>
-            <h1>kvn</h1>
+        <Layout.Header className="hero container-base">
+          <div className="hero__title">
+            <h1 className="title--principal sans-text">
+              otro software developer blog pero escrito en nvim :D
+            </h1>
+          </div>
+          <div className="hero__description">
+            <p>
+              Descubre cómo el arte y la programación se entrelazan en un viaje
+              donde el código se convierte en expresiones personales y las
+              aplicaciones son mucho más que herramientas simples.
+            </p>
           </div>
         </Layout.Header>
         <Layout.Content>

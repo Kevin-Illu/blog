@@ -10,9 +10,7 @@
     height: 18px;
     border-radius: 9999px;
     position: relative;
-    // box-shadow: 0 2px 10px $tomato-dark-a4;
     border: solid 1px;
-    border-color: red;
     background-color: $background-subtle-dark-color;
     -webkit-tap-highlight-color: $background-subtle-dark-color;
 
@@ -43,7 +41,6 @@
 
 html[data-theme="light"] {
     .switch__root {
-        // box-shadow: 0 2px 10px $tomato-dark-a4;
         border-color: $tomato-light-6;
         background-color: $background-subtle-light-color;
         -webkit-tap-highlight-color: $background-subtle-light-color;

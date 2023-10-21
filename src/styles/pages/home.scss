@@ -1,0 +1,115 @@
+.hero {
+
+    .hero__title p,
+    a,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0;
+        line-height: 1;
+    }
+
+    &__title {
+        margin-top: 2rem;
+
+        h1 {
+            font-weight: 600;
+        }
+    }
+
+    &__description {
+        width: 100%;
+        display: flex;
+        font-size: $text-small;
+    }
+
+
+    @media screen and (min-width: $breakpoint-phone) {
+        &__title {
+            font-size: 1.8em;
+        }
+
+        &__description {
+            justify-content: flex-start;
+
+            p {
+                width: 100%;
+                padding: 0;
+            }
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-tablet) {
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &__title {
+            font-size: 2.4em;
+        }
+
+        &__description {
+            justify-content: flex-end;
+            font-size: $text-small;
+
+            p {
+                width: 70%;
+                padding: 0;
+            }
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-laptop) {
+
+        &__title {
+            font-size: 3.6rem;
+        }
+
+        &__description {
+            justify-content: flex-end;
+            font-size: 1.4rem;
+
+            p {
+                width: 56%;
+                padding: 0 3.4rem 0 0;
+            }
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-desktop) {
+
+        &__title {
+            font-size: 3.8em;
+        }
+
+        &__description {
+            justify-content: flex-end;
+
+            p {
+                width: 46%;
+                padding: 0 8rem 0 0;
+            }
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-desktop-xlarge) {
+
+        &__title {
+            font-size: 6.8em;
+        }
+
+        &__description {
+            justify-content: flex-end;
+            font-size: 2rem;
+
+            p {
+                width: 46%;
+                padding: 0 18rem 0 0;
+            }
+        }
+    }
+}

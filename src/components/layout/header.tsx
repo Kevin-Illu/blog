@@ -1,5 +1,6 @@
 import { FC, ReactNode } from "react";
 import { ThemeChanger } from "..";
+import Link from "next/link";
 
 export interface LayoutHeaderProps {
   children: ReactNode;
@@ -14,7 +15,7 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
     <header className="layout__header__root">
       <nav className="layout__header__root__navbar container-base">
         <div className="layout__header__root__navbar__logo">
-          <p>kvn</p>
+          <Link href="/">KVN</Link>
         </div>
         <ThemeChanger />
       </nav>

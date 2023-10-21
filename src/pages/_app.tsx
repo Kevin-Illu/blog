@@ -10,6 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <ThemeProvider>
         <style jsx global>{`
           p,
+          a,
           span,
           strong {
             font-family: ${nunito.style.fontFamily};
@@ -23,10 +24,23 @@ export default function App({ Component, pageProps }: AppProps) {
           h5,
           h6 {
             font-family: ${nunito_sans.style.fontFamily};
+            font-weight: 300;
           }
 
           span[data-line] span,
           div[data-rehype-pretty-code-title] {
+            font-family: ${jetBrains_mono.style.fontFamily};
+          }
+
+          .sans-text {
+            font-family: ${nunito_sans.style.fontFamily};
+          }
+
+          .nunito-text {
+            font-family: ${nunito.style.fontFamily};
+          }
+
+          .code-text {
             font-family: ${jetBrains_mono.style.fontFamily};
           }
         `}</style>
