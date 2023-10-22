@@ -27,6 +27,7 @@ html[data-theme="light"] {
 
 
 .hero {
+    position: relative;
     height: 60vh;
 
     .hero__title p,
@@ -56,6 +57,19 @@ html[data-theme="light"] {
 
         p {
             margin: 0;
+        }
+    }
+
+    &__scroll-indicator {
+        margin-top: 1.6rem;
+        font-size: $text-small;
+
+        display: flex;
+        align-items: center;
+        gap: .4rem;
+
+        p {
+            font-weight: 600;
         }
     }
 
@@ -147,7 +161,22 @@ html[data-theme="light"] {
     }
 }
 
+.home__section {
+    border-top: solid 1px;
+    padding-bottom: 2rem;
+
+    h2 {
+        font-size: 2rem;
+    }
+}
+
 .recent-posts {
+
+    &__link__container {
+        text-align: end;
+        padding: 4rem 0 0;
+        font-size: $text-small;
+    }
 
     &__title {
         font-size: 2rem;
@@ -214,5 +243,18 @@ html[data-theme="light"] {
         .list__item {
             width: 360px;
         }
+    }
+}
+
+.footer {
+    border-top: solid 1px;
+    padding: 1rem 0;
+    font-size: $text-small;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+        margin: 0;
     }
 }

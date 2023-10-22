@@ -3,6 +3,9 @@ import { GetStaticProps, InferGetStaticPropsType } from "next";
 
 import { Post, allPosts } from "contentlayer/generated";
 import { Layout, PostCard } from "@/components";
+import { ArrowDownIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export const getStaticProps: GetStaticProps<{
   posts: Post[];
@@ -22,6 +25,12 @@ export const getStaticProps: GetStaticProps<{
 export default function Home({
   posts,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <div>
       <Head>
@@ -48,21 +57,31 @@ export default function Home({
               Descubre cómo el arte y la programación se entrelazan en un viaje
               donde el código se convierte en expresiones personales y las
               aplicaciones son mucho más que herramientas simples.
+              <br />
+              <div className="hero__scroll-indicator">
+                <ArrowDownIcon width={24} height={24} />
+                <p>scroll</p>
+              </div>
             </p>
           </div>
         </Layout.Header>
         <Layout.Content className="recent-posts">
-          <section className="recent-posts__container container-base">
-            <h2 className="recent-posts__title">Recientes posts</h2>
+          <section className="recent-posts__container container-base home__section">
+            <h2 className="recent-posts__title">Posts recientes</h2>
             <div className="recent-posts__list">
               {posts.map((post) => (
                 <PostCard key={post._id} {...post} />
               ))}
             </div>
+
+            <div className="recent-posts__link__container">
+              <Link href="/blog">ver todo.</Link>
+            </div>
           </section>
         </Layout.Content>
-        <Layout.Footer>
-          <p>footer</p>
+        <Layout.Footer className="container-base footer">
+          <p className="sans-text">kevin illu | desarrollador de software</p>
+          <p>creado con nexjs typescript sass</p>
         </Layout.Footer>
       </Layout>
     </div>
