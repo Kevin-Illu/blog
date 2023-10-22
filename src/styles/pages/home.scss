@@ -1,4 +1,33 @@
+.list__item__header__read-more {
+    background-color: $background-dark-color;
+    color: $heading-dark-color;
+}
+
+html[data-theme="dark"] {
+    .list__item {
+        background-color: $tomato-light-9;
+        color: $high-contrast-text-light-color;
+
+        &:hover {
+            background-color: $tomato-light-10;
+        }
+    }
+}
+
+html[data-theme="light"] {
+    .list__item {
+        background-color: $tomato-dark-9;
+        color: $high-contrast-text-light-color;
+
+        &:hover {
+            background-color: $tomato-dark-10;
+        }
+    }
+}
+
+
 .hero {
+    height: 60vh;
 
     .hero__title p,
     a,
@@ -24,8 +53,11 @@
         width: 100%;
         display: flex;
         font-size: $text-small;
-    }
 
+        p {
+            margin: 0;
+        }
+    }
 
     @media screen and (min-width: $breakpoint-phone) {
         &__title {
@@ -43,7 +75,7 @@
     }
 
     @media screen and (min-width: $breakpoint-tablet) {
-        height: 90vh;
+        height: 96vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -87,7 +119,8 @@
         }
 
         &__description {
-            justify-content: flex-end;
+            flex-direction: column;
+            align-items: flex-end;
 
             p {
                 width: 46%;
@@ -110,6 +143,76 @@
                 width: 46%;
                 padding: 0 18rem 0 0;
             }
+        }
+    }
+}
+
+.recent-posts {
+
+    &__title {
+        font-size: 2rem;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .list__item {
+        width: 100%;
+        height: 16rem;
+        border-radius: 1.8rem;
+        padding: 1rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        p {
+            margin: 0;
+        }
+
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &__read-more {
+                padding: .4rem 1rem;
+                border-radius: 8rem;
+            }
+
+            &__read-more p {
+                display: none;
+            }
+        }
+
+        &__content {
+            .title {
+                font-weight: 600;
+                font-size: 2rem;
+            }
+
+            .description {
+                font-size: $text-small;
+            }
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-tablet) {
+        &__list {
+            gap: 3rem;
+        }
+
+        .list__item {
+            height: 20rem;
+        }
+    }
+
+    @media screen and (min-width: $breakpoint-laptop) {
+        .list__item {
+            width: 360px;
         }
     }
 }

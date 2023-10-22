@@ -1,4 +1,3 @@
-import { Layout } from "@/components";
 import "../styles/index.scss";
 import { jetBrains_mono, nunito_sans, nunito } from "@/fonts";
 import { ThemeProvider } from "next-themes";
