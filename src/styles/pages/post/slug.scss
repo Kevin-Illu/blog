@@ -1,3 +1,24 @@
+.blog__header {
+    width: $container-w-normal;
+    margin: 0 auto;
+    display: flex;
+    height: 80vh;
+
+    &__title {
+        font-size: 6rem;
+    }
+
+    &__description {
+        font-size: $text-small;
+        display: flex;
+        flex-direction: column;
+
+        p {
+            margin: 0;
+        }
+    }
+}
+
 .post__container {
     width: $container-w-small;
     margin: 0;

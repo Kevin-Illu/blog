@@ -1,0 +1,127 @@
+$s-0: 0px;
+$s-1: 4px;
+$s-2: 8px;
+$s-3: 12px;
+$s-4: 16px;
+$s-5: 24px;
+$s-6: 32px;
+$s-7: 40px;
+$s-8: 48px;
+$s-9: 56px;
+$s-10: 64px;
+$s-11: 80px;
+$s-12: 96px;
+
+$font-size-1: 0.75rem;
+$font-size-2: 0.875rem;
+$font-size-3: 1rem;
+$font-size-4: 1.125rem;
+$font-size-5: 1.25rem;
+$font-size-6: 1.5rem;
+$font-size-7: 2rem;
+
+$rounded-1: 4px;
+$rounded-2: 8px;
+$rounded-3: 16px;
+$rounded-full: 28px;
+
+// Media queries
+$mq-phone: 425px;
+$mq-tablet: 768px;
+$mq-laptop: 992px;
+$mq-desktop: 1440px;
+$mq-desktop-xl: 2560px;
+
+// principal app background
+$bg-light-base: $gray-light-1;
+$bg-dark-base: $gray-dark-1;
+
+// background for elements like a box container
+$bg-light-subtle: $gray-light-2;
+$bg-dark-subtle: $gray-dark-2;
+
+$bg-light-accent-subtle: $tomato-light-2;
+$bg-dark-accent-subtle: $tomato-dark-2;
+
+// states for background components
+$bg-light-component: $tomato-light-3;
+$bg-dark-component: $tomato-dark-3;
+
+$bg-light-component-hover: $tomato-light-4;
+$bg-dark-component-hover: $tomato-dark-4;
+
+$bg-light-component-active: $tomato-light-5;
+$bg-dark-component-active: $tomato-dark-5;
+
+// used for accent background
+$bg-light-accent-solid: $tomato-light-9;
+$bg-dark-accent-solid: $tomato-dark-9;
+
+$bg-light-accent-solid-active: $tomato-light-10;
+$bg-dark-accent-solid-active: $tomato-dark-10;
+
+// borders for normal boxes
+$border-light-base: $gray-light-6;
+$border-dark-base: $gray-dark-6;
+
+$border-light-subtle: $gray-light-7;
+$border-dark-subtle: $gray-dark-7;
+
+$border-light-active: $gray-light-8;
+$border-dark-active: $gray-dark-8;
+
+// border for components
+$border-light-accent-color: $tomato-light-6;
+$border-dark-accent-color: $tomato-dark-6;
+
+$border-light-accent-color-active: $tomato-light-7;
+$border-dark-accent-color-active: $tomato-dark-7;
+
+$border-light-accent-hover: $tomato-light-8;
+$border-dark-accent-hover: $tomato-dark-8;
+
+
+// text
+$low-contrast-text-light-color: $gray-light-11;
+$low-contrast-text-dark-color: $gray-dark-11;
+
+$high-contrast-text-light-color: $gray-light-12;
+$high-contrast-text-dark-color: $gray-dark-12;
+
+$low-contrast-text-light-accent-color: $tomato-light-11;
+$low-contrast-text-dark-accent-color: $tomato-dark-11;
+
+$high-contrast-text-light-accent-color: $tomato-light-12;
+$high-contrast-text-dark-accent-color: $tomato-dark-12;
+
+
+// primary button
+$btn-primary-light-bg-color: $tomato-light-9;
+$btn-primary-dark-bg-color: $tomato-dark-9;
+
+$btn-primary-light-bg-active: $tomato-light-10;
+$btn-primary-dark-bg-active: $tomato-dark-10;
+
+
+// secondary buttons
+$btn-secondary-light-bg-color: $tomato-dark-5;
+$btn-secondary-dark-bg-color: $tomato-light-4;
+
+$btn-secondary-light-bg-active: $tomato-dark-6;
+$btn-secondary-dark-bg-active: $tomato-light-3;
+
+
+// primary gray buttons
+$btn-primary-gray-light-bg-color: $gray-light-9;
+$btn-primary-gray-light-bg-active: $gray-light-10;
+
+$btn-primary-gray-dark-bg-color: $gray-dark-9;
+$btn-primary-gray-dark-bg-active: $gray-dark-10;
+
+
+// secondary gray buttons
+$btn-secondary-gray-light-bg-color: $gray-dark-1;
+$btn-secondary-gray-dark-bg-color: $gray-light-4;
+
+$btn-secondary-gray-light-bg-active: $gray-dark-2;
+$btn-secondary-gray-dark-bg-active: $gray-light-3;

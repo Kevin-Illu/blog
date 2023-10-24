@@ -1,79 +1,280 @@
-.container-base {
-    width: 96%;
-    margin: 0 auto;
+// box
+.box {
+    padding: 2rem;
+    display: inline-block;
 }
 
-a {
-    text-decoration: none;
+
+// flex and gap
+.flex-row {
+    display: flex;
 }
 
-button {
-    padding: 0;
-    margin: 0;
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
 
-    p {
-        padding: 0;
-        margin: 0;
+.gap-1 {
+    gap: $s-4;
+}
+
+.gap-2 {
+    gap: $s-6;
+}
+
+.gap-3 {
+    gap: $s-8;
+}
+
+
+// text size
+p {
+    font-size: $font-size-3;
+}
+
+h1 {
+    font-size: $font-size-7;
+}
+
+h2 {
+    font-size: $font-size-6;
+}
+
+h3 {
+    font-size: $font-size-5;
+}
+
+h4 {
+    font-size: $font-size-4;
+}
+
+h5 {
+    font-size: $font-size-3;
+}
+
+p.text-1 {
+    font-size: $font-size-1;
+}
+
+p.text-2 {
+    font-size: $font-size-2;
+}
+
+p.text-3 {
+    font-size: $font-size-3;
+}
+
+p.text-4 {
+    font-size: $font-size-4;
+}
+
+p.text-5 {
+    font-size: $font-size-5;
+}
+
+p.text-6 {
+    font-size: $font-size-6;
+}
+
+p.text-7 {
+    font-size: $font-size-7;
+}
+
+p.text-color-1 {
+    color: $high-contrast-text-light-color;
+}
+
+p.text-color-2 {
+    color: $low-contrast-text-light-color;
+}
+
+html[data-theme="dark"] {
+    p.text-color-1 {
+        color: $high-contrast-text-dark-color;
+    }
+
+    p.text-color-2 {
+        color: $low-contrast-text-dark-color;
     }
 }
 
-html[data-theme="light"] {
 
-    * {
-        border-color: $border-light-color;
+// button
+.btn {
+    display: inline-block;
+    width: fit-content;
+    padding: $s-2 $s-3;
+    border: none;
+    border-radius: $rounded-full;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: $s-2;
+
+    svg path {
+        color: $high-contrast-text-dark-color;
     }
 
-    body {
-        color: $text-light-color;
-        background-color: $background-light-color;
+    &:disabled:hover {
+        cursor: not-allowed;
+    }
+}
+
+.btn.btn-primary {
+    background-color: $btn-primary-light-bg-color;
+    color: $high-contrast-text-dark-color;
+    font-weight: 600;
+
+    &:hover {
+        background-color: $btn-primary-light-bg-active;
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: $heading-light-color;
+    &:disabled {
+        background-color: $gray-light-3;
+        color: $low-contrast-text-dark-color;
+
+        svg path {
+            color: $low-contrast-text-dark-color;
+        }
+    }
+}
+
+.btn.btn-secondary {
+    background-color: $btn-secondary-light-bg-color;
+    color: $high-contrast-text-dark-color;
+
+    &:hover {
+        background-color: $btn-secondary-light-bg-active;
     }
 
-    a {
-        color: $link-light-color;
 
-        &:hover {
-            text-decoration: underline $border-accent-light-color;
+    &:disabled {
+        background-color: $gray-light-2;
+        color: $low-contrast-text-dark-color;
+
+        svg path {
+            color: $low-contrast-text-dark-color;
+        }
+    }
+}
+
+.btn.btn-primary-gray {
+    color: $high-contrast-text-dark-color;
+    background-color: $gray-dark-9;
+    font-weight: 600;
+
+    &:hover {
+        background-color: $gray-dark-10;
+    }
+
+    &:disabled {
+        background-color: $gray-light-2;
+        color: $low-contrast-text-dark-color;
+
+        svg path {
+            color: $low-contrast-text-dark-color;
+        }
+    }
+}
+
+.btn.btn-secondary-gray {
+    color: $high-contrast-text-dark-color;
+    background-color: $btn-secondary-gray-light-bg-color;
+    font-weight: 600;
+
+    &:hover {
+        background-color: $btn-secondary-gray-light-bg-active;
+    }
+
+    &:disabled {
+        background-color: $gray-light-2;
+        color: $low-contrast-text-dark-color;
+
+        svg path {
+            color: $low-contrast-text-dark-color;
         }
     }
 }
 
 html[data-theme="dark"] {
-    * {
-        border-color: $border-dark-color;
-    }
-
-    body {
-        color: $text-dark-color;
-        background-color: $background-dark-color;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: $heading-dark-color;
-    }
-
-    a {
-        color: $link-dark-color;
+    .btn.btn-primary {
+        background-color: $btn-primary-dark-bg-color;
 
         &:hover {
-            text-decoration: underline $border-accent-dark-color;
+            background-color: $btn-primary-dark-bg-active;
+        }
+
+        &:disabled {
+            background-color: $gray-dark-2;
+            color: $low-contrast-text-light-color;
+
+            svg path {
+                color: $low-contrast-text-light-color;
+            }
         }
     }
-}
 
-a.text-decoration-none {
-    text-decoration: none !important;
+    .btn.btn-secondary {
+        background-color: $btn-secondary-dark-bg-color;
+        color: $high-contrast-text-light-color;
+        font-weight: 600;
+
+        svg path {
+            color: $high-contrast-text-light-color;
+        }
+
+        &:hover {
+            background-color: $btn-secondary-dark-bg-active;
+        }
+
+        &:disabled {
+            background-color: $gray-dark-2;
+            color: $low-contrast-text-light-color;
+
+            svg path {
+                color: $low-contrast-text-light-color;
+            }
+        }
+    }
+
+    // gray buttons
+    .btn.btn-primary-gray {
+        background-color: $btn-primary-gray-dark-bg-color;
+
+        &:hover {
+            background-color: $btn-primary-gray-dark-bg-active;
+        }
+
+        &:disabled {
+            background-color: $gray-dark-2;
+            color: $low-contrast-text-light-color;
+
+            svg path {
+                color: $low-contrast-text-light-color;
+            }
+        }
+    }
+
+    .btn.btn-secondary-gray {
+        color: $high-contrast-text-light-color;
+        background-color: $btn-secondary-gray-dark-bg-color;
+
+        svg path {
+            color: $high-contrast-text-light-color;
+        }
+
+        &:hover {
+            background-color: $btn-secondary-gray-dark-bg-active;
+        }
+
+        &:disabled {
+            background-color: $gray-dark-2;
+            color: $low-contrast-text-light-color;
+
+            svg path {
+                color: $low-contrast-text-light-color;
+            }
+        }
+    }
 }

@@ -17,7 +17,10 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
         <div className="layout__header__root__navbar__logo">
           <Link href="/">KVN</Link>
         </div>
-        <ThemeChanger />
+        <div>
+          <Link href="/blog">blog</Link>
+          <ThemeChanger />
+        </div>
       </nav>
       <div className={`${className}`}>{children}</div>
     </header>

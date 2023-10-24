@@ -5,9 +5,17 @@ export interface LayoutFooterProps {
   className?: string;
 }
 
-export const LayoutFooter: FC<LayoutFooterProps> = ({
+export const LayoutFooter: FC<LayoutFooterProps & any> = ({
   children,
   className,
+  props,
 }) => {
-  return <footer className={`${className}`}>{children}</footer>;
+  return (
+    <footer className={`footer__root ${className}`} {...props}>
+      {children}
+      <div className="footer__root__principal__content">
+        <p className="sans-text">KevinIllu97@gmai.com</p>
+      </div>
+    </footer>
+  );
 };

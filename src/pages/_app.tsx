@@ -8,10 +8,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <main>
       <ThemeProvider>
         <style jsx global>{`
-          p,
-          a,
-          span,
-          strong {
+          * {
             font-family: ${nunito.style.fontFamily};
             font-weight: 300;
           }
@@ -23,7 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
           h5,
           h6 {
             font-family: ${nunito_sans.style.fontFamily};
-            font-weight: 300;
+            font-weight: 600;
           }
 
           span[data-line] span,
@@ -31,15 +28,15 @@ export default function App({ Component, pageProps }: AppProps) {
             font-family: ${jetBrains_mono.style.fontFamily};
           }
 
-          .sans-text {
+          .font-sans {
             font-family: ${nunito_sans.style.fontFamily};
           }
 
-          .nunito-text {
+          .font-nunito {
             font-family: ${nunito.style.fontFamily};
           }
 
-          .code-text {
+          .font-jetBrains {
             font-family: ${jetBrains_mono.style.fontFamily};
           }
         `}</style>

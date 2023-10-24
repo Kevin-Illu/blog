@@ -1,0 +1,129 @@
+* {
+    border-color: $border-light-base;
+    color: $high-contrast-text-light-color;
+
+    html[data-theme="dark"] & {
+        border-color: $border-dark-base;
+        color: $high-contrast-text-dark-color;
+    }
+}
+
+body {
+    background-color: $bg-light-base;
+}
+
+html[data-theme="dark"] {
+    body {
+        background-color: $bg-dark-base;
+    }
+}
+
+
+.bg-subtle {
+    background-color: $bg-light-subtle;
+    border-color: $border-light-subtle;
+}
+
+html[data-theme="dark"] {
+    .bg-subtle {
+        background-color: $bg-dark-subtle;
+        border-color: $border-dark-subtle;
+    }
+}
+
+.bg-base {
+    background-color: $bg-light-base;
+}
+
+html[data-theme="dark"] {
+    .bg-base {
+        background-color: $bg-dark-base;
+    }
+}
+
+
+// text
+p.text-base-1 {
+    color: $low-contrast-text-light-color;
+}
+
+p.text-base-2 {
+    color: $high-contrast-text-light-color;
+}
+
+p.text-accent-1 {
+    color: $low-contrast-text-light-accent-color;
+}
+
+p.text-accent-2 {
+    color: $high-contrast-text-light-accent-color;
+}
+
+html[data-theme="dark"] {
+    p.text-accent-1 {
+        color: $low-contrast-text-dark-accent-color;
+    }
+
+    p.text-accent-2 {
+        color: $high-contrast-text-dark-accent-color;
+    }
+
+    p.text-base-1 {
+        color: $low-contrast-text-dark-color;
+    }
+
+    p.text-base-2 {
+        color: $high-contrast-text-dark-color;
+    }
+}
+
+.card {
+    padding: 2rem;
+    display: inline-block;
+    border-radius: $rounded-1;
+    border: 1px solid;
+}
+
+div.card--ghost {
+    background-color: $bg-light-accent-subtle;
+    border-color: $border-light-accent-color;
+    color: $high-contrast-text-light-accent-color;
+
+    &:hover {
+        border-color: $border-dark-accent-color-active;
+    }
+}
+
+.card--solid {
+    outline: none;
+    border: none;
+    background-color: $bg-light-accent-solid;
+
+    &:focus {
+        background-color: $bg-light-accent-solid-active;
+    }
+}
+
+html[data-theme="dark"] {
+    .card--solid {
+        background-color: $bg-dark-accent-solid;
+
+        &:hover {
+            background-color: $bg-dark-accent-solid-active;
+        }
+
+        &:focus {
+            background-color: $bg-dark-accent-solid-active;
+        }
+    }
+
+    div.card--ghost {
+        background-color: $bg-dark-accent-subtle;
+        border-color: $border-dark-accent-color;
+        color: $low-contrast-text-dark-accent-color;
+
+        &:hover {
+            border-color: $border-dark-accent-color-active;
+        }
+    }
+}

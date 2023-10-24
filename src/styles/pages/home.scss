@@ -191,7 +191,7 @@ html[data-theme="light"] {
     .list__item {
         width: 100%;
         height: 16rem;
-        border-radius: 1.8rem;
+        // border-radius: 1.8rem;
         padding: 1rem;
 
         display: flex;
@@ -243,18 +243,5 @@ html[data-theme="light"] {
         .list__item {
             width: 360px;
         }
-    }
-}
-
-.footer {
-    border-top: solid 1px;
-    padding: 1rem 0;
-    font-size: $text-small;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    p {
-        margin: 0;
     }
 }

@@ -22,7 +22,7 @@ export const ThemeChanger = () => {
 
   return (
     <div className="theme__changer">
-      {isClient && <p>{theme}</p>}
+      <div>{isClient && <p>{theme}</p>}</div>
       <Switch.Root
         checked={isChecked}
         onCheckedChange={handleThemeChange}
