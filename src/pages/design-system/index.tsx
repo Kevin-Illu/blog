@@ -1,10 +1,14 @@
-import { ArrowRightIcon } from "@radix-ui/react-icons";
+import {
+  ArrowRightIcon,
+  ExclamationTriangleIcon,
+  InfoCircledIcon,
+} from "@radix-ui/react-icons";
 
 export default function DisignSystem() {
   return (
     <section className="container">
       <div>
-        <h1 className="">my design system</h1>
+        <h1 className="title--accent">my design system</h1>
       </div>
       <div className="flex-col gap-3">
         <Palette />
@@ -86,6 +90,19 @@ export const Components = () => {
           <div className="pill pill--success">Success Pill</div>
           <div className="pill pill--warning">Warning Pill</div>
           <div className="pill pill--danger">Danger Pill</div>
+        </div>
+      </div>
+      <div>
+        <p>Callout</p>
+        <div className="flex-row gap-1">
+          <div className="callout callout--info">
+            <InfoCircledIcon />
+            Lorem ipsum dolor sit amet.
+          </div>
+          <div className="callout callout--danger">
+            <ExclamationTriangleIcon />
+            Lorem ipsum dolor sit amet.
+          </div>
         </div>
       </div>
       <hr></hr>

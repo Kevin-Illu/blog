@@ -128,29 +128,36 @@ $btn-secondary-gray-dark-bg-active: $gray-light-3;
 
 
 // tokens for experimental components
-$pill-info-light-bg-color: $sky-light-2;
+$pill-info-light-bg-color: $sky-light-3;
 $pill-info-light-color: $sky-light-11;
 
-$pill-info-dark-bg-color: $sky-dark-2;
+$pill-info-dark-bg-color: $sky-dark-3;
 $pill-info-dark-color: $sky-dark-11;
 
 // success
-$pill-success-light-bg-color: $grass-light-2;
+$pill-success-light-bg-color: $grass-light-3;
 $pill-success-light-color: $grass-light-11;
 
-$pill-success-dark-bg-color: $grass-dark-2;
+$pill-success-dark-bg-color: $grass-dark-3;
 $pill-success-dark-color: $grass-dark-11;
 
 // warning
-$pill-warning-light-bg-color: $yellow-light-2;
+$pill-warning-light-bg-color: $yellow-light-3;
 $pill-warning-light-color: $yellow-light-11;
 
-$pill-warning-dark-bg-color: $yellow-dark-2;
+$pill-warning-dark-bg-color: $yellow-dark-3;
 $pill-warning-dark-color: $yellow-dark-11;
 
 // danger 
-$pill-danger-light-bg-color: $red-light-2;
+$pill-danger-light-bg-color: $red-light-3;
 $pill-danger-light-color: $red-light-11;
 
-$pill-danger-dark-bg-color: $red-dark-2;
+$pill-danger-dark-bg-color: $red-dark-3;
 $pill-danger-dark-color: $red-dark-11;
+
+// callout
+$callout-info-light-color: $sky-light-4;
+$callout-info-dark-color: $sky-dark-4;
+
+$callout-danger-light-color: $red-light-4;
+$callout-danger-dark-color: $red-dark-4;

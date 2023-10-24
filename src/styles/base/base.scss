@@ -1,3 +1,15 @@
+::selection {
+    background-color: $gray-dark-1;
+    color: $gray-light-1;
+}
+
+html[data-theme="dark"] {
+    ::selection {
+        background-color: $gray-light-1;
+        color: $gray-dark-1;
+    }
+}
+
 // box
 .box {
     padding: 2rem;
@@ -375,4 +387,43 @@ html[data-theme="dark"] {
         background-color: $pill-danger-dark-bg-color;
         color: $pill-danger-dark-color;
     }
+}
+
+.callout {
+    display: inline-block;
+    width: fit-content;
+    padding: $s-5;
+    border-radius: $rounded-2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: $s-4;
+}
+
+.callout--info {
+    background-color: $callout-info-light-color;
+}
+
+.callout--danger {
+    background-color: $callout-danger-light-color;
+}
+
+html[data-theme="dark"] {
+    .callout--info {
+        background-color: $callout-info-dark-color;
+    }
+
+    .callout--danger {
+        background-color: $callout-danger-dark-color;
+    }
+}
+
+.title--accent {
+    text-transform: uppercase;
+    background-color: $tomato-light-9;
+    color: $gray-light-12;
+    display: inline-block;
+    padding: $s-1 $s-0;
+    font-weight: 800;
+    font-size: 3.4rem;
 }
