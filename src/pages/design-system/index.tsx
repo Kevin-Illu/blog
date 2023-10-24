@@ -18,10 +18,10 @@ export default function DisignSystem() {
 export const Palette = () => {
   return (
     <section>
-      <h3>Palete</h3>
-      <div className="flex-row">
-        <div className="box bg-base"></div>
-        <div className="box bg-subtle"></div>
+      <h3>pallete</h3>
+      <div className="flex-row gap-1">
+        <div className="card bg-base"></div>
+        <div className="card bg-subtle"></div>
       </div>
       <hr></hr>
     </section>
@@ -31,7 +31,7 @@ export const Palette = () => {
 export const Components = () => {
   return (
     <section>
-      <h3>3-5: Component backgrounds, 6-8: Borders, 9-10: Solid background</h3>
+      <h3>Components</h3>
       <div className="flex-row gap-1">
         <div className="card">menu item: normal state</div>
         <div className="card card--ghost">menu item: hover state</div>
@@ -78,6 +78,16 @@ export const Components = () => {
           </div>
         </div>
       </div>
+
+      <div>
+        <p>Pills</p>
+        <div className="flex-row gap-1">
+          <div className="pill pill--info">Info Pill</div>
+          <div className="pill pill--success">Success Pill</div>
+          <div className="pill pill--warning">Warning Pill</div>
+          <div className="pill pill--danger">Danger Pill</div>
+        </div>
+      </div>
       <hr></hr>
     </section>
   );
@@ -87,7 +97,7 @@ export const Texts = () => {
   return (
     <section>
       <div>
-        <h3>11-12: Text</h3>
+        <h3>Font sizes</h3>
         <div>
           <p className="text-4 text-accent-1">This text is tomato 11</p>
           <p className="text-4 text-base-1">This text is gray 11</p>

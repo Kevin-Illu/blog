@@ -23,7 +23,7 @@ $font-size-7: 2rem;
 $rounded-1: 4px;
 $rounded-2: 8px;
 $rounded-3: 16px;
-$rounded-full: 28px;
+$rounded-full: 26px;
 
 // Media queries
 $mq-phone: 425px;
@@ -125,3 +125,32 @@ $btn-secondary-gray-dark-bg-color: $gray-light-4;
 
 $btn-secondary-gray-light-bg-active: $gray-dark-2;
 $btn-secondary-gray-dark-bg-active: $gray-light-3;
+
+
+// tokens for experimental components
+$pill-info-light-bg-color: $sky-light-2;
+$pill-info-light-color: $sky-light-11;
+
+$pill-info-dark-bg-color: $sky-dark-2;
+$pill-info-dark-color: $sky-dark-11;
+
+// success
+$pill-success-light-bg-color: $grass-light-2;
+$pill-success-light-color: $grass-light-11;
+
+$pill-success-dark-bg-color: $grass-dark-2;
+$pill-success-dark-color: $grass-dark-11;
+
+// warning
+$pill-warning-light-bg-color: $yellow-light-2;
+$pill-warning-light-color: $yellow-light-11;
+
+$pill-warning-dark-bg-color: $yellow-dark-2;
+$pill-warning-dark-color: $yellow-dark-11;
+
+// danger 
+$pill-danger-light-bg-color: $red-light-2;
+$pill-danger-light-color: $red-light-11;
+
+$pill-danger-dark-bg-color: $red-dark-2;
+$pill-danger-dark-color: $red-dark-11;

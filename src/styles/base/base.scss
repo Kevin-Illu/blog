@@ -4,15 +4,51 @@
     display: inline-block;
 }
 
+.card {
+    border: 1px solid;
+    padding: 2rem;
+    display: inline-block;
+    border-radius: $rounded-1;
+    border-color: $border-light-subtle;
+}
+
+.card--ghost {
+    background-color: $bg-light-accent-subtle;
+    border-color: $border-light-accent-color;
+    color: $high-contrast-text-light-accent-color;
+
+    &:hover {
+        border-color: $border-dark-accent-color-active;
+    }
+}
+
+.card--solid {
+    outline: none;
+    border: none;
+    background-color: $bg-light-accent-solid;
+
+    &:focus {
+        background-color: $bg-light-accent-solid-active;
+    }
+}
+
+html[data-theme="dark"] {
+    .card {
+        border-color: $border-dark-subtle;
+    }
+}
+
 
 // flex and gap
 .flex-row {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .flex-col {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .gap-1 {
@@ -25,6 +61,17 @@
 
 .gap-3 {
     gap: $s-8;
+}
+
+hr {
+    margin: $s-8 0;
+    border-color: $border-light-base;
+}
+
+html[data-theme="dark"] {
+    hr {
+        border-color: $border-dark-base;
+    }
 }
 
 
@@ -276,5 +323,56 @@ html[data-theme="dark"] {
                 color: $low-contrast-text-light-color;
             }
         }
+    }
+}
+
+.pill {
+    font-size: $font-size-2;
+    font-weight: 600;
+    padding: $s-2 $s-4;
+    border-radius: $rounded-full;
+}
+
+
+div.pill--info {
+    background-color: $pill-info-light-bg-color;
+    color: $pill-info-light-color;
+}
+
+div.pill--success {
+    background-color: $pill-success-light-bg-color;
+    color: $pill-success-light-color;
+}
+
+div.pill--warning {
+    background-color: $pill-warning-light-bg-color;
+    color: $pill-warning-light-color;
+}
+
+div.pill--danger {
+    background-color: $pill-danger-light-bg-color;
+    color: $pill-danger-light-color;
+}
+
+
+html[data-theme="dark"] {
+    div.pill--info {
+        background-color: $pill-info-dark-bg-color;
+        color: $pill-info-dark-color;
+    }
+
+    div.pill--success {
+        background-color: $pill-success-dark-bg-color;
+        color: $pill-success-dark-color;
+    }
+
+    div.pill--warning {
+        background-color: $pill-warning-dark-bg-color;
+        color: $pill-warning-dark-color;
+    }
+
+    div.pill--danger {
+        background-color: $pill-danger-dark-bg-color;
+        color: $pill-danger-dark-color;
     }
 }
