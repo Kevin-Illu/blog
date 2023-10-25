@@ -77,32 +77,6 @@ html[data-theme="dark"] {
     }
 }
 
-.card {
-    padding: 2rem;
-    display: inline-block;
-    border-radius: $rounded-1;
-    border: 1px solid;
-}
-
-div.card--ghost {
-    background-color: $bg-light-accent-subtle;
-    border-color: $border-light-accent-color;
-    color: $high-contrast-text-light-accent-color;
-
-    &:hover {
-        border-color: $border-dark-accent-color-active;
-    }
-}
-
-.card--solid {
-    outline: none;
-    border: none;
-    background-color: $bg-light-accent-solid;
-
-    &:focus {
-        background-color: $bg-light-accent-solid-active;
-    }
-}
 
 html[data-theme="dark"] {
     .card--solid {
