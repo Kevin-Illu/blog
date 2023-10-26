@@ -26,19 +26,18 @@ div[data-rehype-pretty-code-title] {
 /* Tema claro para bloques de código */
 html[data-theme="light"] {
     div[data-rehype-pretty-code-fragment] {
-        background-color: $background-subtle-light-color;
-        border-color: $border-light-color;
+        background-color: $bg-light-subtle;
     }
 
     div[data-rehype-pretty-code-title] {
-        background-color: $background-subtle-light-color;
-        border-bottom: solid 1px $border-light-color;
+        background-color: $bg-light-subtle;
+        border-bottom: solid 1px;
         color: $low-contrast-text-light-color;
     }
 
     div[data-rehype-pretty-code-fragment] [data-highlighted-line] {
-        border-left-color: $code-highlight-light-pure-color;
-        background-color: $code-highlight-light-color;
+        // border-left-color: $code-highlight-light-pure-color;
+        // background-color: $code-highlight-light-color;
     }
 }
 
@@ -46,19 +45,18 @@ html[data-theme="light"] {
 /* Tema oscuro para bloques de código */
 html[data-theme="dark"] {
     div[data-rehype-pretty-code-fragment] {
-        background-color: $background-subtle-dark-color;
-        border-color: $border-dark-color;
+        background-color: $bg-dark-subtle;
     }
 
     div[data-rehype-pretty-code-title] {
-        background-color: $background-subtle-dark-color;
-        border-bottom: solid 1px $border-dark-color;
+        background-color: $bg-dark-subtle;
+        border-bottom: solid 1px;
         color: $low-contrast-text-dark-color;
     }
 
     div[data-rehype-pretty-code-fragment] [data-highlighted-line] {
-        border-left-color: $code-highlight-dark-pure-color;
-        background-color: $code-highlight-dark-color;
+        // border-left-color: $code-highlight-dark-pure-color;
+        // background-color: $code-highlight-dark-color;
     }
 }
 
@@ -82,13 +80,13 @@ span[data-highlighted-chars] {
 }
 
 html[data-theme="light"] span[data-highlighted-chars] {
-    background-color: $code-text-highlight-light-bg-color;
-    border-color: $code-text-highlight-light-bg-color;
+    // background-color: $code-text-highlight-light-bg-color;
+    // border-color: $code-text-highlight-light-bg-color;
 }
 
 html[data-theme="dark"] span[data-highlighted-chars] {
-    background-color: $code-text-highlight-dark-bg-color;
-    border-color: $code-text-highlight-dark-bg-color;
+    // background-color: $code-text-highlight-dark-bg-color;
+    // border-color: $code-text-highlight-dark-bg-color;
 }
 
 /*
@@ -102,13 +100,13 @@ html[data-theme="dark"] span[data-highlighted-chars] {
 }
 
 html[data-theme="light"] .line {
-    background-color: $background-subtle-light-color;
-    border-color: $border-light-color;
+    background-color: $bg-light-subtle;
+    // border-color: $border-light-color;
 }
 
 html[data-theme="dark"] .line {
-    background-color: $background-subtle-dark-color;
-    border-color: $border-dark-color;
+    background-color: $bg-dark-subtle;
+    // border-color: $border-dark-color;
 }
 
 

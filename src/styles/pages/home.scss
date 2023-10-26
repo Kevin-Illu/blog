@@ -1,247 +1,118 @@
-.list__item__header__read-more {
-    background-color: $background-dark-color;
-    color: $heading-dark-color;
-}
+.home__header {
+    height: 96vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 
-html[data-theme="dark"] {
-    .list__item {
-        background-color: $tomato-light-9;
-        color: $high-contrast-text-light-color;
-
-        &:hover {
-            background-color: $tomato-light-10;
-        }
-    }
-}
-
-html[data-theme="light"] {
-    .list__item {
-        background-color: $tomato-dark-9;
-        color: $high-contrast-text-light-color;
-
-        &:hover {
-            background-color: $tomato-dark-10;
-        }
-    }
-}
-
-
-.hero {
-    position: relative;
-    height: 60vh;
-
-    .hero__title p,
-    a,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
+    h1 {
         margin: 0;
-        line-height: 1;
+        padding: 0;
     }
 
     &__title {
-        margin-top: 2rem;
+        font-size: 8rem;
+        font-weight: 800;
 
-        h1 {
+        span {
             font-weight: 600;
         }
     }
 
     &__description {
-        width: 100%;
-        display: flex;
-        font-size: $text-small;
+        margin: $s-4 $s-0;
+        font-size: $font-size-4;
+        font-weight: 600;
 
-        p {
-            margin: 0;
-        }
-    }
-
-    &__scroll-indicator {
-        margin-top: 1.6rem;
-        font-size: $text-small;
-
-        display: flex;
-        align-items: center;
-        gap: .4rem;
-
-        p {
-            font-weight: 600;
-        }
-    }
-
-    @media screen and (min-width: $breakpoint-phone) {
-        &__title {
-            font-size: 1.8em;
+        @media screen and (min-width: $mq-laptop) {
+            font-size: $font-size-7;
         }
 
-        &__description {
-            justify-content: flex-start;
-
-            p {
-                width: 100%;
-                padding: 0;
-            }
-        }
-    }
-
-    @media screen and (min-width: $breakpoint-tablet) {
-        height: 96vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        &__title {
-            font-size: 2.4em;
-        }
-
-        &__description {
-            justify-content: flex-end;
-            font-size: $text-small;
-
-            p {
-                width: 70%;
-                padding: 0;
-            }
-        }
-    }
-
-    @media screen and (min-width: $breakpoint-laptop) {
-
-        &__title {
-            font-size: 3.6rem;
-        }
-
-        &__description {
-            justify-content: flex-end;
-            font-size: 1.4rem;
-
-            p {
-                width: 56%;
-                padding: 0 3.4rem 0 0;
-            }
-        }
-    }
-
-    @media screen and (min-width: $breakpoint-desktop) {
-
-        &__title {
-            font-size: 3.8em;
-        }
-
-        &__description {
-            flex-direction: column;
-            align-items: flex-end;
-
-            p {
-                width: 46%;
-                padding: 0 8rem 0 0;
-            }
-        }
-    }
-
-    @media screen and (min-width: $breakpoint-desktop-xlarge) {
-
-        &__title {
-            font-size: 6.8em;
-        }
-
-        &__description {
-            justify-content: flex-end;
-            font-size: 2rem;
-
-            p {
-                width: 46%;
-                padding: 0 18rem 0 0;
-            }
+        @media screen and (min-width: $mq-desktop-xl) {
+            font-size: 3rem;
+            width: 80%;
         }
     }
 }
 
 .home__section {
-    border-top: solid 1px;
-    padding-bottom: 2rem;
+    padding: $s-12 0;
 
-    h2 {
-        font-size: 2rem;
-    }
-}
-
-.recent-posts {
-
-    &__link__container {
-        text-align: end;
-        padding: 4rem 0 0;
-        font-size: $text-small;
-    }
-
-    &__title {
-        font-size: 2rem;
-    }
-
-    &__list {
+    &__header {
         display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-
-    .list__item {
-        width: 100%;
-        height: 16rem;
-        // border-radius: 1.8rem;
-        padding: 1rem;
-
-        display: flex;
-        flex-direction: column;
+        align-items: center;
         justify-content: space-between;
 
-        p {
+        &__title {
+            padding: 0;
             margin: 0;
         }
 
-        &__header {
+        &__link {
+            width: fit-content;
+            font-weight: 800;
+            text-decoration: none;
+            border: solid 1px;
+            border-radius: $rounded-full;
+            margin: $s-2 $s-0;
+            padding: $s-2 $s-4;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
-
-            &__read-more {
-                padding: .4rem 1rem;
-                border-radius: 8rem;
-            }
-
-            &__read-more p {
-                display: none;
-            }
+            gap: $s-1;
         }
 
-        &__content {
-            .title {
-                font-weight: 600;
-                font-size: 2rem;
-            }
+        &__link:hover {
+            background-color: $bg-dark-base;
+            color: $bg-light-base;
 
-            .description {
-                font-size: $text-small;
+            svg path {
+                color: $bg-light-base;
+
             }
         }
     }
+}
 
-    @media screen and (min-width: $breakpoint-tablet) {
-        &__list {
-            gap: 3rem;
-        }
 
-        .list__item {
-            height: 20rem;
-        }
+
+.featured__list {
+    display: grid;
+    grid-auto-rows: auto;
+    gap: $s-10;
+}
+
+.featured__post {
+    padding-top: $s-4;
+    border-top: solid 1px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+
+
+    &__date {
+        margin: 0;
+        font-size: $font-size-4;
+        grid-column: span 2;
     }
 
-    @media screen and (min-width: $breakpoint-laptop) {
-        .list__item {
-            width: 360px;
+    &__info {
+        grid-column: span 4;
+
+        &__title {
+            text-transform: uppercase;
+            font-size: $font-size-6;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        &__description {
+            margin: 0;
+            font-size: $font-size-4;
+        }
+
+        &__link {
+            font-size: $font-size-4;
+            font-weight: 800;
         }
     }
 }
