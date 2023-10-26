@@ -212,6 +212,7 @@ html[data-theme="dark"] {
     justify-content: space-between;
     align-items: center;
     gap: $s-2;
+    text-decoration: none;
 
     svg path {
         color: $high-contrast-text-dark-color;

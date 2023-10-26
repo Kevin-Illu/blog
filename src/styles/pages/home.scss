@@ -99,7 +99,7 @@
         grid-column: span 4;
 
         &__title {
-            text-transform: uppercase;
+            // text-transform: uppercase;
             font-size: $font-size-6;
             font-weight: 800;
             margin: 0;
@@ -114,5 +114,25 @@
             font-size: $font-size-4;
             font-weight: 800;
         }
+    }
+}
+
+.home__footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: $s-4;
+    }
+
+    &__source {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: $s-4;
     }
 }

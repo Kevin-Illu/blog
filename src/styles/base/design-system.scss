@@ -1,9 +1,9 @@
 * {
-    border-color: $border-light-base;
+    border-color: $border-light-subtle;
     color: $high-contrast-text-light-color;
 
     html[data-theme="dark"] & {
-        border-color: $border-dark-base;
+        border-color: $border-dark-subtle;
         color: $high-contrast-text-dark-color;
     }
 }

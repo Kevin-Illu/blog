@@ -12,16 +12,20 @@ export default function PostListPage({
   posts,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <div>
-      <h1>Blog</h1>
+    <div className="container">
+      <header>
+        <h1>Blog</h1>
+      </header>
 
-      {posts.map((post) => (
-        <div key={post.slug}>
-          <h2>
-            <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-          </h2>
-        </div>
-      ))}
+      <main>
+        {posts.map((post) => (
+          <div key={post.slug}>
+            <h2>
+              <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+            </h2>
+          </div>
+        ))}
+      </main>
     </div>
   );
 }

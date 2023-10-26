@@ -1,0 +1,40 @@
+.sections__container {
+    section {
+        min-height: 100vh;
+    }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.bock {
+    display: block;
+}
+
+.text-animation {
+    display: inline-block;
+    overflow-y: hidden;
+
+    h2 {
+        font-size: 8rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    span {
+        text-transform: uppercase;
+        font-weight: 800;
+    }
+}

@@ -1,3 +1,4 @@
+import { AnimatedText } from "@/components/animations";
 import {
   ArrowRightIcon,
   ExclamationTriangleIcon,
@@ -7,15 +8,16 @@ import {
 export default function DisignSystem() {
   return (
     <section className="container">
-      <div>
-        <h1>my design system</h1>
-      </div>
-      <div className="flex-col gap-3">
+      <header>
+        <h1>my playground</h1>
+      </header>
+      <main className="container sections__container">
         <Palette />
         <Components />
         <Texts />
         <Grid />
-      </div>
+        <AnimationsPlayground />
+      </main>
     </section>
   );
 }
@@ -28,7 +30,6 @@ export const Palette = () => {
         <div className="card bg-base"></div>
         <div className="card bg-subtle"></div>
       </div>
-      <hr></hr>
     </section>
   );
 };
@@ -106,7 +107,6 @@ export const Components = () => {
           </div>
         </div>
       </div>
-      <hr></hr>
     </section>
   );
 };
@@ -242,6 +242,17 @@ export const Grid = () => {
             </div>
           </div>
         ))}
+      </div>
+    </section>
+  );
+};
+
+const AnimationsPlayground = () => {
+  return (
+    <section className="animation__playground__section">
+      <h2>Animation Playground</h2>
+      <div className="text-animation">
+        <AnimatedText fontFamily="font-sans" as="h2" text="Nunito Sans" />
       </div>
     </section>
   );

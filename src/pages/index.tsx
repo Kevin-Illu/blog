@@ -1,8 +1,14 @@
-import { ArrowRightIcon, ArrowTopRightIcon } from "@radix-ui/react-icons";
+import {
+  ArrowRightIcon,
+  ArrowTopRightIcon,
+  GitHubLogoIcon,
+} from "@radix-ui/react-icons";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { Post, allPosts } from "contentlayer/generated";
+import { AnimatedText } from "@/components/animations";
+import { RecentPostItem } from "@/components";
 
 export const getStaticProps: GetStaticProps<{
   posts: Post[];
@@ -65,48 +71,35 @@ export default function Home({
             experiencias en el mundo del desarrollo de software.
           </p>
         </header>
+
         <section className="home__section">
           <header className="home__section__header">
-            <h2 className="home__section__header__title">POSTS RECIENTES</h2>
+            <h2 className="home__section__header__title">Posts recientes</h2>
             <Link className="home__section__header__link" href="/blog">
-              VER TODOS <ArrowRightIcon height={20} width={20} />
+              Ver todos <ArrowRightIcon height={20} width={20} />
             </Link>
           </header>
+
           <div className="featured__list">
-            {postsFormated.map(({ _id, title, description, date, slug }) => (
-              <div key={_id} className="featured__post">
-                <p className="featured__post__date">{date}</p>
-                <div className="featured__post__info">
-                  <p className="featured__post__info__title">{title}</p>
-                  <p className="featured__post__info__description">
-                    {description}
-                  </p>
-                  <div className="featured__post__info__link">
-                    <Link href={`/blog/${slug}`}>
-                      <ArrowTopRightIcon height={60} width={30} />
-                    </Link>
-                  </div>
-                </div>
-              </div>
+            {postsFormated.map((post) => (
+              <RecentPostItem key={post._id} {...post} />
             ))}
           </div>
         </section>
-        <FloatMenu />
       </main>
+
+      <footer className="container home__footer">
+        <div className="home__footer__info">
+          <p className="text-4">Kevin Illu </p>
+          <a href="https://twitter.com/3Kevinillu" className="text-4">
+            (@3KevinIllu)
+          </a>
+        </div>
+        <div className="home__footer__source">
+          <p className="text-4">source</p>
+          <GitHubLogoIcon />
+        </div>
+      </footer>
     </div>
   );
 }
-
-export const FloatMenu = () => {
-  return (
-    <div className="float-menu">
-      <p className="float-menu__item">light</p>
-      <p className="float-menu__item">menu</p>
-      <ul className="float-menu__sub-menu">
-        <li>blog</li>
-        <li>about</li>
-        <li>contact</li>
-      </ul>
-    </div>
-  );
-};
