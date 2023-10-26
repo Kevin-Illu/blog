@@ -1,13 +1,8 @@
-import {
-  ArrowRightIcon,
-  ArrowTopRightIcon,
-  GitHubLogoIcon,
-} from "@radix-ui/react-icons";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { Post, allPosts } from "contentlayer/generated";
-import { AnimatedText } from "@/components/animations";
+import { ArrowRightIcon, GitHubLogoIcon } from "@radix-ui/react-icons";
 import { RecentPostItem } from "@/components";
 
 export const getStaticProps: GetStaticProps<{
