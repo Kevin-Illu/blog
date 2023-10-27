@@ -38,11 +38,11 @@ export default function PostListPage({
   const postsFormated = SortAndFormatPosts(posts);
 
   return (
-    <div className="container">
-      <header>
+    <div className="slug-container">
+      <header className="blog__header">
         <h1>
-          Explora mis posts a tu ritmo. Tal vez descubras una genialidad oculta
-          o simplemente mi esfuerzo por alcanzarla.
+          Adelante, elige un post, cualquier post. ¡Puede ser brillante o
+          simplemente otro intento de parecerlo!
         </h1>
       </header>
 
@@ -52,7 +52,7 @@ export default function PostListPage({
             href={`/blog/${post.slug}`}
             key={post.slug}
             className={`blog__content__card-item card-item-variant-${
-              (i % 5) + 1
+              (i % 6) + 1
             }`}
           >
             <header className="post__header">

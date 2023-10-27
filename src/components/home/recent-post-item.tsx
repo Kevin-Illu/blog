@@ -9,7 +9,7 @@ export const RecentPostItem = ({ date, title, description, slug }: Post) => (
       <p className="featured__post__info__title">{title}</p>
       <p className="featured__post__info__description">{description}</p>
       <div className="featured__post__info__link">
-        <Link href={`/blog/${slug}`}>
+        <Link href={`/blog/${slug}`} className="btn btn-secondary">
           leer <ArrowTopRightIcon height={20} width={20} />
         </Link>
       </div>

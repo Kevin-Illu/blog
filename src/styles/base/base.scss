@@ -92,14 +92,32 @@ main {
 }
 
 .container {
-    width: 94%;
+    width: 96%;
     margin: 0 auto;
+}
 
-    @media screen and (min-width: $mq-laptop) {
+@media screen and (min-width: $mq-laptop) {
+    .container {
         width: 98%;
     }
 }
 
+.container--secondary {
+    margin: 0 auto;
+    width: 96%;
+}
+
+@media (min-width: $mq-laptop) {
+    .container--secondary {
+        width: 86%;
+    }
+}
+
+@media (min-width: $mq-desktop-xl) {
+    .container--secondary {
+        width: 80%;
+    }
+}
 
 // box
 .box {

@@ -9,6 +9,7 @@ export const getStaticProps: GetStaticProps<{
   posts: Post[];
 }> = () => {
   // Obtiene los tres posts mas recientes de la lista, ordenados por fecha.
+  // la fecha se formatea para optener el mes en formato long
   const recentPosts = allPosts
     .sort((postA, postB) => {
       const dateA = new Date(postA.date);
@@ -16,7 +17,20 @@ export const getStaticProps: GetStaticProps<{
 
       return dateA > dateB ? -1 : 1;
     })
-    .slice(0, 3);
+    .slice(0, 3)
+    .map((post) => {
+      const dateToFormat = new Date(post.date);
+      const formater = new Intl.DateTimeFormat("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
+
+      return {
+        ...post,
+        date: formater.format(dateToFormat),
+      };
+    });
 
   return { props: { posts: recentPosts } };
 };
@@ -24,20 +38,6 @@ export const getStaticProps: GetStaticProps<{
 export default function Home({
   posts,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const postsFormated = posts.map((post) => {
-    const dateToFormat = new Date(post.date);
-    const formater = new Intl.DateTimeFormat("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-
-    return {
-      ...post,
-      date: formater.format(dateToFormat),
-    };
-  });
-
   return (
     <div>
       <Head>
@@ -70,13 +70,16 @@ export default function Home({
         <section className="home__section">
           <header className="home__section__header">
             <h2 className="home__section__header__title">Posts recientes</h2>
-            <Link className="home__section__header__link" href="/blog">
+            <Link
+              className="home__section__header__link btn btn-secondary-gray"
+              href="/blog"
+            >
               Ver todos <ArrowRightIcon height={20} width={20} />
             </Link>
           </header>
 
           <div className="featured__list">
-            {postsFormated.map((post) => (
+            {posts.map((post) => (
               <RecentPostItem key={post._id} {...post} />
             ))}
           </div>

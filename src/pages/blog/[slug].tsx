@@ -27,9 +27,13 @@ export default function SinglePostPage({
   const MDXContent = useMDXComponent(post.body.code);
 
   return (
-    <div>
-      <h1>{post.title}</h1>
-      <MDXContent />
+    <div className="slug-container">
+      <article>
+        <h1>{post.title}</h1>
+        <div className="post-content">
+          <MDXContent />
+        </div>
+      </article>
     </div>
   );
 }

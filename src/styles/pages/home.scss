@@ -1,3 +1,14 @@
+// .featured__post__info__link a {
+//     background-color: $tomato-light-9;
+// }
+
+// html[data-theme="dark"] {
+//     .featured__post__info__link a {
+//         background-color: $tomato-dark-9;
+//     }
+// }
+
+
 .home__header {
     height: 96vh;
     display: flex;
@@ -48,28 +59,8 @@
         }
 
         &__link {
-            width: fit-content;
-            font-weight: 800;
-            text-decoration: none;
-            border: solid 1px;
-            border-radius: $rounded-full;
             margin: $s-2 $s-0;
             padding: $s-2 $s-4;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: $s-1;
-        }
-
-        &__link:hover {
-            background-color: $bg-dark-base;
-            color: $bg-light-base;
-
-            svg path {
-                color: $bg-light-base;
-
-            }
         }
     }
 }
@@ -126,6 +117,8 @@
                 font-size: $font-size-4;
                 margin-top: $s-4;
                 text-decoration: none;
+                padding: $s-2 $s-4;
+                border-radius: $rounded-full;
             }
         }
     }
