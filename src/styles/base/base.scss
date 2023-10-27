@@ -92,9 +92,14 @@ main {
 }
 
 .container {
-    width: 98%;
+    width: 94%;
     margin: 0 auto;
+
+    @media screen and (min-width: $mq-laptop) {
+        width: 98%;
+    }
 }
+
 
 // box
 .box {
