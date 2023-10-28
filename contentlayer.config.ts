@@ -1,8 +1,10 @@
 import rehypePrettyCode from "rehype-pretty-code";
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
-import { rehypePrettyCodeOptions } from "./src/lib/rehypePrettyCode";
-import { calculateReadingTime } from "./src/lib/calculateReadingTime";
-import { formatDateTime } from "./src/lib/formatDateTime";
+import {
+  formatDateTime,
+  calculateReadingTime,
+  rehypePrettyCodeOptions,
+} from "./src/lib";
 
 const Post = defineDocumentType(() => ({
   name: "Post",
