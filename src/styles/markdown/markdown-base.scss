@@ -5,6 +5,7 @@
 
 p {
     line-height: 1.4;
+    color: $low-contrast-text-dark-color;
 }
 
 // blockquote
@@ -28,6 +29,12 @@ ol {
 li {
     margin: 10px 0;
     line-height: 1.4;
+    font-size: $font-size-5;
+    color: $low-contrast-text-dark-color !important;
+
+    p {
+        color: $low-contrast-text-dark-color;
+    }
 }
 
 html[data-theme="light"] {
@@ -43,6 +50,5 @@ html[data-theme="dark"] {
     blockquote {
         background-color: #2e2e2e;
         border-left-color: #515151;
-        // color: $heading-dark-color;
     }
 }

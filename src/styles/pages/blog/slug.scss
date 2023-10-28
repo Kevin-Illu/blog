@@ -1,3 +1,10 @@
+html[data-theme="dark"] {
+    .post-content p {
+        color: $low-contrast-text-dark-color;
+    }
+}
+
+
 .slug-container {
     width: 94%;
     margin: 0 auto;
@@ -22,5 +29,9 @@
 
     .post-content {
         max-width: 760px;
+
+        p {
+            font-size: $font-size-5;
+        }
     }
 }

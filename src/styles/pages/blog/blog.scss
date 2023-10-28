@@ -168,6 +168,7 @@ html[data-theme="dark"] {
         grid-template-columns: 1fr 1fr;
 
         p {
+            font-size: $font-size-4;
             grid-column-start: 2;
             margin: 0;
         }
@@ -191,10 +192,6 @@ html[data-theme="dark"] {
 
     @media screen and (min-width: $mq-laptop) {
         grid-template-columns: repeat(3, 1fr);
-    }
-
-    @media screen and (min-width: $mq-desktop) {
-        grid-template-columns: repeat(4, 1fr);
     }
 }
 
