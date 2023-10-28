@@ -26,6 +26,19 @@ html[data-theme="dark"] {
         width: 52%;
     }
 
+    .post__info {
+        display: flex;
+        align-items: center;
+        gap: $s-4;
+
+        &__reading-time {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: fit-content;
+            gap: $s-2;
+        }
+    }
 
     .post-content {
         max-width: 760px;

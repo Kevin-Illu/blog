@@ -17,20 +17,7 @@ export const getStaticProps: GetStaticProps<{
 
       return dateA > dateB ? -1 : 1;
     })
-    .slice(0, 3)
-    .map((post) => {
-      const dateToFormat = new Date(post.date);
-      const formater = new Intl.DateTimeFormat("en-US", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      });
-
-      return {
-        ...post,
-        date: formater.format(dateToFormat),
-      };
-    });
+    .slice(0, 3);
 
   return { props: { posts: recentPosts } };
 };

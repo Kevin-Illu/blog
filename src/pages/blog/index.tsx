@@ -10,26 +10,12 @@ export const getStaticProps: GetStaticProps<{
 };
 
 function SortAndFormatPosts(posts: Post[]): Post[] {
-  return posts
-    .map((post) => {
-      const dateToFormat = new Date(post.date);
-      const formater = new Intl.DateTimeFormat("en-US", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      });
+  return posts.sort((pA, pB) => {
+    const dateA = new Date(pA.date);
+    const dateB = new Date(pB.date);
 
-      return {
-        ...post,
-        date: formater.format(dateToFormat),
-      };
-    })
-    .sort((pA, pB) => {
-      const dateA = new Date(pA.date);
-      const dateB = new Date(pB.date);
-
-      return dateA < dateB ? -1 : 1;
-    });
+    return dateA < dateB ? -1 : 1;
+  });
 }
 
 export default function PostListPage({
@@ -58,7 +44,7 @@ export default function PostListPage({
             <header className="post__header">
               <div className="post__header-title">
                 <h4 className="text-6">{post.title}</h4>
-                <time dateTime={post.date}>{post.date}</time>
+                <time dateTime={post.date}>{post.formatedDate}</time>
               </div>
               <div className="post__header-icon">
                 <div className="icon">

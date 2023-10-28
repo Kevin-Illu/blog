@@ -1,3 +1,4 @@
+import { LapTimerIcon } from "@radix-ui/react-icons";
 import { allPosts, type Post } from "contentlayer/generated";
 import { type GetStaticProps, type InferGetStaticPropsType } from "next";
 import { useMDXComponent } from "next-contentlayer/hooks";
@@ -29,7 +30,17 @@ export default function SinglePostPage({
   return (
     <div className="slug-container">
       <article>
-        <h1>{post.title}</h1>
+        <header className="post__header">
+          <h1 className="post__title">{post.title}</h1>
+          <div className="post__info">
+            <p>{post.formatedDate}</p>
+            <p>/</p>
+            <div className="post__info__reading-time">
+              <LapTimerIcon width={20} height={20} />
+              <p>{post.readingTime}</p>
+            </div>
+          </div>
+        </header>
         <div className="post-content">
           <MDXContent />
         </div>

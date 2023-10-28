@@ -1,6 +1,8 @@
 import rehypePrettyCode from "rehype-pretty-code";
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import { rehypePrettyCodeOptions } from "./src/lib/rehypePrettyCode";
+import { calculateReadingTime } from "./src/lib/calculateReadingTime";
+import { formatDateTime } from "./src/lib/formatDateTime";
 
 const Post = defineDocumentType(() => ({
   name: "Post",
@@ -25,6 +27,14 @@ const Post = defineDocumentType(() => ({
     slug: {
       type: "string",
       resolve: (post) => post._raw.sourceFileName.replace(/\.mdx$/, ""),
+    },
+    readingTime: {
+      type: "string",
+      resolve: (post) => calculateReadingTime(post.body.raw),
+    },
+    formatedDate: {
+      type: "string",
+      resolve: (post) => formatDateTime(post.date),
     },
   },
 }));
