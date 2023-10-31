@@ -81,7 +81,9 @@ export default function Home({
           </a>
         </div>
         <div className="home__footer__source">
-          <p className="text-4">source</p>
+          <a href="https://github.com/Kevin-Illu/kvn-blog" className="text-4">
+            source
+          </a>
           <GitHubLogoIcon />
         </div>
       </footer>

@@ -1,680 +1,669 @@
 ::selection {
-    background-color: $gray-dark-1;
-    color: $gray-light-1;
+  background-color: $gray-dark-1;
+  color: $gray-light-1;
 }
 
 html[data-theme="dark"] {
-    ::selection {
-        background-color: $gray-light-1;
-        color: $gray-dark-1;
-    }
+  ::selection {
+    background-color: $gray-light-1;
+    color: $gray-dark-1;
+  }
 }
 
 // background and border colors
 
 * {
-    border-color: $border-light-subtle;
-    color: $high-contrast-text-light-color;
+  border-color: $border-light-subtle;
+  color: $high-contrast-text-light-color;
 
-    html[data-theme="dark"] & {
-        border-color: $border-dark-subtle;
-        color: $high-contrast-text-dark-color;
-    }
+  html[data-theme="dark"] & {
+    border-color: $border-dark-subtle;
+    color: $high-contrast-text-dark-color;
+  }
 }
 
 body {
-    background-color: $bg-light-base;
+  background-color: $bg-light-base;
 }
 
 html[data-theme="dark"] {
-    body {
-        background-color: $bg-dark-base;
-    }
+  body {
+    background-color: $bg-dark-base;
+  }
 }
-
 
 .bg-subtle {
-    background-color: $bg-light-subtle;
-    border-color: $border-light-subtle;
+  background-color: $bg-light-subtle;
+  border-color: $border-light-subtle;
 }
 
 html[data-theme="dark"] {
-    .bg-subtle {
-        background-color: $bg-dark-subtle;
-        border-color: $border-dark-subtle;
-    }
+  .bg-subtle {
+    background-color: $bg-dark-subtle;
+    border-color: $border-dark-subtle;
+  }
 }
 
 .bg-base {
-    background-color: $bg-light-base;
+  background-color: $bg-light-base;
 }
 
 html[data-theme="dark"] {
-    .bg-base {
-        background-color: $bg-dark-base;
-    }
+  .bg-base {
+    background-color: $bg-dark-base;
+  }
 }
 
 main {
-    position: relative;
+  position: relative;
 }
 
 .float-menu {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    backdrop-filter: invert(100%);
-    display: flex;
-    flex-direction: row;
-    gap: $s-4;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  backdrop-filter: invert(100%);
+  display: flex;
+  flex-direction: row;
+  gap: $s-4;
 
-    margin: $s-5 $s-0 $s-0;
-    padding: $s-2 $s-4;
-    border-radius: $rounded-full;
-    background-color: $bg-dark-base-transparent;
+  margin: $s-5 $s-0 $s-0;
+  padding: $s-2 $s-4;
+  border-radius: $rounded-full;
+  background-color: $bg-dark-base-transparent;
 
+  p {
+    color: $high-contrast-text-dark-color;
+    margin: 0;
+    padding: 0;
+    font-size: $font-size-3;
+  }
 
-    p {
-        color: $high-contrast-text-dark-color;
-        margin: 0;
-        padding: 0;
-        font-size: $font-size-3;
-    }
+  &__sub-menu {
+    display: none;
+  }
 
-    &__sub-menu {
-        display: none;
-    }
-
-    @media screen and (min-width: $mq-laptop) {
-        top: 0;
-        bottom: auto;
-    }
+  @media screen and (min-width: $mq-laptop) {
+    top: 0;
+    bottom: auto;
+  }
 }
 
 .container {
-    width: 96%;
-    margin: 0 auto;
+  width: 96%;
+  margin: 0 auto;
 }
 
 @media screen and (min-width: $mq-laptop) {
-    .container {
-        width: 98%;
-    }
+  .container {
+    width: 98%;
+  }
 }
 
 .container--secondary {
-    margin: 0 auto;
-    width: 96%;
+  margin: 0 auto;
+  width: 96%;
 }
 
 @media (min-width: $mq-laptop) {
-    .container--secondary {
-        width: 86%;
-    }
+  .container--secondary {
+    width: 86%;
+  }
 }
 
 @media (min-width: $mq-desktop-xl) {
-    .container--secondary {
-        width: 80%;
-    }
+  .container--secondary {
+    width: 80%;
+  }
 }
 
 // box
 .box {
-    padding: 2rem;
-    display: inline-block;
+  padding: 2rem;
+  display: inline-block;
 }
 
 .card {
-    border: 1px solid;
-    padding: 2rem;
-    display: inline-block;
-    border-radius: $rounded-1;
-    border-color: $border-light-subtle;
+  border: 1px solid;
+  padding: 2rem;
+  display: inline-block;
+  border-radius: $rounded-1;
+  border-color: $border-light-subtle;
 }
 
 .card--ghost {
-    background-color: $bg-light-accent-subtle;
-    border-color: $border-light-accent-color;
-    color: $high-contrast-text-light-accent-color;
+  background-color: $bg-light-accent-subtle;
+  border-color: $border-light-accent-color;
+  color: $high-contrast-text-light-accent-color;
 
-    &:hover {
-        border-color: $border-dark-accent-color-active;
-    }
+  &:hover {
+    border-color: $border-dark-accent-color-active;
+  }
 }
 
 .card--solid {
-    outline: none;
-    border: none;
-    background-color: $bg-light-accent-solid;
+  outline: none;
+  border: none;
+  background-color: $bg-light-accent-solid;
 
-    &:focus {
-        background-color: $bg-light-accent-solid-active;
-    }
+  &:focus {
+    background-color: $bg-light-accent-solid-active;
+  }
 }
 
 html[data-theme="dark"] {
-    .card {
-        border-color: $border-dark-subtle;
-    }
+  .card {
+    border-color: $border-dark-subtle;
+  }
 }
-
 
 // flex and gap
 .flex-row {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .flex-col {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .gap-1 {
-    gap: $s-4;
+  gap: $s-4;
 }
 
 .gap-2 {
-    gap: $s-6;
+  gap: $s-6;
 }
 
 .gap-3 {
-    gap: $s-8;
+  gap: $s-8;
 }
 
 hr {
-    margin: $s-8 0;
-    border-color: $border-light-base;
+  margin: $s-8 0;
+  border-color: $border-light-base;
 }
 
 html[data-theme="dark"] {
-    hr {
-        border-color: $border-dark-base;
-    }
+  hr {
+    border-color: $border-dark-base;
+  }
 }
-
 
 // text size
 p {
-    font-size: $font-size-3;
-    line-height: 1.8rem;
+  font-size: $font-size-3;
+  line-height: 1.8rem;
 }
 
 h1 {
-    font-size: $font-size-7;
+  font-size: $font-size-7;
 }
 
 h2 {
-    font-size: $font-size-6;
+  font-size: $font-size-6;
 }
 
 h3 {
-    font-size: $font-size-5;
+  font-size: $font-size-5;
 }
 
 h4 {
-    font-size: $font-size-4;
+  font-size: $font-size-4;
 }
 
 h5 {
-    font-size: $font-size-3;
+  font-size: $font-size-3;
 }
 
 .text-1 {
-    font-size: $font-size-1;
+  font-size: $font-size-1;
 }
 
 .text-2 {
-    font-size: $font-size-2;
+  font-size: $font-size-2;
 }
 
 .text-3 {
-    font-size: $font-size-3;
+  font-size: $font-size-3;
 }
 
 .text-4 {
-    font-size: $font-size-4;
+  font-size: $font-size-4;
 }
 
 .text-5 {
-    font-size: $font-size-5;
+  font-size: $font-size-5;
 }
 
 .text-6 {
-    font-size: $font-size-6;
+  font-size: $font-size-6;
 }
 
 .text-7 {
-    font-size: $font-size-7;
+  font-size: $font-size-7;
 }
 
 // TODO: separete in a diferent fiel for more colors
 // text colors
 p.text-base-color-1 {
-    color: $low-contrast-text-light-color;
+  color: $low-contrast-text-light-color;
 }
 
 p.text-base-color-2 {
-    color: $high-contrast-text-light-color;
+  color: $high-contrast-text-light-color;
 }
 
 p.text-accent-color-1 {
-    color: $low-contrast-text-light-accent-color;
+  color: $low-contrast-text-light-accent-color;
 }
 
 p.text-accent-color-2 {
-    color: $high-contrast-text-light-accent-color;
+  color: $high-contrast-text-light-accent-color;
 }
 
 html[data-theme="dark"] {
-    p.text-accent-color-1 {
-        color: $low-contrast-text-dark-accent-color;
-    }
+  p.text-accent-color-1 {
+    color: $low-contrast-text-dark-accent-color;
+  }
 
-    p.text-accent-color-2 {
-        color: $high-contrast-text-dark-accent-color;
-    }
+  p.text-accent-color-2 {
+    color: $high-contrast-text-dark-accent-color;
+  }
 
-    p.text-base-color-1 {
-        color: $low-contrast-text-dark-color;
-    }
+  p.text-base-color-1 {
+    color: $low-contrast-text-dark-color;
+  }
 
-    p.text-base-color-2 {
-        color: $high-contrast-text-dark-color;
-    }
-}
-
-
-html[data-theme="dark"] {
-    .card--solid {
-        background-color: $bg-dark-accent-solid;
-
-        &:hover {
-            background-color: $bg-dark-accent-solid-active;
-        }
-
-        &:focus {
-            background-color: $bg-dark-accent-solid-active;
-        }
-    }
-
-    div.card--ghost {
-        background-color: $bg-dark-accent-subtle;
-        border-color: $border-dark-accent-color;
-        color: $low-contrast-text-dark-accent-color;
-
-        &:hover {
-            border-color: $border-dark-accent-color-active;
-        }
-    }
+  p.text-base-color-2 {
+    color: $high-contrast-text-dark-color;
+  }
 }
 
 html[data-theme="dark"] {
-    p.text-color-1 {
-        color: $high-contrast-text-dark-color;
+  .card--solid {
+    background-color: $bg-dark-accent-solid;
+
+    &:hover {
+      background-color: $bg-dark-accent-solid-active;
     }
 
-    p.text-color-2 {
-        color: $low-contrast-text-dark-color;
+    &:focus {
+      background-color: $bg-dark-accent-solid-active;
     }
+  }
+
+  div.card--ghost {
+    background-color: $bg-dark-accent-subtle;
+    border-color: $border-dark-accent-color;
+    color: $low-contrast-text-dark-accent-color;
+
+    &:hover {
+      border-color: $border-dark-accent-color-active;
+    }
+  }
 }
 
+html[data-theme="dark"] {
+  p.text-color-1 {
+    color: $high-contrast-text-dark-color;
+  }
+
+  p.text-color-2 {
+    color: $low-contrast-text-dark-color;
+  }
+}
 
 // button
 .btn {
-    display: inline-block;
-    width: fit-content;
-    padding: $s-2 $s-3;
-    border: none;
-    border-radius: $rounded-full;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: $s-2;
-    text-decoration: none;
+  display: inline-block;
+  width: fit-content;
+  padding: $s-2 $s-3;
+  border: none;
+  border-radius: $rounded-full;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $s-2;
+  text-decoration: none;
 
-    svg path {
-        color: $high-contrast-text-dark-color;
-    }
+  svg path {
+    color: $high-contrast-text-dark-color;
+  }
 
-    &:disabled:hover {
-        cursor: not-allowed;
-    }
+  &:disabled:hover {
+    cursor: not-allowed;
+  }
 }
 
 .btn.btn-primary {
-    background-color: $btn-primary-light-bg-color;
-    color: $high-contrast-text-dark-color;
-    font-weight: 600;
+  background-color: $btn-primary-light-bg-color;
+  color: $high-contrast-text-dark-color;
+  font-weight: 600;
 
-    &:hover {
-        background-color: $btn-primary-light-bg-active;
+  &:hover {
+    background-color: $btn-primary-light-bg-active;
+  }
+
+  &:disabled {
+    background-color: $gray-light-3;
+    color: $low-contrast-text-dark-color;
+
+    svg path {
+      color: $low-contrast-text-dark-color;
     }
-
-    &:disabled {
-        background-color: $gray-light-3;
-        color: $low-contrast-text-dark-color;
-
-        svg path {
-            color: $low-contrast-text-dark-color;
-        }
-    }
+  }
 }
 
 .btn.btn-secondary {
-    background-color: $btn-secondary-light-bg-color;
-    color: $high-contrast-text-dark-color;
+  background-color: $btn-secondary-light-bg-color;
+  color: $high-contrast-text-dark-color;
 
-    &:hover {
-        background-color: $btn-secondary-light-bg-active;
+  &:hover {
+    background-color: $btn-secondary-light-bg-active;
+  }
+
+  &:disabled {
+    background-color: $gray-light-2;
+    color: $low-contrast-text-dark-color;
+
+    svg path {
+      color: $low-contrast-text-dark-color;
     }
-
-
-    &:disabled {
-        background-color: $gray-light-2;
-        color: $low-contrast-text-dark-color;
-
-        svg path {
-            color: $low-contrast-text-dark-color;
-        }
-    }
+  }
 }
 
 .btn.btn-primary-gray {
-    color: $high-contrast-text-dark-color;
-    background-color: $gray-dark-9;
-    font-weight: 600;
+  color: $high-contrast-text-dark-color;
+  background-color: $gray-dark-9;
+  font-weight: 600;
 
-    &:hover {
-        background-color: $gray-dark-10;
+  &:hover {
+    background-color: $gray-dark-10;
+  }
+
+  &:disabled {
+    background-color: $gray-light-2;
+    color: $low-contrast-text-dark-color;
+
+    svg path {
+      color: $low-contrast-text-dark-color;
     }
-
-    &:disabled {
-        background-color: $gray-light-2;
-        color: $low-contrast-text-dark-color;
-
-        svg path {
-            color: $low-contrast-text-dark-color;
-        }
-    }
+  }
 }
 
 .btn.btn-secondary-gray {
-    color: $high-contrast-text-dark-color;
-    background-color: $btn-secondary-gray-light-bg-color;
-    font-weight: 600;
+  color: $high-contrast-text-dark-color;
+  background-color: $btn-secondary-gray-light-bg-color;
+  font-weight: 600;
+
+  &:hover {
+    background-color: $btn-secondary-gray-light-bg-active;
+  }
+
+  &:disabled {
+    background-color: $gray-light-2;
+    color: $low-contrast-text-dark-color;
+
+    svg path {
+      color: $low-contrast-text-dark-color;
+    }
+  }
+}
+
+html[data-theme="dark"] {
+  .btn.btn-primary {
+    background-color: $btn-primary-dark-bg-color;
 
     &:hover {
-        background-color: $btn-secondary-gray-light-bg-active;
+      background-color: $btn-primary-dark-bg-active;
     }
 
     &:disabled {
-        background-color: $gray-light-2;
-        color: $low-contrast-text-dark-color;
+      background-color: $gray-dark-2;
+      color: $low-contrast-text-light-color;
 
-        svg path {
-            color: $low-contrast-text-dark-color;
-        }
+      svg path {
+        color: $low-contrast-text-light-color;
+      }
     }
-}
+  }
 
-html[data-theme="dark"] {
-    .btn.btn-primary {
-        background-color: $btn-primary-dark-bg-color;
+  .btn.btn-secondary {
+    background-color: $btn-secondary-dark-bg-color;
+    color: $high-contrast-text-light-color;
+    font-weight: 600;
 
-        &:hover {
-            background-color: $btn-primary-dark-bg-active;
-        }
-
-        &:disabled {
-            background-color: $gray-dark-2;
-            color: $low-contrast-text-light-color;
-
-            svg path {
-                color: $low-contrast-text-light-color;
-            }
-        }
+    svg path {
+      color: $high-contrast-text-light-color;
     }
 
-    .btn.btn-secondary {
-        background-color: $btn-secondary-dark-bg-color;
-        color: $high-contrast-text-light-color;
-        font-weight: 600;
-
-        svg path {
-            color: $high-contrast-text-light-color;
-        }
-
-        &:hover {
-            background-color: $btn-secondary-dark-bg-active;
-        }
-
-        &:disabled {
-            background-color: $gray-dark-2;
-            color: $low-contrast-text-light-color;
-
-            svg path {
-                color: $low-contrast-text-light-color;
-            }
-        }
+    &:hover {
+      background-color: $btn-secondary-dark-bg-active;
     }
 
-    // gray buttons
-    .btn.btn-primary-gray {
-        background-color: $btn-primary-gray-dark-bg-color;
+    &:disabled {
+      background-color: $gray-dark-2;
+      color: $low-contrast-text-light-color;
 
-        &:hover {
-            background-color: $btn-primary-gray-dark-bg-active;
-        }
+      svg path {
+        color: $low-contrast-text-light-color;
+      }
+    }
+  }
 
-        &:disabled {
-            background-color: $gray-dark-2;
-            color: $low-contrast-text-light-color;
+  // gray buttons
+  .btn.btn-primary-gray {
+    background-color: $btn-primary-gray-dark-bg-color;
 
-            svg path {
-                color: $low-contrast-text-light-color;
-            }
-        }
+    &:hover {
+      background-color: $btn-primary-gray-dark-bg-active;
     }
 
-    .btn.btn-secondary-gray {
-        color: $high-contrast-text-light-color;
-        background-color: $btn-secondary-gray-dark-bg-color;
+    &:disabled {
+      background-color: $gray-dark-2;
+      color: $low-contrast-text-light-color;
 
-        svg path {
-            color: $high-contrast-text-light-color;
-        }
-
-        &:hover {
-            background-color: $btn-secondary-gray-dark-bg-active;
-        }
-
-        &:disabled {
-            background-color: $gray-dark-2;
-            color: $low-contrast-text-light-color;
-
-            svg path {
-                color: $low-contrast-text-light-color;
-            }
-        }
+      svg path {
+        color: $low-contrast-text-light-color;
+      }
     }
+  }
+
+  .btn.btn-secondary-gray {
+    color: $high-contrast-text-light-color;
+    background-color: $btn-secondary-gray-dark-bg-color;
+
+    svg path {
+      color: $high-contrast-text-light-color;
+    }
+
+    &:hover {
+      background-color: $btn-secondary-gray-dark-bg-active;
+    }
+
+    &:disabled {
+      background-color: $gray-dark-2;
+      color: $low-contrast-text-light-color;
+
+      svg path {
+        color: $low-contrast-text-light-color;
+      }
+    }
+  }
 }
 
 .pill {
-    font-size: $font-size-2;
-    font-weight: 600;
-    padding: $s-2 $s-4;
-    border-radius: $rounded-full;
+  font-size: $font-size-2;
+  font-weight: 600;
+  padding: $s-2 $s-4;
+  border-radius: $rounded-full;
 }
 
-
 div.pill--info {
-    background-color: $pill-info-light-bg-color;
-    color: $pill-info-light-color;
+  background-color: $pill-info-light-bg-color;
+  color: $pill-info-light-color;
 }
 
 div.pill--success {
-    background-color: $pill-success-light-bg-color;
-    color: $pill-success-light-color;
+  background-color: $pill-success-light-bg-color;
+  color: $pill-success-light-color;
 }
 
 div.pill--warning {
-    background-color: $pill-warning-light-bg-color;
-    color: $pill-warning-light-color;
+  background-color: $pill-warning-light-bg-color;
+  color: $pill-warning-light-color;
 }
 
 div.pill--danger {
-    background-color: $pill-danger-light-bg-color;
-    color: $pill-danger-light-color;
+  background-color: $pill-danger-light-bg-color;
+  color: $pill-danger-light-color;
 }
 
-
 html[data-theme="dark"] {
-    div.pill--info {
-        background-color: $pill-info-dark-bg-color;
-        color: $pill-info-dark-color;
-    }
+  div.pill--info {
+    background-color: $pill-info-dark-bg-color;
+    color: $pill-info-dark-color;
+  }
 
-    div.pill--success {
-        background-color: $pill-success-dark-bg-color;
-        color: $pill-success-dark-color;
-    }
+  div.pill--success {
+    background-color: $pill-success-dark-bg-color;
+    color: $pill-success-dark-color;
+  }
 
-    div.pill--warning {
-        background-color: $pill-warning-dark-bg-color;
-        color: $pill-warning-dark-color;
-    }
+  div.pill--warning {
+    background-color: $pill-warning-dark-bg-color;
+    color: $pill-warning-dark-color;
+  }
 
-    div.pill--danger {
-        background-color: $pill-danger-dark-bg-color;
-        color: $pill-danger-dark-color;
-    }
+  div.pill--danger {
+    background-color: $pill-danger-dark-bg-color;
+    color: $pill-danger-dark-color;
+  }
 }
 
 .callout {
-    display: inline-block;
-    width: fit-content;
-    padding: $s-5;
-    border-radius: $rounded-2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: $s-4;
+  display: inline-block;
+  width: fit-content;
+  padding: $s-5;
+  border-radius: $rounded-2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $s-4;
 }
 
 .callout--info {
-    background-color: $callout-info-light-color;
+  background-color: $callout-info-light-color;
 }
 
 .callout--danger {
-    background-color: $callout-danger-light-color;
+  background-color: $callout-danger-light-color;
 }
 
 html[data-theme="dark"] {
-    .callout--info {
-        background-color: $callout-info-dark-color;
-    }
+  .callout--info {
+    background-color: $callout-info-dark-color;
+  }
 
-    .callout--danger {
-        background-color: $callout-danger-dark-color;
-    }
+  .callout--danger {
+    background-color: $callout-danger-dark-color;
+  }
 }
 
 .title {
-    font-weight: 400;
+  font-weight: 400;
 }
 
-
 .grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-auto-rows: min(8rem, 1fr);
-    padding: $s-4 $s-0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: min(8rem, 1fr);
+  padding: $s-4 $s-0;
 }
 
 .grid-item {
-    border-top: solid 1px;
-    border-bottom: solid 1px;
-    display: grid;
-    grid-auto-columns: 1fr;
+  border-top: solid 1px;
+  border-bottom: solid 1px;
+  display: grid;
+  grid-auto-columns: 1fr;
 }
 
 .grid-item:not(:last-of-type) {
-    border-bottom: none;
-    padding: 0;
+  border-bottom: none;
+  padding: 0;
 }
 
 @media screen and (min-width: $mq-tablet) {
-    .grid-item {
-        grid-template-columns: repeat(12, 1fr);
-        padding: 0 0 $s-8 0;
-        gap: $s-6;
-    }
+  .grid-item {
+    grid-template-columns: repeat(12, 1fr);
+    padding: 0 0 $s-8 0;
+    gap: $s-6;
+  }
 
-    div.grid-span--2 {
-        grid-column: span 2;
-    }
+  div.grid-span--2 {
+    grid-column: span 2;
+  }
 
-    div.grid-span--3 {
-        grid-column: span 3;
-    }
+  div.grid-span--3 {
+    grid-column: span 3;
+  }
 
-    div.grid-span--4 {
-        grid-column: span 4;
-    }
+  div.grid-span--4 {
+    grid-column: span 4;
+  }
 
-    div.grid-span--6 {
-        grid-column: span 6;
-    }
+  div.grid-span--6 {
+    grid-column: span 6;
+  }
 }
 
 @media screen and (min-width: $mq-desktop) {
-    .grid-item {
-        gap: $s-8;
-    }
+  .grid-item {
+    gap: $s-8;
+  }
 }
-
 
 // compnent animations
 .sections__container {
-    section {
-        min-height: 100vh;
-    }
+  section {
+    min-height: 100vh;
+  }
 }
 
 .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .inline-block {
-    display: inline-block;
+  display: inline-block;
 }
 
 .bock {
-    display: block;
+  display: block;
 }
 
 .text-animation {
-    display: inline-block;
-    overflow-y: hidden;
+  display: inline-block;
+  overflow-y: hidden;
 
-    h2 {
-        font-size: 8rem;
-        margin: 0;
-        padding: 0;
-    }
+  h2 {
+    font-size: 8rem;
+    margin: 0;
+    padding: 0;
+  }
 
-    span {
-        text-transform: uppercase;
-        font-weight: 800;
-    }
+  span {
+    text-transform: uppercase;
+    font-weight: 800;
+  }
 }

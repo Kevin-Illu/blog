@@ -3,52 +3,47 @@
     styles
 */
 
-p {
+.post-content {
+  p {
     line-height: 1.4;
-    color: $low-contrast-text-dark-color;
-}
+  }
 
-// blockquote
-blockquote {
+  // blockquote
+  blockquote {
     border-left: 4px solid;
     margin: 20px 0;
     padding: 10px 20px;
     font-style: italic;
-}
+  }
 
-ul {
+  ul {
     list-style-type: disc;
     margin: 0 0 20px 20px;
-}
+  }
 
-ol {
+  ol {
     list-style-type: decimal;
     margin: 0 0 20px 20px;
-}
+  }
 
-li {
+  li {
     margin: 10px 0;
     line-height: 1.4;
     font-size: $font-size-5;
-    color: $low-contrast-text-dark-color !important;
+  }
 
-    p {
-        color: $low-contrast-text-dark-color;
-    }
-}
-
-html[data-theme="light"] {
+  html[data-theme="light"] {
     blockquote {
-        color: #666;
-        border-left-color: #ccc;
-        background-color: #f8f8f8;
+      color: #666;
+      border-left-color: #ccc;
+      background-color: #f8f8f8;
     }
-}
+  }
 
-html[data-theme="dark"] {
-
+  html[data-theme="dark"] {
     blockquote {
-        background-color: #2e2e2e;
-        border-left-color: #515151;
+      background-color: #2e2e2e;
+      border-left-color: #515151;
     }
+  }
 }
