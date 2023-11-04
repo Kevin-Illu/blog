@@ -1,6 +1,7 @@
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import { allPosts, type Post } from "contentlayer/generated";
 import type { GetStaticProps, InferGetStaticPropsType } from "next";
+import Head from "next/head";
 import Link from "next/link";
 
 export const getStaticProps: GetStaticProps<{
@@ -25,6 +26,13 @@ export default function PostListPage({
 
   return (
     <div className="slug-container">
+      <Head>
+        <title>Blog posts | KVN</title>
+        <meta
+          name="description"
+          content="Encuentra algo para leer o aprender :b"
+        />
+      </Head>
       <header className="blog__header">
         <h1>
           Adelante, elige un post, cualquier post. ¡Puede ser brillante o
