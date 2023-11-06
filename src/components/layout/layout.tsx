@@ -9,7 +9,7 @@ interface LayoutProps {
 }
 
 export const Layout = ({ children }: LayoutProps) => {
-  return <div>{children}</div>;
+  return <div className="layout">{children}</div>;
 };
 
 Layout.Footer = LayoutFooter;

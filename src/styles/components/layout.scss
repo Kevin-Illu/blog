@@ -1,0 +1,14 @@
+.layout {
+  &__header__root__navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: $s-4;
+    }
+  }
+}

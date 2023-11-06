@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import * as Switch from "@radix-ui/react-switch";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
@@ -23,13 +24,17 @@ export const ThemeChanger = () => {
   return (
     <div className="theme__changer">
       <div>{isClient && <p>{theme}</p>}</div>
-      <Switch.Root
-        checked={isChecked}
-        onCheckedChange={handleThemeChange}
-        className="switch__root"
-      >
-        <Switch.Thumb className="switch__root__thumb" />
-      </Switch.Root>
+      <motion.div layout>
+        <Switch.Root
+          checked={isChecked}
+          onCheckedChange={handleThemeChange}
+          className="switch__root"
+        >
+          <motion.span>
+            <Switch.Thumb className="switch__root__thumb" />
+          </motion.span>
+        </Switch.Root>
+      </motion.div>
     </div>
   );
 };
