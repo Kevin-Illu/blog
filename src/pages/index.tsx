@@ -1,9 +1,8 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
-import Link from "next/link";
 import { Post, allPosts } from "contentlayer/generated";
-import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { Layout, NavBar, RecentPostItem } from "@/components";
+import Image from "next/image";
 
 export const getStaticProps: GetStaticProps<{
   posts: Post[];
@@ -38,13 +37,16 @@ export default function Home({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <div className="container">
-        <NavBar />
-      </div>
-      <Layout.Header className="home__header container">
-        <h1 className="home__header__title">KVN</h1>
-        <p className="font-sans home__header__description">
+      <Layout.Header withNavbar className="container header">
+        <div className="header__banner">
+          <Image
+            src="/bg-primary.jpg"
+            width={1200}
+            height={1200}
+            alt="shadow bg"
+          />
+        </div>
+        <p className="header__description">
           Soy kevin Illu, software developer con base en Guatemala, en este blog
           te enseñaré lo que he aprendido y lo que estoy aprendiendo en mi
           carrera. Exploraremos una variedad de temas emocionantes, incluyendo
@@ -55,26 +57,6 @@ export default function Home({
           del desarrollo de software.
         </p>
       </Layout.Header>
-
-      <Layout.Content className="container">
-        <section className="home__section">
-          <header className="home__section__header">
-            <h2 className="home__section__header__title">Posts recientes</h2>
-            <Link
-              className="home__section__header__link btn btn-secondary-gray"
-              href="/blog"
-            >
-              Ver todos <ArrowRightIcon height={20} width={20} />
-            </Link>
-          </header>
-
-          <div className="featured__list">
-            {posts.map((post) => (
-              <RecentPostItem key={post._id} {...post} />
-            ))}
-          </div>
-        </section>
-      </Layout.Content>
       <Layout.Footer />
     </Layout>
   );

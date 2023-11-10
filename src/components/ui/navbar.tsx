@@ -1,16 +1,16 @@
 import Link from "next/link";
-import { ThemeChanger } from "..";
 
 export const NavBar = () => {
   return (
-    <nav className="layout__header__root__navbar">
+    <nav className="layout__header__root__navbar container">
       <div className="layout__header__root__navbar__logo">
-        <Link href="/" className="font-extrabold">
-          *
+        <Link href="/" className="logo">
+          KVN
         </Link>
       </div>
       <div className="layout__header__root__navbar__menu">
-        <ThemeChanger />
+        <button className="btn btn--theme"></button>
+        <button className="btn btn-primary">menu</button>
       </div>
     </nav>
   );

@@ -1,0 +1,36 @@
+.layout__header__root__navbar {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: $spacing-4;
+  }
+
+  .logo {
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .btn {
+    outline: none;
+    border: none;
+  }
+
+  .btn-primary {
+    padding: 0.4rem 1rem;
+    font-weight: 600;
+    border-radius: 25px;
+    background-color: $background-primary-solid-accent;
+  }
+
+  .btn--theme {
+    background-color: $base-color-12;
+    padding: 0.4rem;
+    border-radius: 50%;
+  }
+}
