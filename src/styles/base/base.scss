@@ -46,8 +46,10 @@ main {
 
 hr {
   margin: $spacing-8 0;
-  color: $background-secondary;
-  border-color: $background-secondary;
+  color: $border-primary;
+  border: none;
+  border-top: solid 1px $border-primary;
+  background-color: transparent;
 }
 
 // // text size

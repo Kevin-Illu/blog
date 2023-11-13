@@ -1,8 +1,10 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import { Post, allPosts } from "contentlayer/generated";
-import { Layout, NavBar, RecentPostItem } from "@/components";
+import { Layout } from "@/components";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 
 export const getStaticProps: GetStaticProps<{
   posts: Post[];
@@ -57,6 +59,38 @@ export default function Home({
           del desarrollo de software.
         </p>
       </Layout.Header>
+      <Layout.Content className="container recent__posts">
+        <hr />
+        <section className="recent__posts__container">
+          <div className="recent__posts__header">
+            <div className="square">
+              <h2 className="rencet__posts__container__title">
+                Todos los posts
+              </h2>
+              <div className="spacer"></div>
+              <Link href="/blog" className="all-posts__link">
+                Ver todos los posts
+                <ArrowTopRightIcon width={20} height={20} />
+              </Link>
+            </div>
+          </div>
+          <div className="recent__posts__list">
+            {posts.map((post) => (
+              <div key={post._id} className="recent__post">
+                <div className="recent__post__title">
+                  <p>{post.title}</p>
+                </div>
+                <div className="recent__post__footer">
+                  <p>{post.formatedDate}</p>
+                  <Link href={`/blog/${post.slug}`} className="link">
+                    <ArrowTopRightIcon width={24} height={24} />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </Layout.Content>
       <Layout.Footer />
     </Layout>
   );
