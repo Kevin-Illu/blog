@@ -1,1 +1,1 @@
-export * from "./theme-changer";
+export * from "./navbar";
