@@ -4,26 +4,7 @@ import { Post, allPosts } from "contentlayer/generated";
 import { Layout, NavBar, RecentPostItem } from "@/components";
 import Image from "next/image";
 
-export const getStaticProps: GetStaticProps<{
-  posts: Post[];
-}> = () => {
-  // Obtiene los tres posts mas recientes de la lista, ordenados por fecha.
-  // la fecha se formatea para optener el mes en formato long
-  const recentPosts = allPosts
-    .sort((postA, postB) => {
-      const dateA = new Date(postA.date);
-      const dateB = new Date(postB.date);
-
-      return dateA > dateB ? -1 : 1;
-    })
-    .slice(0, 3);
-
-  return { props: { posts: recentPosts } };
-};
-
-export default function Home({
-  posts,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Home() {
   return (
     <Layout>
       <Head>
