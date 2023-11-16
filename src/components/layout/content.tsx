@@ -1,4 +1,5 @@
 import { FC, ReactNode } from "react";
+import { motion } from "framer-motion";
 
 export interface LayoutContentProps {
   children: ReactNode;
@@ -8,5 +9,5 @@ export const LayoutContent: FC<LayoutContentProps> = ({
   children,
   className,
 }) => {
-  return <main className={`${className}`}>{children}</main>;
+  return <motion.main className={`${className}`}>{children}</motion.main>;
 };

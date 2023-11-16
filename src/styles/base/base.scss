@@ -1,6 +1,6 @@
 ::selection {
-  background-color: $background-primary-solid-accent;
-  color: $text-primary-accent;
+  background-color: $background-primary-solid;
+  color: $text-primary;
 }
 
 * {
@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color: $background-primary-accent;
+  background-color: $background-primary;
 }
 
 main {
@@ -23,7 +23,19 @@ main {
 
 @media screen and (min-width: $mq-laptop) {
   .container {
-    width: 98%;
+    width: 94%;
+  }
+}
+
+@media screen and (min-width: $mq-desktop) {
+  .container {
+    width: 86%;
+  }
+}
+
+@media screen and (min-width: $mq-desktop-xl) {
+  .container {
+    width: 80%;
   }
 }
 
@@ -113,5 +125,27 @@ span {
   span {
     text-transform: uppercase;
     font-weight: 800;
+  }
+}
+
+.transition {
+  &__slide-in {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: red;
+    transform-origin: bottom;
+  }
+
+  &__slide-out {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: red;
+    transform-origin: top;
   }
 }

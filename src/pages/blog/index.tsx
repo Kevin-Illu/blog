@@ -1,8 +1,30 @@
-import { ArrowTopRightIcon } from "@radix-ui/react-icons";
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+
 import { allPosts, type Post } from "contentlayer/generated";
 import type { GetStaticProps, InferGetStaticPropsType } from "next";
-import Head from "next/head";
-import Link from "next/link";
+
+import { motion } from "framer-motion";
+import { Layout } from "@/components";
+
+const parentVariants = {
+  show: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const childVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+    },
+  },
+};
 
 export const getStaticProps: GetStaticProps<{
   posts: Post[];
@@ -25,47 +47,63 @@ export default function PostListPage({
   const postsFormated = SortAndFormatPosts(posts);
 
   return (
-    <div className="slug-container">
+    <Layout>
       <Head>
-        <title>Blog posts | KVN</title>
+        <title>Blog | kvn</title>
         <meta
           name="description"
-          content="Encuentra algo para leer o aprender :b"
+          content="Encuentra artículos y tutoriales sobre programación y desarrollo de software en el blog de KVN. Explora temas de tecnología, aprendizaje y mejores prácticas de desarrollo."
         />
+        <meta
+          name="keywords"
+          content="programación, desarrollo de software, tecnología, tutoriales, KVN, Kevin Illu, blog, Blog de kevin illu"
+        />
+        <meta name="author" content="Kevin Illu" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <header className="blog__header">
-        <h1>
-          Adelante, elige un post, cualquier post. ¡Puede ser brillante o
-          simplemente otro intento de parecerlo!
-        </h1>
-      </header>
-
-      <main className="blog__content">
-        {postsFormated.map((post, i) => (
-          <Link
-            href={`/blog/${post.slug}`}
-            key={post.slug}
-            className={`blog__content__card-item card-item-variant-${
-              (i % 6) + 1
-            }`}
-          >
-            <header className="post__header">
-              <div className="post__header-title">
-                <h4 className="text-6">{post.title}</h4>
-                <time dateTime={post.date}>{post.formatedDate}</time>
-              </div>
-              <div className="post__header-icon">
-                <div className="icon">
-                  <ArrowTopRightIcon height={30} width={30} />
+      <Layout.Header withNavbar className="blog__container">
+        <h1 className="blog__header__title">Blog</h1>
+      </Layout.Header>
+      <hr />
+      <Layout.Content className="blog__container">
+        <motion.div
+          className="blog-grid"
+          initial="hidden"
+          animate="show"
+          variants={parentVariants}
+        >
+          {postsFormated.map((post) => (
+            <motion.div
+              variants={childVariants}
+              key={post._id}
+              className="entry"
+            >
+              <Link href={`/blog/${post.slug}`} className="entry-card">
+                <motion.div
+                  whileHover={{
+                    borderRadius: "36px",
+                  }}
+                  className="entry-header"
+                >
+                  <Image
+                    src="/bg-primary.jpg"
+                    alt="hola"
+                    width={600}
+                    height={600}
+                  />
+                </motion.div>
+                <div className="entry-content">
+                  <h4 className="entry-title">{post.title}</h4>
+                  <time className="entry-date" dateTime={post.date}>
+                    {post.formatedDate}
+                  </time>
                 </div>
-              </div>
-            </header>
-            <main className="post__description">
-              <p>{post.description}</p>
-            </main>
-          </Link>
-        ))}
-      </main>
-    </div>
+              </Link>
+            </motion.div>
+          ))}
+        </motion.div>
+      </Layout.Content>
+      <Layout.Footer className="blog__container blog__footer" />
+    </Layout>
   );
 }

@@ -1,7 +1,10 @@
+import { Layout } from "@/components";
 import { LapTimerIcon } from "@radix-ui/react-icons";
 import { allPosts, type Post } from "contentlayer/generated";
 import { type GetStaticProps, type InferGetStaticPropsType } from "next";
 import { useMDXComponent } from "next-contentlayer/hooks";
+import Head from "next/head";
+import Image from "next/image";
 
 export const getStaticPaths = () => {
   return {
@@ -28,10 +31,19 @@ export default function SinglePostPage({
   const MDXContent = useMDXComponent(post.body.code);
 
   return (
-    <div className="slug-container">
-      <article>
-        <header className="post__header">
+    <Layout>
+      <Head>
+        {/*TODO: add dinamic keywords for SEO*/}
+        <title>{post.slug}</title>
+        <meta name="author" content="Kevin Illu" />
+        <meta name="description" content={post.description} />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      <Layout.Header withNavbar className="container post__header">
+        <div className="post__header__content">
           <h1 className="post__title">{post.title}</h1>
+          <p className="post__description">{post.description}</p>
           <div className="post__info">
             <p>{post.formatedDate}</p>
             <p>/</p>
@@ -40,11 +52,19 @@ export default function SinglePostPage({
               <p>{post.readingTime}</p>
             </div>
           </div>
-        </header>
-        <div className="post-content">
-          <MDXContent />
         </div>
-      </article>
-    </div>
+        <div>
+          <Image src="/bg-primary.jpg" alt="hola" width={600} height={600} />
+        </div>
+      </Layout.Header>
+      <div className="slug-container">
+        <hr />
+      </div>
+      <Layout.Content className="slug-container">
+        <article className="post-content">
+          <MDXContent />
+        </article>
+      </Layout.Content>
+    </Layout>
   );
 }

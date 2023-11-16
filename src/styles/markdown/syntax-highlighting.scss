@@ -1,14 +1,19 @@
 /* Estilos para bloques de código */
 div[data-rehype-pretty-code-fragment] {
-  margin-top: $spacing-4;
+  background-color: $background-secondary;
   overflow: hidden;
   border-radius: 0.5rem;
   border: solid 1px;
+  margin-top: 1rem;
 
   pre {
     overflow-x: auto;
-    font-size: 0.875rem;
+    font-size: $font-size-4;
     line-height: 1.5rem;
+  }
+
+  code * {
+    font-size: $font-size-3;
   }
 }
 
@@ -31,12 +36,12 @@ div[data-rehype-pretty-code-fragment] span[data-line] {
 /* Tema claro para bloques de código */
 html[data-theme="light"] {
   div[data-rehype-pretty-code-fragment] {
-    background-color: $background-primary;
+    background-color: $background-secondary;
     border-color: $border-primary;
   }
 
   div[data-rehype-pretty-code-title] {
-    background-color: $background-primary;
+    background-color: $background-secondary;
 
     border-color: $border-primary;
     color: $text-primary;
@@ -84,7 +89,7 @@ span[data-highlighted-chars] {
   border: solid 1px;
   border-radius: 0.5rem;
   background-color: $background-secondary;
-  // border-color: $border-light-color;
+  border-color: $border-primary;
 }
 
 // html[data-theme="dark"] .line {

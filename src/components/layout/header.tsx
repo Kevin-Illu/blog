@@ -1,5 +1,6 @@
 import { FC, ReactNode } from "react";
 import { NavBar } from "..";
+import { motion } from "framer-motion";
 
 export interface LayoutHeaderProps {
   children: ReactNode;
@@ -13,9 +14,9 @@ export const LayoutHeader: FC<LayoutHeaderProps> = ({
   withNavbar,
 }) => {
   return (
-    <header className="layout__header__root">
+    <motion.header className="layout__header__root">
       {withNavbar && <NavBar />}
       <div className={className}>{children}</div>
-    </header>
+    </motion.header>
   );
 };

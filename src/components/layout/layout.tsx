@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import { motion } from "framer-motion";
 
 import { LayoutFooter } from "./footer";
 import { LayoutHeader } from "./header";
@@ -9,7 +10,7 @@ interface LayoutProps {
 }
 
 export const Layout = ({ children }: LayoutProps) => {
-  return <div className="layout">{children}</div>;
+  return <motion.div className="layout">{children}</motion.div>;
 };
 
 Layout.Footer = LayoutFooter;
