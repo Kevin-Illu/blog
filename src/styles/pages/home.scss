@@ -18,7 +18,14 @@
 
   @media screen and (min-width: $mq-tablet) {
     .description {
+      margin: 8rem 0 0;
       font-size: $font-size-6;
+    }
+  }
+
+  @media (min-width: $mq-desktop-xl) {
+    .description {
+      max-width: 70%;
     }
   }
 }
@@ -39,7 +46,7 @@
   }
 
   .logo,
-  .logo > * {
+  .logo>* {
     display: inline-block;
     font-size: 12rem;
     font-weight: 800;
@@ -51,7 +58,7 @@
       padding: 4rem 0;
     }
 
-    .logo > * {
+    .logo>* {
       font-size: 24rem;
     }
   }
@@ -61,14 +68,29 @@
       height: 32rem;
     }
 
-    .logo > * {
+    .logo>* {
       font-size: 32rem;
     }
   }
 
   @media screen and (min-width: $mq-desktop) {
-    .logo > * {
+    .logo>* {
       font-size: 36rem;
+    }
+  }
+
+  @media screen and (min-width: $mq-desktop-xl) {
+    padding: 0;
+
+    .logo__container {
+      height: 60rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .logo>* {
+      font-size: 64rem;
     }
   }
 }
