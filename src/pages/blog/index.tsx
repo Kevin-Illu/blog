@@ -8,7 +8,7 @@ import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import { motion } from "framer-motion";
 import { Layout } from "@/components";
 
-const parentVariants = {
+export const parentVariants = {
   show: {
     transition: {
       staggerChildren: 0.2,
@@ -16,7 +16,7 @@ const parentVariants = {
   },
 };
 
-const childVariants = {
+export const childVariants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -85,12 +85,7 @@ export default function PostListPage({
                   }}
                   className="entry-header"
                 >
-                  <Image
-                    src="/bg-primary.jpg"
-                    alt="hola"
-                    width={600}
-                    height={600}
-                  />
+                  <Image src={post.img} alt="hola" width={600} height={600} />
                 </motion.div>
                 <div className="entry-content">
                   <h4 className="entry-title">{post.title}</h4>

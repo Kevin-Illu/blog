@@ -10,10 +10,6 @@
     text-decoration: none;
   }
 
-  .middle-menu {
-    gap: 1rem;
-  }
-
   .theme-changer {
     width: 1rem;
     height: 1rem;
@@ -29,6 +25,7 @@
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
+    gap: $spacing-4;
 
     div,
     a,

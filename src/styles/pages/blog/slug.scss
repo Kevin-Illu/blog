@@ -58,6 +58,13 @@
   img {
     object-fit: cover;
     width: 100%;
+    max-height: 350px;
     border-radius: $radius-2;
+  }
+
+  @media (min-width: $mq-laptop) {
+    img {
+      max-height: fit-content;
+    }
   }
 }

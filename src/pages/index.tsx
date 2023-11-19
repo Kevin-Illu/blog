@@ -1,27 +1,8 @@
 import Head from "next/head";
 import { Layout } from "@/components";
-import { cubicBezier, motion } from "framer-motion";
-
-const parentVariants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.4,
-    },
-  },
-};
-
-const childVariants = {
-  hidden: { y: 400 },
-  show: {
-    y: 0,
-    transition: {
-      ease: cubicBezier(0.6, 0.01, -0.05, 0.95),
-      duration: 1,
-    },
-  },
-};
+import { motion } from "framer-motion";
+import { childVariants, parentVariants } from "./home.animations";
+import { CldOgImage } from "next-cloudinary";
 
 const Home = () => {
   return (
@@ -40,7 +21,24 @@ const Home = () => {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="author" content="Kevin Illu" />
+        <link rel="icon" href="/kevin-icon.ico" sizes="any" />
       </Head>
+      <CldOgImage
+        src="/og-img.png"
+        alt="kevin's blog logo"
+        sizes="100vw"
+        overlays={[
+          {
+            text: {
+              color: "white",
+              fontFamily: "Source Sans Pro",
+              fontSize: 200,
+              fontWeight: "bold",
+              text: "kevin illu | web developer",
+            },
+          },
+        ]}
+      />
       <Layout.Header withNavbar className="container home__header">
         <div>
           <motion.p
