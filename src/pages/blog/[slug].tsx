@@ -6,7 +6,6 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import Head from "next/head";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { CldOgImage } from "next-cloudinary";
 
 export const getStaticPaths = () => {
   return {
@@ -42,22 +41,6 @@ export default function SinglePostPage({
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <CldOgImage
-        src="/images/og-img.png"
-        alt="kevin's blog logo"
-        sizes="100vw"
-        overlays={[
-          {
-            text: {
-              color: "white",
-              fontFamily: "Source Sans Pro",
-              fontSize: 200,
-              fontWeight: "bold",
-              text: post.title,
-            },
-          },
-        ]}
-      />
       <Layout.Header withNavbar className="slug-container post__header">
         <div className="post__header__content">
           <h1 className="post__title">{post.title}</h1>

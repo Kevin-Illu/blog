@@ -2,7 +2,6 @@ import Head from "next/head";
 import { Layout } from "@/components";
 import { motion } from "framer-motion";
 import { childVariants, parentVariants } from "../utils/home.animations";
-import { CldOgImage } from "next-cloudinary";
 
 const Home = () => {
   return (
@@ -23,22 +22,6 @@ const Home = () => {
         <meta name="author" content="Kevin Illu" />
         <link rel="icon" href="/kevin-icon.ico" sizes="any" />
       </Head>
-      <CldOgImage
-        src="/og-img.png"
-        alt="kevin's blog logo"
-        sizes="100vw"
-        overlays={[
-          {
-            text: {
-              color: "white",
-              fontFamily: "Source Sans Pro",
-              fontSize: 200,
-              fontWeight: "bold",
-              text: "kevin illu | web developer",
-            },
-          },
-        ]}
-      />
       <Layout.Header withNavbar className="container home__header">
         <div>
           <motion.p
