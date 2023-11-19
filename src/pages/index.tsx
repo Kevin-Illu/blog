@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Layout } from "@/components";
 import { motion } from "framer-motion";
-import { childVariants, parentVariants } from "./home.animations";
+import { childVariants, parentVariants } from "../utils/home.animations";
 import { CldOgImage } from "next-cloudinary";
 
 const Home = () => {
