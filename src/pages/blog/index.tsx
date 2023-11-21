@@ -61,11 +61,11 @@ export default function PostListPage({
         <meta name="author" content="Kevin Illu" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Layout.Header withNavbar className="blog__container">
+      <Layout.Header withNavbar className="container">
         <h1 className="blog__header__title">Blog</h1>
         <hr />
       </Layout.Header>
-      <Layout.Content className="blog__container">
+      <Layout.Content className="container">
         <motion.div
           className="blog-grid"
           initial="hidden"
@@ -102,7 +102,7 @@ export default function PostListPage({
           ))}
         </motion.div>
       </Layout.Content>
-      <Layout.Footer className="blog__container blog__footer">
+      <Layout.Footer className="container blog__footer">
         <div className="footer-pattern"></div>
       </Layout.Footer>
     </Layout>

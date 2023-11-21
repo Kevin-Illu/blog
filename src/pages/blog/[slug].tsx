@@ -41,7 +41,7 @@ export default function SinglePostPage({
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Layout.Header withNavbar className="slug-container post__header">
+      <Layout.Header withNavbar className="post__container post__header">
         <div className="post__header__content">
           <h1 className="post__title">{post.title}</h1>
           <p className="post__description">{post.description}</p>
@@ -66,8 +66,10 @@ export default function SinglePostPage({
         >
           <Image src={post.img} alt="hola" width={600} height={600} />
         </motion.div>
+
+        <hr />
       </Layout.Header>
-      <Layout.Content className="content-container">
+      <Layout.Content className="post__container content-container">
         <article className="post-content">
           <MDXContent />
         </article>

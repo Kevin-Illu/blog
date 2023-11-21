@@ -16,46 +16,6 @@ main {
   position: relative;
 }
 
-.container {
-  width: 96%;
-  margin: 0 auto;
-}
-
-@media screen and (min-width: $mq-laptop) {
-  .container {
-    width: 94%;
-  }
-}
-
-@media screen and (min-width: $mq-desktop) {
-  .container {
-    width: 86%;
-  }
-}
-
-@media screen and (min-width: $mq-desktop-xl) {
-  .container {
-    width: 80%;
-  }
-}
-
-.container--secondary {
-  margin: 0 auto;
-  width: 96%;
-}
-
-@media (min-width: $mq-laptop) {
-  .container--secondary {
-    width: 86%;
-  }
-}
-
-@media (min-width: $mq-desktop-xl) {
-  .container--secondary {
-    width: 80%;
-  }
-}
-
 hr {
   margin: $spacing-8 0;
   color: $border-primary;
@@ -147,5 +107,107 @@ span {
     height: 100vh;
     background: red;
     transform-origin: top;
+  }
+}
+
+.container {
+  width: 96%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: $mq-laptop) {
+  .container {
+    width: 94%;
+  }
+}
+
+@media screen and (min-width: $mq-desktop) {
+  .container {
+    width: 86%;
+  }
+}
+
+@media screen and (min-width: $mq-desktop-xl) {
+  .container {
+    width: 80%;
+  }
+}
+
+// .container--secondary {
+//   margin: 0 auto;
+//   width: 96%;
+// }
+
+// @media (min-width: $mq-laptop) {
+//   .container--secondary {
+//     width: 86%;
+//   }
+// }
+
+// @media (min-width: $mq-desktop-xl) {
+//   .container--secondary {
+//     width: 80%;
+//   }
+// }
+
+// .content-container {
+//   width: 94%;
+//   margin: 0 auto;
+
+//   @media screen and (min-width: $mq-tablet) {
+//     width: 90%;
+//   }
+
+//   @media screen and (min-width: $mq-laptop) {
+//     margin: 0 auto $spacing-8;
+
+//     article {
+//       padding: 0 $spacing-8;
+//       max-width: 840px;
+//     }
+//   }
+
+//   @media screen and (min-width: $mq-desktop-xl) {
+//     width: 52%;
+//   }
+// }
+
+// .slug-container {
+//   width: 94%;
+//   margin: 0 auto;
+
+//   @media screen and (min-width: $mq-tablet) {
+//     width: 90%;
+//   }
+
+//   @media screen and (min-width: $mq-laptop) {
+//     margin: 120px auto 100px;
+
+//     article {
+//       padding: 0 $spacing-8;
+//       max-width: 840px;
+//     }
+//   }
+
+//   @media screen and (min-width: $mq-desktop-xl) {
+//     width: 52%;
+//   }
+// }
+
+.post__container {
+  width: 94%;
+  flex: 1;
+  margin: 0 auto;
+
+  @media screen and (min-width: $mq-tablet) {
+    width: 90%;
+  }
+
+  @media screen and (min-width: $mq-laptop) {
+    width: 86%;
+  }
+
+  @media screen and (min-width: $mq-desktop-xl) {
+    width: 52%;
   }
 }

@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { Layout } from "@/components";
 import { motion } from "framer-motion";
-import { childVariants, parentVariants } from "../utils/home.animations";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 
