@@ -2,6 +2,8 @@ import Head from "next/head";
 import { Layout } from "@/components";
 import { motion } from "framer-motion";
 import { childVariants, parentVariants } from "../utils/home.animations";
+import { ArrowTopRightIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
 
 const Home = () => {
   return (
@@ -23,14 +25,14 @@ const Home = () => {
         <link rel="icon" href="/kevin-icon.ico" sizes="any" />
       </Head>
       <Layout.Header withNavbar className="container home__header">
-        <div>
+        <div className="header-content">
           <motion.p
             initial={{ opacity: 0 }}
             animate={{
               opacity: 1,
               transition: {
                 duration: 0.8,
-                delay: 2,
+                // delay: 2,
               },
             }}
             exit={{
@@ -47,30 +49,20 @@ const Home = () => {
             otros. Acompáñame en este viaje mientras compartimos conocimientos y
             experiencias en el mundo del desarrollo de software.
           </motion.p>
+          <div className="header-links">
+            <Link href="/blog" className="with-icon btn btn-primary">
+              leer mis posts
+              <ArrowTopRightIcon width={20} height={20} />
+            </Link>
+            <Link href="/" className="btn btn-secondary">
+              sobre mi
+            </Link>
+          </div>
         </div>
       </Layout.Header>
-      <Layout.Content className="container home__content">
-        <motion.div
-          variants={parentVariants}
-          initial="hidden"
-          animate="show"
-          className="logo__container"
-        >
-          <span className="sr-only">kvn</span>
-          <span className="logo">
-            {"kvn".split("").map((char, i) => (
-              <motion.span
-                variants={childVariants}
-                className="logo__char font-sans"
-                key={i}
-              >
-                {char}
-              </motion.span>
-            ))}
-          </span>
-        </motion.div>
-      </Layout.Content>
-      <Layout.Footer className="container" />
+      <Layout.Footer className="container">
+        <div className="footer-pattern"></div>
+      </Layout.Footer>
     </Layout>
   );
 };

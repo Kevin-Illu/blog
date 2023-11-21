@@ -37,7 +37,7 @@ function SortAndFormatPosts(posts: Post[]): Post[] {
     const dateA = new Date(pA.date);
     const dateB = new Date(pB.date);
 
-    return dateA < dateB ? -1 : 1;
+    return dateA < dateB ? 1 : -1;
   });
 }
 
@@ -63,8 +63,8 @@ export default function PostListPage({
       </Head>
       <Layout.Header withNavbar className="blog__container">
         <h1 className="blog__header__title">Blog</h1>
+        <hr />
       </Layout.Header>
-      <hr />
       <Layout.Content className="blog__container">
         <motion.div
           className="blog-grid"
@@ -72,7 +72,7 @@ export default function PostListPage({
           animate="show"
           variants={parentVariants}
         >
-          {postsFormated.map((post) => (
+          {postsFormated.map((post, i) => (
             <motion.div
               variants={childVariants}
               key={post._id}
@@ -88,17 +88,23 @@ export default function PostListPage({
                   <Image src={post.img} alt="hola" width={600} height={600} />
                 </motion.div>
                 <div className="entry-content">
-                  <h4 className="entry-title">{post.title}</h4>
                   <time className="entry-date" dateTime={post.date}>
                     {post.formatedDate}
                   </time>
+                  <h4 className="entry-title">{post.title}</h4>
+
+                  {i === 0 && (
+                    <p className="entry-description">{post.description}</p>
+                  )}
                 </div>
               </Link>
             </motion.div>
           ))}
         </motion.div>
       </Layout.Content>
-      <Layout.Footer className="blog__container blog__footer" />
+      <Layout.Footer className="blog__container blog__footer">
+        <div className="footer-pattern"></div>
+      </Layout.Footer>
     </Layout>
   );
 }

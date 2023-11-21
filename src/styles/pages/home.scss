@@ -1,25 +1,23 @@
 .home__header {
   padding: 2rem 0 0 0;
+  font-weight: 400;
+  font-size: $font-size-4;
 
-  div {
-    overflow: hidden;
-  }
-
-  .description {
-    font-weight: 600;
-    font-size: $font-size-4;
-  }
-
-  @media screen and (min-width: $mq-tablet) {
+  @media (min-width: $mq-tablet) {
     .description {
       font-size: $font-size-5;
     }
   }
 
-  @media screen and (min-width: $mq-tablet) {
+  @media (min-width: $mq-tablet) {
+    .description {
+      font-size: $font-size-6;
+    }
+  }
+
+  @media (min-width: $mq-desktop) {
     .description {
       margin: 8rem 0 0;
-      font-size: $font-size-6;
     }
   }
 
@@ -33,64 +31,121 @@
 .home__content {
   overflow-y: hidden;
   padding: 2rem 0;
+}
 
-  .logo__container {
-    width: 100%;
-    height: 12rem;
+.header-links {
+  padding-top: $spacing-4;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-4;
+
+  .with-icon {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    gap: $spacing-2;
     align-items: center;
-    user-select: none;
-    overflow: hidden;
   }
 
-  .logo,
-  .logo>* {
-    display: inline-block;
-    font-size: 12rem;
-    font-weight: 800;
+  .btn {
+    font-size: $font-size-4;
+    text-decoration: none;
+    padding: 0.4rem 1rem;
+    border-radius: $radius-2;
   }
 
-  @media screen and (min-width: $mq-tablet) {
-    .logo__container {
-      height: 22rem;
-      padding: 4rem 0;
-    }
+  .btn-secondary {
+    background-color: $base-color-3;
 
-    .logo>* {
-      font-size: 24rem;
+    &:hover {
+      background-color: $base-color-4;
     }
   }
 
-  @media screen and (min-width: $mq-laptop) {
-    .logo__container {
-      height: 32rem;
+  .btn-primary {
+    background-color: $base-color-12;
+    color: $base-color-1;
+
+    path {
+      color: $base-color-1;
     }
 
-    .logo>* {
-      font-size: 32rem;
+    &:hover {
+      color: $base-color-4;
+
+      path {
+        color: $base-color-4;
+      }
     }
   }
 
-  @media screen and (min-width: $mq-desktop) {
-    .logo>* {
-      font-size: 36rem;
-    }
-  }
-
-  @media screen and (min-width: $mq-desktop-xl) {
-    padding: 0;
-
-    .logo__container {
-      height: 60rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-    }
-
-    .logo>* {
-      font-size: 64rem;
+  @media (min-width: $mq-tablet) {
+    a {
+      font-size: $font-size-6;
     }
   }
 }
+
+.footer-pattern {
+  width: 100%;
+  height: 100px;
+  background-image: url("/logo.svg");
+  background-size: 80px 100px;
+  background-repeat: space;
+  margin: $spacing-4 0;
+}
+// .logo__container {
+//   width: 100%;
+//   height: 12rem;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   user-select: none;
+//   overflow: hidden;
+// }
+
+// .logo,
+// .logo > * {
+//   display: inline-block;
+//   font-size: 12rem;
+//   font-weight: 800;
+// }
+
+// @media (min-width: $mq-tablet) {
+//   .logo__container {
+//     height: 22rem;
+//     padding: 4rem 0;
+//   }
+
+//   .logo > * {
+//     font-size: 24rem;
+//   }
+// }
+
+// @media (min-width: $mq-laptop) {
+//   .logo__container {
+//     height: 32rem;
+//   }
+
+//   .logo > * {
+//     font-size: 32rem;
+//   }
+// }
+
+// @media (min-width: $mq-desktop) {
+//   .logo > * {
+//     font-size: 36rem;
+//   }
+// }
+
+// @media (min-width: $mq-desktop-xl) {
+//   .logo__container {
+//     height: 60rem;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: flex-end;
+//   }
+
+//   .logo > * {
+//     font-size: 64rem;
+//   }
+// }

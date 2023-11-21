@@ -54,7 +54,11 @@ export default function SinglePostPage({
             </div>
           </div>
         </div>
+
         <motion.div
+          initial={{
+            borderRadius: "8px",
+          }}
           whileHover={{
             borderRadius: "36px",
           }}
@@ -63,11 +67,14 @@ export default function SinglePostPage({
           <Image src={post.img} alt="hola" width={600} height={600} />
         </motion.div>
       </Layout.Header>
-      <Layout.Content className="slug-container">
+      <Layout.Content className="content-container">
         <article className="post-content">
           <MDXContent />
         </article>
       </Layout.Content>
+      <Layout.Footer className="container">
+        <div className="footer-pattern"></div>
+      </Layout.Footer>
     </Layout>
   );
 }

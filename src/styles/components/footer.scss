@@ -1,8 +1,16 @@
 .footer {
   display: flex;
   flex-direction: column;
+  padding-top: $spacing-12;
 
-  p {
+  .footer-container {
+    padding-top: $spacing-4;
+    background-color: $base-color-2;
+  }
+
+  p,
+  a {
+    font-weight: 600;
     margin: 0;
   }
 

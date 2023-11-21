@@ -1,3 +1,25 @@
+.content-container {
+  width: 94%;
+  margin: 0 auto;
+
+  @media screen and (min-width: $mq-tablet) {
+    width: 90%;
+  }
+
+  @media screen and (min-width: $mq-laptop) {
+    margin: 0 auto $spacing-8;
+
+    article {
+      padding: 0 $spacing-8;
+      max-width: 840px;
+    }
+  }
+
+  @media screen and (min-width: $mq-desktop-xl) {
+    width: 52%;
+  }
+}
+
 .slug-container {
   width: 94%;
   margin: 0 auto;
@@ -37,6 +59,7 @@
     display: flex;
     align-items: center;
     gap: $spacing-4;
+    margin-bottom: $spacing-8;
 
     &__reading-time {
       display: flex;
@@ -46,7 +69,25 @@
 
     * {
       font-size: $font-size-3;
-      margin-top: 0;
+      margin: 0;
+    }
+  }
+
+  @media (min-width: $mq-laptop) {
+    .post__description {
+      margin-right: calc($spacing-12 * 2);
+    }
+  }
+
+  @media (min-width: $mq-desktop) {
+    .post__description {
+      margin-right: calc($spacing-12 * 4);
+    }
+  }
+
+  @media (min-width: $mq-desktop) {
+    .post__description {
+      margin-right: calc($spacing-12 * 6);
     }
   }
 }
@@ -54,17 +95,10 @@
 .post__header__img {
   overflow: hidden;
   max-width: 1250px;
+  max-height: 460px;
 
   img {
-    object-fit: cover;
     width: 100%;
-    max-height: 350px;
-    border-radius: $radius-2;
-  }
-
-  @media (min-width: $mq-laptop) {
-    img {
-      max-height: fit-content;
-    }
+    object-fit: cover;
   }
 }
