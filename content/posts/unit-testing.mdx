@@ -1,0 +1,140 @@
+---
+title: Elevando la calidad del código (Testing en React con TypeScript)
+description: Creando projectos sostenibles y mantenibles con Unit Test, Explorando testing libreries en Typescript y React
+img: /blog/blog5.jpg
+date: 11-21-2023
+---
+
+## En el vertiginoso mundo del desarrollo web, la importancia de realizar pruebas en nuestras aplicaciones se vuelve cada vez más evidente. En este artículo, exploraremos las mejores prácticas y estrategias para realizar pruebas en aplicaciones React escritas en TypeScript. Acompáñanos en este viaje para mejorar la calidad de nuestro código y garantizar una experiencia de usuario excepcional.
+
+## ¿Por qué el Testing es Crucial en Desarrollo Web?
+
+Antes de sumergirnos en las técnicas específicas, es crucial entender por qué el testing es fundamental en el desarrollo de aplicaciones web. Exploraremos los beneficios de las pruebas unitarias y cómo contribuyen a la robustez y mantenibilidad de nuestro código.
+
+## Configuración del Entorno
+
+Configurar un entorno de pruebas efectivo es el primer paso. Detallaremos cómo configurar Jest y React Testing Library para trabajar de manera óptima con TypeScript. También discutiremos la importancia de las configuraciones adecuadas para maximizar la eficiencia de nuestras pruebas.
+
+## Estructura del Proyecto y Arcquitectura de Directorios
+
+Antes de sumergirnos en los detalles de las pruebas, es esencial establecer una arquitectura de directorios clara. Aquí hay un ejemplo de una estructura de directorios para un proyecto React con TypeScript:
+
+```plaintext
+my-react-app/
+|-- src/
+|   |-- components/
+|   |   |-- Button/
+|   |   |   |-- Button.tsx
+|   |   |   |-- Button.test.tsx
+|   |-- services/
+|   |   |-- api.ts
+|-- __tests__/
+|   |-- setupTests.ts
+|-- package.json
+```
+
+En este ejemplo, los archivos de prueba están ubicados junto a los componentes correspondientes para una fácil referencia y mantenimiento.
+
+Escribiendo Pruebas Unitarias en TypeScript
+Abordaremos el proceso de escribir pruebas unitarias para componentes React escritos en TypeScript. Veremos ejemplos prácticos que cubren desde pruebas sencillas hasta pruebas más complejas, haciendo hincapié en la importancia de la cobertura de código.
+
+```tsx
+// Button.tsx
+import React from "react";
+
+interface ButtonProps {
+  onClick: () => void;
+  label: string;
+}
+
+const Button: React.FC<ButtonProps> = ({ onClick, label }) => (
+  <button onClick={onClick}>{label}</button>
+);
+
+export default Button;
+```
+
+```tsx
+// Button.test.tsx
+import React from "react";
+import { render, fireEvent } from "@testing-library/react";
+import Button from "./Button";
+
+test("renders button with correct label", () => {
+  const { getByText } = render(<Button onClick={() => {}} label="Click me" />);
+  const button = getByText("Click me");
+  expect(button).toBeInTheDocument();
+});
+
+test("calls the onClick function when clicked", () => {
+  const onClickMock = jest.fn();
+  const { getByText } = render(
+    <Button onClick={onClickMock} label="Click me" />
+  );
+  const button = getByText("Click me");
+  fireEvent.click(button);
+  expect(onClickMock).toHaveBeenCalledTimes(1);
+});
+```
+
+Mocking y Stubbing en Pruebas
+Exploraremos técnicas avanzadas como el uso de mocks y stubs para aislar componentes y funciones, facilitando pruebas más específicas y efectivas. Aprenderemos a usar estas herramientas para controlar el comportamiento de nuestras dependencias durante las pruebas.
+
+```tsx
+// api.ts
+export const fetchData = async (): Promise<string> => {
+  // Lógica para obtener datos de la API
+  return "Mocked data";
+};
+```
+
+```tsx
+// Component.tsx
+import React, { useEffect, useState } from "react";
+import { fetchData } from "../services/api";
+
+const Component: React.FC = () => {
+  const [data, setData] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchDataAndSetState = async () => {
+      const result = await fetchData();
+      setData(result);
+    };
+
+    fetchDataAndSetState();
+  }, []);
+
+  return <div>{data}</div>;
+};
+
+export default Component;
+```
+
+```tsx
+// Component.test.tsx
+import React from "react";
+import { render } from "@testing-library/react";
+import Component from "./Component";
+import { fetchData } from "../services/api";
+
+jest.mock("../services/api");
+
+test("renders data fetched from API", async () => {
+  const mockedData = "Mocked data";
+  (fetchData as jest.Mock).mockResolvedValue(mockedData);
+
+  const { getByText } = render(<Component />);
+  const dataElement = getByText(mockedData);
+  expect(dataElement).toBeInTheDocument();
+});
+```
+
+Integración Continua y Despliegue Continuo
+El testing no termina con el desarrollo; es un proceso continuo. Discutiremos cómo integrar pruebas en nuestros flujos de trabajo de integración continua (CI) y despliegue continuo (CD) para garantizar que nuestro código siga siendo robusto incluso en entornos de producción.
+
+Conclusiones y Recursos Adicionales
+Concluiremos resaltando la importancia de la implementación de pruebas en el desarrollo de aplicaciones React con TypeScript. Proporcionaremos recursos adicionales, herramientas y bibliotecas que pueden enriquecer aún más nuestra experiencia de testing.
+
+Conclusión
+En este viaje a través del mundo del testing en React con TypeScript, hemos explorado las bases, las mejores prácticas y técnicas avanzadas. Al implementar un sólido conjunto de pruebas, no solo mejoramos la calidad de nuestro código, sino que también contribuimos a la creación de aplicaciones más fiables y mantenibles. ¡No subestimemos el poder de un código bien probado en el éxito a largo plazo de nuestros proyectos!

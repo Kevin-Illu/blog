@@ -74,9 +74,7 @@ export default function SinglePostPage({
           <MDXContent />
         </article>
       </Layout.Content>
-      <Layout.Footer className="container">
-        <div className="footer-pattern"></div>
-      </Layout.Footer>
+      <Layout.Footer />
     </Layout>
   );
 }

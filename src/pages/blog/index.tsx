@@ -102,9 +102,7 @@ export default function PostListPage({
           ))}
         </motion.div>
       </Layout.Content>
-      <Layout.Footer className="container blog__footer">
-        <div className="footer-pattern"></div>
-      </Layout.Footer>
+      <Layout.Footer />
     </Layout>
   );
 }

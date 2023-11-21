@@ -57,9 +57,7 @@ const Home = () => {
           </div>
         </div>
       </Layout.Header>
-      <Layout.Footer className="container">
-        <div className="footer-pattern"></div>
-      </Layout.Footer>
+      <Layout.Footer />
     </Layout>
   );
 };
