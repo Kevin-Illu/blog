@@ -25,13 +25,23 @@
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: auto;
+  place-items: center;
   gap: $spacing-8;
   max-width: 1200px;
+
+  @media (min-width: $mq-desktop) {
+    width: 100% !important;
+    max-width: max-content;
+  }
 }
 
-@media (min-width: $mq-tablet) {
-  .entry:first-of-type {
-    grid-column: span 3;
+
+.entry:first-of-type {
+  grid-column: span 1;
+
+  @media (min-width: $mq-tablet) {
+    grid-column: span 2;
     display: grid;
     place-items: center;
     width: 100%;
@@ -53,6 +63,18 @@
     .entry-content {
       max-width: 600px;
     }
+  }
+
+  @media (min-width: $mq-laptop) {
+    grid-column: span 3;
+  }
+
+  @media (min-width: $mq-desktop) {
+    grid-column: span 4;
+  }
+
+  @media (min-width: $mq-desktop-xl) {
+    grid-column: span 4;
   }
 }
 

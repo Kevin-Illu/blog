@@ -49,7 +49,7 @@ export default function PostListPage({
   return (
     <Layout>
       <Head>
-        <title>Blog | kvn</title>
+        <title>Blog</title>
         <meta
           name="description"
           content="Encuentra artículos y tutoriales sobre programación y desarrollo de software en el blog de KVN. Explora temas de tecnología, aprendizaje y mejores prácticas de desarrollo."

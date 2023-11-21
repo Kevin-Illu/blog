@@ -8,16 +8,14 @@ const Home = () => {
   return (
     <Layout>
       <Head>
-        <title>
-          Kevin Illu | Desarrollador de Software y Apasionado del Arte{" "}
-        </title>
+        <title>Kevin Illu | Desarrollador de Software </title>
         <meta
           name="description"
-          content="Explora el mundo del desarrollo de software, el diseño de interfaces y el arte"
+          content="Explora el mundo del desarrollo de software y el diseño de interfaces"
         />
         <meta
           name="keywords"
-          content="programación, desarrollo de software, tecnología, tutoriales, kvn, KVN, kevin illu, blog, Home"
+          content="programación, desarrollo de software, tecnología, tutoriales, kvn, KVN, kevin illu, blog, Home, blog de kevin illu"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="author" content="Kevin Illu" />
