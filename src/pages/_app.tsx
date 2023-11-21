@@ -10,45 +10,43 @@ export default function App({ Component, pageProps }: AppProps) {
   const pageKey = router.asPath;
 
   return (
-    <main>
-      <AnimatePresence mode="wait">
-        <ThemeProvider>
-          <style jsx global>{`
-            * {
-              font-family: ${nunito.style.fontFamily};
-              font-weight: 300;
-            }
+    <AnimatePresence mode="wait">
+      <ThemeProvider>
+        <style jsx global>{`
+          * {
+            font-family: ${nunito.style.fontFamily};
+            font-weight: 300;
+          }
 
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6 {
-              font-family: ${nunito_sans.style.fontFamily};
-              font-weight: 600;
-            }
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6 {
+            font-family: ${nunito_sans.style.fontFamily};
+            font-weight: 600;
+          }
 
-            span[data-line] span,
-            div[data-rehype-pretty-code-title] {
-              font-family: ${jetBrains_mono.style.fontFamily};
-            }
+          span[data-line] span,
+          div[data-rehype-pretty-code-title] {
+            font-family: ${jetBrains_mono.style.fontFamily};
+          }
 
-            .font-sans {
-              font-family: ${nunito_sans.style.fontFamily};
-            }
+          .font-sans {
+            font-family: ${nunito_sans.style.fontFamily};
+          }
 
-            .font-nunito {
-              font-family: ${nunito.style.fontFamily};
-            }
+          .font-nunito {
+            font-family: ${nunito.style.fontFamily};
+          }
 
-            .font-jetBrains {
-              font-family: ${jetBrains_mono.style.fontFamily};
-            }
-          `}</style>
-          <Component key={pageKey} {...pageProps} />
-        </ThemeProvider>
-      </AnimatePresence>
-    </main>
+          .font-jetBrains {
+            font-family: ${jetBrains_mono.style.fontFamily};
+          }
+        `}</style>
+        <Component key={pageKey} {...pageProps} />
+      </ThemeProvider>
+    </AnimatePresence>
   );
 }
