@@ -19,6 +19,10 @@ const itemVariants = {
   },
 };
 
+interface NavBarProps {
+  current?: "blog" | "about";
+}
+
 export const NavBar = () => {
   const { theme, setTheme } = useTheme();
 
@@ -45,9 +49,6 @@ export const NavBar = () => {
         </motion.div>
       </div>
       <div className="animated__container">
-        <motion.div variants={itemVariants}>
-          <Link href="/blog">about</Link>
-        </motion.div>
         <motion.div variants={itemVariants}>
           <Link href="/blog">blog</Link>
         </motion.div>

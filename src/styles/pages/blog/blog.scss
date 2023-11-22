@@ -36,7 +36,6 @@
   }
 }
 
-
 .entry:first-of-type {
   grid-column: span 1;
 
@@ -79,6 +78,8 @@
 }
 
 .entry {
+  border-radius: $radius-2;
+
   &:hover {
     * {
       color: $base-color-11;
@@ -90,9 +91,11 @@
 .entry-card {
   text-decoration: none;
   max-width: 480px;
+  border-radius: $radius-2;
 }
 
 .entry-header {
+  border-radius: $radius-2;
   overflow: hidden;
   min-height: 240px;
 
