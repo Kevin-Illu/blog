@@ -46,19 +46,27 @@ export default function PostListPage({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const postsFormated = SortAndFormatPosts(posts);
 
+  const baseUrl = "http://localhost:3000/api/og";
+  const encodeTitle = encodeURIComponent("Blog");
+  const encodeDescription = encodeURIComponent(
+    "Encuentra artículos y tutoriales sobre programación y desarrollo de software en mi blog. Explora temas de tecnología, aprendizaje y mejores prácticas de desarrollo."
+  );
+  const ogContent = `${baseUrl}?title=${encodeTitle}&description=${encodeDescription}`;
+
   return (
     <Layout>
       <Head>
         <title>Blog</title>
         <meta
           name="description"
-          content="Encuentra artículos y tutoriales sobre programación y desarrollo de software en el blog de KVN. Explora temas de tecnología, aprendizaje y mejores prácticas de desarrollo."
+          content="Encuentra artículos y tutoriales sobre programación y desarrollo de software en mi blog. Explora temas de tecnología, aprendizaje y mejores prácticas de desarrollo."
         />
         <meta
           name="keywords"
           content="programación, desarrollo de software, tecnología, tutoriales, KVN, Kevin Illu, blog, Blog de kevin illu"
         />
         <meta name="author" content="Kevin Illu" />
+        <meta property="og:image" content={ogContent} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Layout.Header withNavbar className="container">

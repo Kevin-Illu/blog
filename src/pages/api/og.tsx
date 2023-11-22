@@ -1,5 +1,6 @@
 import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
+import { nunito_sans } from "../../styles/fonts";
 
 export const config = {
   runtime: "edge",
@@ -15,73 +16,55 @@ const defaultOptions: OgOptions = {
   description: "Software Developer",
 };
 
+const host = "http://localhost:3000";
+
 export default function handler(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
 
-    const title = searchParams.has("title") || defaultOptions.title;
+    const title = searchParams.get("title") || defaultOptions.title;
+    console.log(title);
+
     const description =
-      searchParams.has("description") || defaultOptions.description;
+      searchParams.get("description") || defaultOptions.description;
+    console.log(description);
 
     return new ImageResponse(
       (
-        <div
-          style={{
-            backgroundColor: "black",
-            backgroundSize: "150px 150px",
-            height: "100%",
-            width: "100%",
-            display: "flex",
-            textAlign: "center",
-            alignItems: "center",
-            justifyContent: "center",
-            flexDirection: "column",
-            flexWrap: "nowrap",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              justifyItems: "center",
-            }}
-          >
-            <div
-              style={{
-                fontSize: 60,
-                fontStyle: "normal",
-                letterSpacing: "-0.025em",
-                color: "white",
-                marginTop: 30,
-                padding: "0 120px",
-                lineHeight: 1.4,
-                whiteSpace: "pre-wrap",
-              }}
+        <div tw="flex bg-white w-full h-full p-[4rem]">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            tw="absolute top-0 left-0 z-0"
+            src={`${host}/images/blurry-gradient.svg`}
+            width={1200}
+            height={630}
+            alt="blurry background"
+          ></img>
+          <div tw="w-1/2 flex flex-col justify-center items-start z-10 font-bold">
+            <h1 tw="text-6xl p-0 m-0 font-bold uppercase">{title}</h1>
+            <p tw="text-4xl">{description}</p>
+          </div>
+          <div tw="w-1/2 flex justify-center items-center z-10">
+            <svg
+              width="141"
+              height="145"
+              viewBox="0 0 91 95"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              {title}
-            </div>
-            <div
-              style={{
-                fontSize: 60,
-                fontStyle: "normal",
-                letterSpacing: "-0.025em",
-                color: "white",
-                marginTop: 30,
-                padding: "0 120px",
-                lineHeight: 1.4,
-                whiteSpace: "pre-wrap",
-              }}
-            >
-              {description}
-            </div>
+              <path
+                d="M27.34 12L20.67 50M14 88L20.67 50M20.67 50L83 12M20.67 50L83 81.7862"
+                stroke="black"
+                stroke-width="28"
+              />
+            </svg>
           </div>
         </div>
       ),
       {
         width: 1200,
         height: 630,
-      },
+      }
     );
   } catch (e: any) {
     console.log(`${e.message}`);

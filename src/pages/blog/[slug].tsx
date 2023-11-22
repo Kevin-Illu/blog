@@ -31,6 +31,10 @@ export default function SinglePostPage({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const MDXContent = useMDXComponent(post.body.code);
 
+  const baseUrl = "http://localhost:3000/api/og";
+  const encodeTitle = encodeURIComponent(post.title);
+  const encodeDescription = encodeURIComponent(post.description);
+
   return (
     <Layout>
       <Head>
@@ -38,7 +42,10 @@ export default function SinglePostPage({
         <title>{post.slug}</title>
         <meta name="author" content="Kevin Illu" />
         <meta name="description" content={post.description} />
-
+        <meta
+          property="og:image"
+          content={`${baseUrl}?title=${encodeTitle}&description=${encodeDescription}`}
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Layout.Header withNavbar className="post__container post__header">

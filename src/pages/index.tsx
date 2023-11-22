@@ -5,6 +5,13 @@ import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 
 const Home = () => {
+  const baseUrl = "http://localhost:3000/api/og";
+  const encodeTitle = encodeURIComponent("Kevin Illu");
+  const encodeDescription = encodeURIComponent(
+    "Software Developer, entusiasta del diseño web y el design system"
+  );
+  const ogContent = `${baseUrl}?title=${encodeTitle}&description=${encodeDescription}`;
+
   return (
     <Layout>
       <Head>
@@ -20,6 +27,7 @@ const Home = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="author" content="Kevin Illu" />
         <link rel="icon" href="/kevin-icon.ico" sizes="any" />
+        <meta property="og:image" content={ogContent} />
       </Head>
       <Layout.Header withNavbar className="container home__header">
         <div className="header-content">
