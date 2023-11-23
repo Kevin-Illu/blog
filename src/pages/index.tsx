@@ -3,14 +3,13 @@ import { Layout } from "@/components";
 import { motion } from "framer-motion";
 import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
+import { ogImageContentEncode } from "@/utils/ogDataFormatter";
 
 const Home = () => {
-  const baseUrl = "http://localhost:3000/api/og";
-  const encodeTitle = encodeURIComponent("Kevin Illu");
-  const encodeDescription = encodeURIComponent(
-    "Software Developer, entusiasta del diseño web y el design system"
-  );
-  const ogContent = `${baseUrl}?title=${encodeTitle}&description=${encodeDescription}`;
+  const ogContent = ogImageContentEncode({
+    title: "Kevin Illu",
+    description: "Software Developer",
+  });
 
   return (
     <Layout>

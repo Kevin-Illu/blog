@@ -1,17 +1,12 @@
 import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
-import { nunito_sans } from "../../styles/fonts";
+import { OgImageContent } from "@/types";
 
 export const config = {
   runtime: "edge",
 };
 
-interface OgOptions {
-  title?: string;
-  description?: string;
-}
-
-const defaultOptions: OgOptions = {
+const defaultOptions: OgImageContent = {
   title: "Kevin Illu",
   description: "Software Developer",
 };

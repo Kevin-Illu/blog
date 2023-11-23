@@ -7,6 +7,7 @@ import type { GetStaticProps, InferGetStaticPropsType } from "next";
 
 import { motion } from "framer-motion";
 import { Layout } from "@/components";
+import { ogImageContentEncode } from "@/utils/ogDataFormatter";
 
 export const parentVariants = {
   show: {
@@ -32,7 +33,7 @@ export const getStaticProps: GetStaticProps<{
   return { props: { posts: allPosts } };
 };
 
-function SortAndFormatPosts(posts: Post[]): Post[] {
+function SortPosts(posts: Post[]): Post[] {
   return posts.sort((pA, pB) => {
     const dateA = new Date(pA.date);
     const dateB = new Date(pB.date);
@@ -44,14 +45,11 @@ function SortAndFormatPosts(posts: Post[]): Post[] {
 export default function PostListPage({
   posts,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const postsFormated = SortAndFormatPosts(posts);
+  const sortedPosts = SortPosts(posts);
 
-  const baseUrl = "http://localhost:3000/api/og";
-  const encodeTitle = encodeURIComponent("Blog");
-  const encodeDescription = encodeURIComponent(
-    "Encuentra artículos y tutoriales sobre programación y desarrollo de software en mi blog. Explora temas de tecnología, aprendizaje y mejores prácticas de desarrollo."
-  );
-  const ogContent = `${baseUrl}?title=${encodeTitle}&description=${encodeDescription}`;
+  const ogContent = ogImageContentEncode({
+    title: "Blog",
+  });
 
   return (
     <Layout>
@@ -80,7 +78,7 @@ export default function PostListPage({
           animate="show"
           variants={parentVariants}
         >
-          {postsFormated.map((post, i) => (
+          {sortedPosts.map((post, i) => (
             <motion.div
               variants={childVariants}
               key={post._id}
