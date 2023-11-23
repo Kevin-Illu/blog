@@ -63,9 +63,25 @@ export default function PostListPage({
           name="keywords"
           content="programación, desarrollo de software, tecnología, tutoriales, KVN, Kevin Illu, blog, Blog de kevin illu"
         />
-        <meta name="author" content="Kevin Illu" />
-        <meta property="og:image" content={ogContent} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* open graph */}
+        <meta property="og:title" content="Kevin Illu | Blog"></meta>
+        <meta
+          property="og:description"
+          content="Encuentra artículos y tutoriales sobre programación y desarrollo de software en mi blog. Explora temas de tecnología, aprendizaje y mejores prácticas de desarrollo."
+        />
+        <meta property="og:image" content={ogContent} />
+        {/* <meta property="og:url" content=""></meta> */}
+
+        {/* twitter */}
+        <meta property="twitter:title" content="Kevin Illu | Blog"></meta>
+        <meta
+          property="twitter:description"
+          content="Encuentra artículos y tutoriales sobre programación y desarrollo de software en mi blog. Explora temas de tecnología, aprendizaje y mejores prácticas de desarrollo."
+        ></meta>
+        <meta property="twitter:image" content={ogContent}></meta>
+        <meta property="twitter:card" content="summary_large_image"></meta>
       </Head>
       <Layout.Header withNavbar className="container">
         <h1 className="blog__header__title">Blog</h1>

@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <Layout>
       <Head>
-        <title>Kevin Illu | Desarrollador de Software </title>
+        <title>Kevin Illu | Desarrollador de Software</title>
         <meta
           name="description"
           content="Explora el mundo del desarrollo de software y el diseño de interfaces"
@@ -26,7 +26,30 @@ const Home = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="author" content="Kevin Illu" />
         <link rel="icon" href="/kevin-icon.ico" sizes="any" />
+
+        {/* open graph */}
+        <meta
+          property="og:title"
+          content="Kevin Illu | Desarrollador de Software"
+        ></meta>
+        <meta
+          property="og:description"
+          content="Explora el mundo del desarrollo de software y el diseño de interfaces"
+        />
         <meta property="og:image" content={ogContent} />
+        {/* <meta property="og:url" content=""></meta> */}
+
+        {/* twitter */}
+        <meta
+          property="twitter:title"
+          content="Kevin Illu | Desarrollador de Software"
+        ></meta>
+        <meta
+          property="twitter:description"
+          content="Explora el mundo del desarrollo de software y el diseño de interfaces"
+        ></meta>
+        <meta property="twitter:image" content={ogContent}></meta>
+        <meta property="twitter:card" content="summary_large_image"></meta>
       </Head>
       <Layout.Header withNavbar className="container home__header">
         <div className="header-content">

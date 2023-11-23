@@ -45,6 +45,18 @@ export default function SinglePostPage({
         <meta name="description" content={post.description} />
         <meta property="og:image" content={ogContent} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* open graph */}
+        <meta property="og:title" content={post.title}></meta>
+        <meta property="og:description" content={post.description} />
+        <meta property="og:image" content={ogContent} />
+        {/* <meta property="og:url" content=""></meta> */}
+
+        {/* twitter */}
+        <meta property="twitter:title" content={post.title}></meta>
+        <meta property="twitter:description" content={post.description}></meta>
+        <meta property="twitter:image" content={ogContent}></meta>
+        <meta property="twitter:card" content="summary_large_image"></meta>
       </Head>
       <Layout.Header withNavbar className="post__container post__header">
         <div className="post__header__content">
