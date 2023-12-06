@@ -10,8 +10,8 @@ export default function App({ Component, pageProps }: AppProps) {
   const pageKey = router.asPath;
 
   return (
-    <AnimatePresence mode="wait">
-      <ThemeProvider>
+    <ThemeProvider>
+      <div className="bg-black w-full h-full">
         <style jsx global>{`
           * {
             font-family: ${nunito.style.fontFamily};
@@ -45,8 +45,10 @@ export default function App({ Component, pageProps }: AppProps) {
             font-family: ${jetBrains_mono.style.fontFamily};
           }
         `}</style>
-        <Component key={pageKey} {...pageProps} />
-      </ThemeProvider>
-    </AnimatePresence>
+        <AnimatePresence mode="wait">
+          <Component key={pageKey} {...pageProps} />
+        </AnimatePresence>
+      </div>
+    </ThemeProvider>
   );
 }
