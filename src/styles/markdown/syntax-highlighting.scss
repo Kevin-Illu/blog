@@ -34,23 +34,21 @@ div[data-rehype-pretty-code-fragment] span[data-line] {
 }
 
 /* Tema claro para bloques de código */
-html[data-theme="light"] {
-  div[data-rehype-pretty-code-fragment] {
-    background-color: $background-secondary;
-    border-color: $border-primary;
-  }
+div[data-rehype-pretty-code-fragment] {
+  background-color: $background-secondary;
+  border-color: $border-primary;
+}
 
-  div[data-rehype-pretty-code-title] {
-    background-color: $background-secondary;
+div[data-rehype-pretty-code-title] {
+  background-color: $background-secondary;
 
-    border-color: $border-primary;
-    color: $text-primary;
-  }
+  border-color: $border-primary;
+  color: $text-primary;
+}
 
-  div[data-rehype-pretty-code-fragment] [data-highlighted-line] {
-    border-left-color: $accent-color-9;
-    background-color: $accent-color-3;
-  }
+div[data-rehype-pretty-code-fragment] [data-highlighted-line] {
+  border-left-color: $accent-color-9;
+  background-color: $accent-color-3;
 }
 
 /* Estilos para líneas de código */
@@ -117,20 +115,25 @@ code[data-line-numbers] {
     esta es la logica para mostrar el code block
     segun el color scheme del usuario
 */
-pre[data-theme="dark"] {
-  color-scheme: dark;
-}
+// pre[data-theme="dark"] {
+//   color-scheme: dark;
+// }
+//
+// html[data-theme="dark"] {
+//   pre[data-theme="light"],
+//   code[data-theme="light"] {
+//     display: none;
+//   }
+// }
+//
+// html[data-theme="light"] {
+//   pre[data-theme="dark"],
+//   code[data-theme="dark"] {
+//     display: none;
+//   }
+// }
 
-html[data-theme="dark"] {
-  pre[data-theme="light"],
-  code[data-theme="light"] {
-    display: none;
-  }
-}
-
-html[data-theme="light"] {
-  pre[data-theme="dark"],
-  code[data-theme="dark"] {
-    display: none;
-  }
+pre[data-theme="dark"],
+code[data-theme="dark"] {
+  display: none;
 }
