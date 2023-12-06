@@ -15,11 +15,9 @@ export const Layout = ({ children }: LayoutProps) => {
       initial={{
         y: 40,
         opacity: 0,
-        scale: 0.98,
       }}
       animate={{
         y: 0,
-        scale: 1,
         opacity: 1,
         transition: {
           ease: cubicBezier(0.6, 0.01, -0.05, 0.95),
@@ -29,7 +27,6 @@ export const Layout = ({ children }: LayoutProps) => {
       exit={{
         y: 40,
         opacity: 0,
-        scale: 0.98,
         transition: {
           ease: cubicBezier(0.6, 0.01, -0.05, 0.95),
           duration: 1,

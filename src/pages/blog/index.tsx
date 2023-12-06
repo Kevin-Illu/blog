@@ -100,7 +100,11 @@ export default function PostListPage({
               key={post._id}
               className="entry"
             >
-              <Link href={`/blog/${post.slug}`} className="entry-card">
+              <Link
+                href={`/blog/${post.slug}`}
+                className="entry-card"
+                scroll={false}
+              >
                 <motion.div
                   whileHover={{
                     borderRadius: "36px",

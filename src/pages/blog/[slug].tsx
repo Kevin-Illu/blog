@@ -7,6 +7,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ogImageContentEncode } from "@/utils/ogDataFormatter";
+import { useLayoutEffect } from "react";
 
 export const getStaticPaths = () => {
   return {
@@ -35,6 +36,12 @@ export default function SinglePostPage({
   const ogContent = ogImageContentEncode({
     title: post.title,
   });
+
+  useLayoutEffect(() => {
+    window.scroll({
+      top: 0,
+    });
+  }, []);
 
   return (
     <Layout>
