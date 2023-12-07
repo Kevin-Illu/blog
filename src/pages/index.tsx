@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <Layout>
       <Head>
-        <title>Kevin Illu | Desarrollador de Software</title>
+        <title>Kevin Illu</title>
         <meta
           name="description"
           content="Explora el mundo del desarrollo de software y el diseño de interfaces"
