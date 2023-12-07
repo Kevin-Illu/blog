@@ -5,10 +5,10 @@ export const LayoutFooter = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer--primary container">
-          <div className="footer__info">
+          <div className="">
             <p className="text-4">Kevin Illu </p>
             <a href="https://twitter.com/3Kevinillu" className="text-4">
-              (@3KevinIllu)
+              Twitter (@3KevinIllu)
             </a>
           </div>
           <div className="footer__source">

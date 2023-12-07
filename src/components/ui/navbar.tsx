@@ -2,6 +2,7 @@ import Link from "next/link";
 import { cubicBezier, motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const itemVariants = {
   initial: {
@@ -25,11 +26,16 @@ interface NavBarProps {
 
 export const NavBar = () => {
   const { theme, setTheme } = useTheme();
+  const [nextTheme, setNextTheme] = useState("");
 
   const handleToggleTheme = () => {
     const nextTheme = theme === "light" ? "dark" : "light";
     setTheme(nextTheme);
   };
+
+  useEffect(() => {
+    setNextTheme(theme == "light" ? "dark" : "light");
+  }, [theme]);
 
   return (
     <motion.nav
@@ -55,11 +61,13 @@ export const NavBar = () => {
         <motion.button
           variants={itemVariants}
           whileTap={{
-            scale: 0.8,
+            scale: 0.9,
           }}
           onClick={handleToggleTheme}
           className="theme-changer"
-        ></motion.button>
+        >
+          {nextTheme}
+        </motion.button>
       </div>
     </motion.nav>
   );
