@@ -11,35 +11,16 @@ const defaultOptions: OgImageContent = {
   description: "Software Developer",
 };
 
-const host = "http://localhost:3000";
-
 export default function handler(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
-
     const title = searchParams.get("title") || defaultOptions.title;
-    console.log(title);
-
-    const description =
-      searchParams.get("description") || defaultOptions.description;
-    console.log(description);
 
     return new ImageResponse(
       (
-        <div tw="flex bg-white w-full h-full p-[4rem]">
+        <div tw="flex flex-col justify-center items-center gap-8 bg-white w-full h-full p-[4rem]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            tw="absolute top-0 left-0 z-0"
-            src={`${host}/images/blurry-gradient.svg`}
-            width={1200}
-            height={630}
-            alt="blurry background"
-          ></img>
-          <div tw="w-1/2 flex flex-col justify-center items-start z-10 font-bold">
-            <h1 tw="text-6xl p-0 m-0 font-bold uppercase">{title}</h1>
-            <p tw="text-4xl">{description}</p>
-          </div>
-          <div tw="w-1/2 flex justify-center items-center z-10">
+          <div tw="flex justify-center items-center w-full">
             <svg
               width="141"
               height="145"
@@ -54,12 +35,15 @@ export default function handler(request: NextRequest) {
               />
             </svg>
           </div>
+          <div tw="flex w-full justify-center items-center">
+            <h1>{title}</h1>
+          </div>
         </div>
       ),
       {
         width: 1200,
         height: 630,
-      }
+      },
     );
   } catch (e: any) {
     console.log(`${e.message}`);
